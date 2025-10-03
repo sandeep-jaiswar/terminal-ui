@@ -1,7 +1,7 @@
 {
-  "name": "@sandeep-jaiswar/ui",
+  "name": "@sandeep-jaiswar/utils",
   "version": "0.0.0",
-  "description": "Bloomberg Terminal-inspired React UI components",
+  "description": "Shared utilities for @sandeep-jaiswar/ui",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -10,11 +10,9 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
-    },
-    "./styles.css": "./dist/styles.css"
+    }
   },
   "files": ["dist"],
-  "sideEffects": ["**/*.css"],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -25,15 +23,8 @@
   "devDependencies": {
     "@sandeep-jaiswar/eslint-config": "workspace:*",
     "@sandeep-jaiswar/tsconfig": "workspace:*",
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.18",
     "eslint": "^8.56.0",
-    "react": "^18.2.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
-  },
-  "peerDependencies": {
-    "react": ">=18.0.0",
-    "react-dom": ">=18.0.0"
   }
 }

@@ -1,25 +1,39 @@
 {
+  "name": "@sandeep-jaiswar/ui",
+  "version": "0.0.0",
   "private": true,
+  "description": "Bloomberg Terminal-inspired React UI component library",
+  "keywords": ["react", "ui", "components", "financial", "trading", "bloomberg", "terminal"],
+  "author": "Sandeep Jaiswar <sandeep.jaiswar.dev@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sandeep-jaiswar/terminal-ui.git"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "clean": "turbo run clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "turbo run test",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,md,json}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build --filter=docs^... && changeset publish",
-    "preview-storybook": "turbo run preview-storybook"
+    "release": "turbo run build lint test && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
-    "prettier": "^3.2.5",
-    "turbo": "^2.5.8"
-  },
-  "name": "design-system",
-  "packageManager": "npm@10.9.2",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+    "@sandeep-jaiswar/eslint-config": "workspace:*",
+    "@sandeep-jaiswar/tsconfig": "workspace:*",
+    "prettier": "^3.1.1",
+    "turbo": "^1.11.2",
+    "typescript": "^5.3.3"
+  }
 }
