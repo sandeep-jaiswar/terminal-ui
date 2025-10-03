@@ -1,5 +1,5 @@
 {
-  "name": "@sandeep-jaiswar/ui",
+  "name": "@sandeep-jaiswar/ui-monorepo",
   "version": "0.0.0",
   "private": true,
   "description": "Bloomberg Terminal-inspired React UI component library",

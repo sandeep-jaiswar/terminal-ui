@@ -1,0 +1,42 @@
+{
+  "name": "@sandeep-jaiswar/trading",
+  "version": "0.0.0",
+  "description": "Trading-specific components",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "keywords": ["react", "trading", "ui", "financial", "bloomberg"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src/",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@sandeep-jaiswar/tokens": "workspace:*",
+    "@sandeep-jaiswar/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@sandeep-jaiswar/eslint-config": "workspace:*",
+    "@sandeep-jaiswar/tsconfig": "workspace:*",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "eslint": "^8.56.0",
+    "react": "^18.2.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  }
+}
