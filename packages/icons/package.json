@@ -1,7 +1,7 @@
 {
-  "name": "@sandeep-jaiswar/ui",
+  "name": "@sandeep-jaiswar/icons",
   "version": "0.0.0",
-  "description": "Bloomberg Terminal-inspired React UI components",
+  "description": "Icon library for @sandeep-jaiswar/ui",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -10,11 +10,9 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    },
-    "./styles.css": "./dist/styles.css"
+    }
   },
   "files": ["dist"],
-  "sideEffects": ["**/*.css"],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -33,7 +31,6 @@
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "react": ">=18.0.0",
-    "react-dom": ">=18.0.0"
+    "react": ">=18.0.0"
   }
 }
