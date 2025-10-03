@@ -13,18 +13,33 @@ A professional, Bloomberg Terminal-inspired React UI component library built wit
 
 ## 🏗️ Monorepo Structure
 
-This Turborepo includes the following packages and applications:
+This Turborepo includes the following packages and applications with **component-per-package architecture** for optimal tree-shaking and granular versioning:
 
 ### Apps
 - `apps/docs` - Storybook documentation and component showcase
 - `apps/playground` - Next.js development playground for testing components
 - `apps/examples` - Usage examples for common financial UI patterns
 
-### Packages
-- `packages/ui` - Core React component library
+### Foundation Packages
 - `packages/tokens` - Design tokens (colors, spacing, typography)
-- `packages/icons` - Icon library
+- `packages/theme` - Theme provider and context
 - `packages/utils` - Shared utility functions (formatCurrency, cn, a11y helpers)
+- `packages/icons` - Icon library
+
+### Component Packages
+- `packages/button` - Button component
+- `packages/input` - Input, NumberInput, SearchInput components
+- `packages/badge` - Badge component
+- `packages/card` - Card component
+- `packages/modal` - Modal component
+- `packages/navigation` - Sidebar, Tabs, Breadcrumb components
+- `packages/data-grid` - DataGrid component
+- `packages/charts` - Sparkline, LineChart, CandlestickChart components
+- `packages/trading` - Watchlist, Portfolio, OrderBook components
+- `packages/dashboard` - Dashboard, Widget components
+
+### Meta Package
+- `packages/ui` - Re-exports all components for convenience imports
 
 ### Tools
 - `tools/eslint-config` - Shared ESLint configuration
@@ -76,18 +91,74 @@ pnpm format:check
 
 ## 📖 Using the Library
 
+### Option 1: Granular Imports (Recommended for Optimal Bundle Size)
+
+Import individual components for the best tree-shaking and smallest bundle size:
+
 ```tsx
-import { Button } from '@sandeep-jaiswar/ui';
+// Import only what you need from individual packages
+import { Button } from '@sandeep-jaiswar/button';
+import { Input, NumberInput } from '@sandeep-jaiswar/input';
+import { DataGrid } from '@sandeep-jaiswar/data-grid';
+import { ThemeProvider } from '@sandeep-jaiswar/theme';
 import { formatCurrency } from '@sandeep-jaiswar/utils';
 
 function TradingInterface() {
   return (
-    <Button onClick={() => console.log('Buy order placed!')}>
-      Buy 100 AAPL @ {formatCurrency(150.25)}
-    </Button>
+    <ThemeProvider theme="dark">
+      <DataGrid data={stocks} />
+      <Input placeholder="Enter symbol" />
+      <Button onClick={() => console.log('Buy order placed!')}>
+        Buy 100 AAPL @ {formatCurrency(150.25)}
+      </Button>
+    </ThemeProvider>
   );
 }
 ```
+
+### Option 2: Convenience Imports (Full Library)
+
+Import everything from the meta package for quick prototyping:
+
+```tsx
+// Import from meta package
+import { 
+  Button, 
+  Input,
+  DataGrid,
+  ThemeProvider,
+  formatCurrency 
+} from '@sandeep-jaiswar/ui';
+
+function TradingInterface() {
+  return (
+    <ThemeProvider theme="dark">
+      <DataGrid data={stocks} />
+      <Input placeholder="Enter symbol" />
+      <Button onClick={() => console.log('Buy order placed!')}>
+        Buy 100 AAPL @ {formatCurrency(150.25)}
+      </Button>
+    </ThemeProvider>
+  );
+}
+```
+
+### Available Component Packages
+
+- `@sandeep-jaiswar/button` - Button component
+- `@sandeep-jaiswar/input` - Input components
+- `@sandeep-jaiswar/badge` - Badge component
+- `@sandeep-jaiswar/card` - Card component
+- `@sandeep-jaiswar/modal` - Modal component
+- `@sandeep-jaiswar/navigation` - Navigation components
+- `@sandeep-jaiswar/data-grid` - DataGrid component
+- `@sandeep-jaiswar/charts` - Chart components
+- `@sandeep-jaiswar/trading` - Trading-specific components
+- `@sandeep-jaiswar/dashboard` - Dashboard components
+- `@sandeep-jaiswar/theme` - Theme provider
+- `@sandeep-jaiswar/tokens` - Design tokens
+- `@sandeep-jaiswar/utils` - Utility functions
+- `@sandeep-jaiswar/icons` - Icon library
 
 ## 🏗️ Turborepo
 

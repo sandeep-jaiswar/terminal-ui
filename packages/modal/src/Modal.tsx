@@ -6,12 +6,12 @@ export interface ModalProps {
   onClose?: () => void;
 }
 
-export function Modal({ children, isOpen = false, onClose }: ModalProps): JSX.Element | null {
+export function Modal({ children, isOpen = false }: ModalProps): JSX.Element | null {
   if (!isOpen) return null;
   
   return (
-    <div onClick={onClose}>
-      <div onClick={(e) => e.stopPropagation()}>
+    <div data-component="modal">
+      <div data-component="modal-content">
         {children}
       </div>
     </div>
