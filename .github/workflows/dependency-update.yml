@@ -14,6 +14,7 @@ jobs:
   update-dependencies:
     name: Update Dependencies
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -68,6 +69,7 @@ jobs:
   renovate:
     name: Renovate Bot
     runs-on: ubuntu-latest
+    if: false  # Disabled by default - enable in repository settings
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -83,6 +85,7 @@ jobs:
   security-updates:
     name: Security Updates
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -141,6 +144,7 @@ jobs:
   check-outdated:
     name: Check Outdated Packages
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4

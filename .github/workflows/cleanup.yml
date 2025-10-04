@@ -14,6 +14,7 @@ jobs:
   cleanup-caches:
     name: Cleanup Caches
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -60,6 +61,7 @@ jobs:
   cleanup-artifacts:
     name: Cleanup Artifacts
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -107,6 +109,7 @@ jobs:
   cleanup-old-workflow-runs:
     name: Cleanup Old Workflow Runs
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -158,6 +161,7 @@ jobs:
   cleanup-packages:
     name: Cleanup Old Package Versions
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -174,6 +178,7 @@ jobs:
   storage-report:
     name: Storage Report
     runs-on: ubuntu-latest
+    continue-on-error: true
     needs: [cleanup-caches, cleanup-artifacts, cleanup-old-workflow-runs]
     steps:
       - name: Generate Storage Report

@@ -15,6 +15,7 @@ jobs:
   code-health:
     name: Code Health Metrics
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -73,6 +74,7 @@ jobs:
   dependency-health:
     name: Dependency Health
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -122,6 +124,7 @@ jobs:
   pr-health:
     name: Pull Request Health
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -172,6 +175,7 @@ jobs:
   issue-health:
     name: Issue Health
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -227,6 +231,7 @@ jobs:
   workflow-health:
     name: Workflow Health
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -274,6 +279,7 @@ jobs:
   create-health-report:
     name: Create Health Report Issue
     runs-on: ubuntu-latest
+    continue-on-error: true
     needs: [code-health, dependency-health, pr-health, issue-health, workflow-health]
     if: failure()
     steps:

@@ -16,6 +16,7 @@ jobs:
   deploy-storybook:
     name: Deploy Storybook to Vercel
     runs-on: ubuntu-latest
+    if: false  # Disabled by default - requires VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID secrets
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -94,7 +95,7 @@ jobs:
   deploy-github-pages:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: false  # Disabled by default - enable when GitHub Pages is configured
     permissions:
       contents: write
       pages: write

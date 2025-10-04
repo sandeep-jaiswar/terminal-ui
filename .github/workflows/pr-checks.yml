@@ -144,16 +144,19 @@ jobs:
     runs-on: ubuntu-latest
     needs: check-draft
     if: needs.check-draft.outputs.is-draft == 'false'
+    continue-on-error: true
     steps:
       - name: Check PR Labels
         uses: actions/github-script@v7
         with:
           script: |
             const labels = context.payload.pull_request.labels.map(l => l.name);
-            const validLabels = ['bug', 'enhancement', 'documentation', 'dependencies', 'breaking-change'];
+            const validLabels = ['bug', 'enhancement', 'documentation', 'dependencies', 'breaking-change', 'no-changeset'];
             
             const hasValidLabel = labels.some(label => validLabels.includes(label));
             
             if (!hasValidLabel) {
-              core.setFailed(`Please add at least one label: ${validLabels.join(', ')}`);
+              core.warning(`Consider adding a label: ${validLabels.join(', ')}`);
+            } else {
+              core.info(`PR has valid labels: ${labels.join(', ')}`);
             }

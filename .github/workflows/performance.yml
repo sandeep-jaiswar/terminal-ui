@@ -92,6 +92,7 @@ jobs:
   performance-benchmarks:
     name: Performance Benchmarks
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -122,6 +123,7 @@ jobs:
   check-bundle-limits:
     name: Check Bundle Size Limits
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4

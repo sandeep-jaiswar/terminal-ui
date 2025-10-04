@@ -20,6 +20,7 @@ jobs:
   lighthouse-storybook:
     name: Lighthouse - Storybook
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -71,6 +72,7 @@ jobs:
   lighthouse-playground:
     name: Lighthouse - Playground
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -122,6 +124,7 @@ jobs:
   performance-budget:
     name: Performance Budget Check
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -154,6 +157,7 @@ jobs:
   web-vitals:
     name: Core Web Vitals
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4

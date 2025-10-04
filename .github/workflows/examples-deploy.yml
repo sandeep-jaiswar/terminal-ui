@@ -17,6 +17,7 @@ jobs:
   deploy-playground:
     name: Deploy Playground to Vercel
     runs-on: ubuntu-latest
+    if: false  # Disabled by default - requires VERCEL_TOKEN and VERCEL_PLAYGROUND_PROJECT_ID secrets
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -88,7 +89,7 @@ jobs:
   deploy-examples:
     name: Deploy Examples to Vercel
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: false  # Disabled by default - requires VERCEL_TOKEN and VERCEL_EXAMPLES_PROJECT_ID secrets
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -127,6 +128,7 @@ jobs:
   deployment-summary:
     name: Deployment Summary
     runs-on: ubuntu-latest
+    if: false  # Disabled when deployment jobs are disabled
     needs: [deploy-playground, deploy-examples]
     if: always()
     steps:
