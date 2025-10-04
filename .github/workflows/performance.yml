@@ -1,0 +1,171 @@
+name: Performance
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  bundle-analysis:
+    name: Bundle Size Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.15.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Packages
+        run: pnpm build
+
+      - name: Analyze Bundle Sizes
+        run: |
+          mkdir -p .size-reports
+          
+          echo "## 📦 Bundle Size Report" > .size-reports/report.md
+          echo "" >> .size-reports/report.md
+          echo "| Package | Size | Gzipped | Modules |" >> .size-reports/report.md
+          echo "|---------|------|---------|---------|" >> .size-reports/report.md
+          
+          for pkg in packages/*/dist; do
+            if [ -d "$pkg" ]; then
+              pkg_name=$(basename $(dirname $pkg))
+              size=$(du -sh "$pkg" | cut -f1)
+              num_files=$(find "$pkg" -type f | wc -l)
+              echo "| @sandeep-jaiswar/$pkg_name | $size | - | $num_files files |" >> .size-reports/report.md
+            fi
+          done
+          
+          cat .size-reports/report.md >> $GITHUB_STEP_SUMMARY
+
+      - name: Compare with Base Branch
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "" >> .size-reports/report.md
+          echo "### 📊 Size Comparison with Base Branch" >> .size-reports/report.md
+          echo "" >> .size-reports/report.md
+          echo "Bundle size comparison will be available after implementing size-limit." >> .size-reports/report.md
+
+      - name: Upload Size Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundle-size-report
+          path: .size-reports/
+          retention-days: 30
+
+      - name: Comment PR with Size Report
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('.size-reports/report.md', 'utf8');
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: report
+            });
+
+  performance-benchmarks:
+    name: Performance Benchmarks
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.15.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Packages
+        run: pnpm build
+
+      - name: Run Performance Tests
+        run: |
+          echo "## ⚡ Performance Benchmarks" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Performance benchmarks placeholder - implement with actual benchmark suite" >> $GITHUB_STEP_SUMMARY
+
+  check-bundle-limits:
+    name: Check Bundle Size Limits
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.15.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Packages
+        run: pnpm build
+
+      - name: Check Size Limits
+        run: |
+          # Define size limits (in KB)
+          MAX_SIZE=500
+          
+          echo "## 🎯 Bundle Size Limits Check" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Package | Size (KB) | Limit (KB) | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|---------|-----------|------------|--------|" >> $GITHUB_STEP_SUMMARY
+          
+          for pkg in packages/*/dist; do
+            if [ -d "$pkg" ]; then
+              pkg_name=$(basename $(dirname $pkg))
+              size_kb=$(du -sk "$pkg" | cut -f1)
+              
+              if [ "$size_kb" -gt "$MAX_SIZE" ]; then
+                status="❌ Exceeded"
+                echo "| @sandeep-jaiswar/$pkg_name | $size_kb | $MAX_SIZE | $status |" >> $GITHUB_STEP_SUMMARY
+              else
+                status="✅ OK"
+                echo "| @sandeep-jaiswar/$pkg_name | $size_kb | $MAX_SIZE | $status |" >> $GITHUB_STEP_SUMMARY
+              fi
+            fi
+          done

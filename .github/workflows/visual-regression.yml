@@ -1,0 +1,127 @@
+name: Visual Regression
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  chromatic:
+    name: Chromatic Visual Tests
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.15.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Packages
+        run: pnpm build
+
+      - name: Build Storybook
+        run: |
+          cd apps/docs
+          pnpm build
+
+      - name: Publish to Chromatic
+        if: env.CHROMATIC_PROJECT_TOKEN != ''
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          buildScriptName: build
+          workingDir: apps/docs
+          exitZeroOnChanges: true
+          exitOnceUploaded: true
+          autoAcceptChanges: main
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
+      - name: Chromatic Status Check
+        if: env.CHROMATIC_PROJECT_TOKEN == ''
+        run: |
+          echo "⚠️ CHROMATIC_PROJECT_TOKEN is not set. Skipping Chromatic visual tests."
+          echo "To enable Chromatic:"
+          echo "1. Sign up at https://www.chromatic.com"
+          echo "2. Add your project token as a GitHub secret named CHROMATIC_PROJECT_TOKEN"
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
+  visual-snapshot:
+    name: Visual Snapshots
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.15.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Storybook
+        run: |
+          cd apps/docs
+          pnpm build
+
+      - name: Upload Storybook Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook-static
+          path: apps/docs/storybook-static
+          retention-days: 7
+
+  component-screenshots:
+    name: Component Screenshots
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    needs: visual-snapshot
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download Storybook Build
+        uses: actions/download-artifact@v4
+        with:
+          name: storybook-static
+          path: apps/docs/storybook-static
+
+      - name: Serve Storybook
+        run: |
+          npx serve -l 6006 apps/docs/storybook-static &
+          sleep 5
+
+      - name: Take Screenshots
+        run: |
+          echo "## 📸 Component Screenshots" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Component screenshots would be generated here with Playwright or similar tool" >> $GITHUB_STEP_SUMMARY

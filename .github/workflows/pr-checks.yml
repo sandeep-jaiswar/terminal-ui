@@ -1,0 +1,162 @@
+name: PR Checks
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Skip draft PRs
+  check-draft:
+    name: Check Draft Status
+    runs-on: ubuntu-latest
+    outputs:
+      is-draft: ${{ steps.check.outputs.is-draft }}
+    steps:
+      - name: Check if PR is draft
+        id: check
+        run: |
+          if [ "${{ github.event.pull_request.draft }}" = "true" ]; then
+            echo "is-draft=true" >> $GITHUB_OUTPUT
+          else
+            echo "is-draft=false" >> $GITHUB_OUTPUT
+          fi
+
+  validate-pr:
+    name: Validate PR
+    runs-on: ubuntu-latest
+    needs: check-draft
+    if: needs.check-draft.outputs.is-draft == 'false'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.15.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate PR Title
+        uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          types: |
+            feat
+            fix
+            docs
+            style
+            refactor
+            perf
+            test
+            build
+            ci
+            chore
+            revert
+          requireScope: false
+
+      - name: Check for Changeset
+        id: changeset-check
+        run: |
+          if [ -z "$(ls -A .changeset/*.md 2>/dev/null | grep -v README)" ]; then
+            echo "⚠️ No changeset found. Please run 'pnpm changeset' to add one."
+            echo "has-changeset=false" >> $GITHUB_OUTPUT
+          else
+            echo "✅ Changeset found"
+            echo "has-changeset=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check for Breaking Changes
+        run: |
+          if git log --format=%B -n 1 | grep -q "BREAKING CHANGE:"; then
+            echo "⚠️ Breaking change detected. Ensure version bump is appropriate."
+          fi
+
+      - name: Run Affected Lint
+        run: pnpm lint
+
+      - name: Run Affected Type Check
+        run: pnpm type-check
+
+      - name: Run Affected Tests
+        run: pnpm test
+
+      - name: Run Affected Build
+        run: pnpm build
+
+  size-limit:
+    name: Check Bundle Size
+    runs-on: ubuntu-latest
+    needs: check-draft
+    if: needs.check-draft.outputs.is-draft == 'false'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.15.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Packages
+        run: pnpm build
+
+      - name: Analyze Bundle Size
+        run: |
+          echo "## 📦 Bundle Size Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Package | Size | Gzipped |" >> $GITHUB_STEP_SUMMARY
+          echo "|---------|------|---------|" >> $GITHUB_STEP_SUMMARY
+          
+          for pkg in packages/*/dist; do
+            if [ -d "$pkg" ]; then
+              pkg_name=$(basename $(dirname $pkg))
+              size=$(du -sh "$pkg" | cut -f1)
+              echo "| $pkg_name | $size | - |" >> $GITHUB_STEP_SUMMARY
+            fi
+          done
+
+  label-check:
+    name: Check Labels
+    runs-on: ubuntu-latest
+    needs: check-draft
+    if: needs.check-draft.outputs.is-draft == 'false'
+    continue-on-error: true
+    steps:
+      - name: Check PR Labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const labels = context.payload.pull_request.labels.map(l => l.name);
+            const validLabels = ['bug', 'enhancement', 'documentation', 'dependencies', 'breaking-change', 'no-changeset'];
+            
+            const hasValidLabel = labels.some(label => validLabels.includes(label));
+            
+            if (!hasValidLabel) {
+              core.warning(`Consider adding a label: ${validLabels.join(', ')}`);
+            } else {
+              core.info(`PR has valid labels: ${labels.join(', ')}`);
+            }
