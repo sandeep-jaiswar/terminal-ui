@@ -265,7 +265,7 @@ export const NoPadding: Story = {
       <div style={{ padding: '1rem' }}>
         <h4 style={{ marginBottom: '0.5rem', fontSize: '1rem' }}>Custom Padding</h4>
         <p style={{ color: '#666', fontSize: '0.875rem' }}>
-          Use padding="none" to apply custom padding
+          Use padding=&quot;none&quot; to apply custom padding
         </p>
       </div>
     ),
