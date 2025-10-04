@@ -1,2 +1,2 @@
-export { Input, NumberInput, SearchInput } from './Input';
-export type { InputProps, NumberInputProps, SearchInputProps } from './Input';
+export { Input, NumberInput, SearchInput, Textarea } from './Input';
+export type { InputProps, NumberInputProps, SearchInputProps, TextareaProps } from './Input';
