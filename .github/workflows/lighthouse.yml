@@ -69,58 +69,6 @@ jobs:
           echo "| Best Practices | 100 | ✅ |" >> $GITHUB_STEP_SUMMARY
           echo "| SEO | 90+ | ✅ |" >> $GITHUB_STEP_SUMMARY
 
-  lighthouse-playground:
-    name: Lighthouse - Playground
-    runs-on: ubuntu-latest
-    continue-on-error: true
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8.15.0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'pnpm'
-
-      - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build Playground
-        run: |
-          cd apps/playground
-          pnpm build
-
-      - name: Start Playground Server
-        run: |
-          cd apps/playground
-          pnpm start &
-          sleep 10
-
-      - name: Run Lighthouse CI
-        uses: treosh/lighthouse-ci-action@v11
-        with:
-          urls: |
-            http://localhost:3000
-          uploadArtifacts: true
-          temporaryPublicStorage: true
-
-      - name: Create Lighthouse Report
-        run: |
-          echo "## 🔦 Lighthouse Audit Report - Playground" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Category | Score | Target |" >> $GITHUB_STEP_SUMMARY
-          echo "|----------|-------|--------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Performance | 90+ | ✅ |" >> $GITHUB_STEP_SUMMARY
-          echo "| Accessibility | 100 | ✅ |" >> $GITHUB_STEP_SUMMARY
-          echo "| Best Practices | 100 | ✅ |" >> $GITHUB_STEP_SUMMARY
-          echo "| SEO | 90+ | ✅ |" >> $GITHUB_STEP_SUMMARY
-
   performance-budget:
     name: Performance Budget Check
     runs-on: ubuntu-latest

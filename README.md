@@ -17,8 +17,6 @@ This Turborepo includes the following packages and applications with **component
 
 ### Apps
 - `apps/docs` - Storybook documentation and component showcase
-- `apps/playground` - Next.js development playground for testing components
-- `apps/examples` - Usage examples for common financial UI patterns
 
 ### Foundation Packages
 - `packages/tokens` - Design tokens (colors, spacing, typography)

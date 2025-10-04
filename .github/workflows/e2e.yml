@@ -45,17 +45,17 @@ jobs:
       - name: Build Packages
         run: pnpm build
 
-      - name: Start Test Server
+      - name: Build and Start Storybook
         run: |
-          cd apps/playground
+          cd apps/docs
           pnpm build
-          pnpm start &
+          npx serve -l 6006 storybook-static &
           sleep 10
 
       - name: Run Playwright Tests
         run: |
           echo "Running E2E tests with ${{ matrix.browser }}"
-          # Placeholder for actual Playwright tests
+          # Placeholder for actual Playwright tests against Storybook
           # npx playwright test --browser=${{ matrix.browser }}
 
       - name: Upload Test Results
