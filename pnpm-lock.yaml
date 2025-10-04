@@ -502,6 +502,18 @@ importers:
       '@sandeep-jaiswar/tsconfig':
         specifier: workspace:*
         version: link:../../tools/tsconfig
+      '@testing-library/jest-dom':
+        specifier: ^6.1.5
+        version: 6.9.1
+      '@testing-library/react':
+        specifier: ^14.1.2
+        version: 14.3.1(@types/react@18.3.25)(react-dom@18.3.1)(react@18.3.1)
+      '@testing-library/user-event':
+        specifier: ^14.5.1
+        version: 14.6.1(@testing-library/dom@9.3.4)
+      '@types/jest':
+        specifier: ^29.5.11
+        version: 29.5.14
       '@types/react':
         specifier: ^18.2.45
         version: 18.3.25
@@ -511,9 +523,18 @@ importers:
       eslint:
         specifier: ^8.56.0
         version: 8.57.1
+      jest:
+        specifier: ^29.7.0
+        version: 29.7.0
+      jest-environment-jsdom:
+        specifier: ^29.7.0
+        version: 29.7.0
       react:
         specifier: ^18.2.0
         version: 18.3.1
+      ts-jest:
+        specifier: ^29.1.1
+        version: 29.4.4(@babel/core@7.28.4)(esbuild@0.25.10)(jest@29.7.0)(typescript@5.9.3)
       tsup:
         specifier: ^8.0.1
         version: 8.5.0(typescript@5.9.3)
@@ -2916,6 +2937,15 @@ packages:
       react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
+    dev: true
+
+  /@testing-library/user-event@14.6.1(@testing-library/dom@9.3.4):
+    resolution: {integrity: sha512-vq7fv0rnt+QTXgPxr5Hjc210p6YKq2kmdziLgnsZGgLJ9e6VAShx1pACLuRjd/AS/sr7phAR58OIIpf0LlmQNw==}
+    engines: {node: '>=12', npm: '>=6'}
+    peerDependencies:
+      '@testing-library/dom': '>=7.21.4'
+    dependencies:
+      '@testing-library/dom': 9.3.4
     dev: true
 
   /@tootallnate/once@2.0.0:
