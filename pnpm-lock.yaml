@@ -29,6 +29,9 @@ importers:
 
   apps/docs:
     dependencies:
+      '@sandeep-jaiswar/icons':
+        specifier: workspace:*
+        version: link:../../packages/icons
       '@sandeep-jaiswar/ui':
         specifier: workspace:*
         version: link:../../packages/ui

@@ -1,2 +1,2 @@
-// Placeholder for icon exports
-export const IconPlaceholder = () => null;
+export { Icon } from './Icon';
+export type { IconProps, IconName } from './types';
