@@ -56,7 +56,7 @@ export interface EnumOption {
   color?: string;
 }
 
-export interface Column<T = any> {
+export interface Column<T = Record<string, unknown>> {
   /** Unique key for the column */
   key: string;
   /** Display label for column header */
@@ -76,9 +76,9 @@ export interface Column<T = any> {
   /** Alignment of cell content */
   align?: "left" | "center" | "right";
   /** Custom render function */
-  render?: (value: any, row: T, index: number) => React.ReactNode;
+  render?: (value: unknown, row: T, index: number) => React.ReactNode;
   /** Format function for cell value */
-  format?: (value: any) => string;
+  format?: (value: unknown) => string;
   /** Currency symbol (for currency type) */
   currencySymbol?: string;
   /** Decimal places (for number/currency/percentage) */
@@ -90,7 +90,7 @@ export interface Column<T = any> {
   /** Whether to highlight positive/negative values */
   financialStyling?: boolean;
   /** Custom className for cells */
-  cellClassName?: string | ((value: any, row: T) => string);
+  cellClassName?: string | ((value: unknown, row: T) => string);
   /** Custom className for header */
   headerClassName?: string;
 }
@@ -104,7 +104,7 @@ export interface FilterConfig {
   [key: string]: string;
 }
 
-export interface DataGridProps<T = any> {
+export interface DataGridProps<T = Record<string, unknown>> {
   /** Column definitions */
   columns: Column<T>[];
   /** Data rows */
@@ -151,7 +151,7 @@ export interface DataGridProps<T = any> {
   "data-testid"?: string;
 }
 
-export const DataGrid = <T extends Record<string, any>>({
+export const DataGrid = <T extends Record<string, unknown>>({
   columns,
   data,
   rowKey = "id",
@@ -181,9 +181,6 @@ export const DataGrid = <T extends Record<string, any>>({
   const [localSort, setLocalSort] = React.useState<SortConfig | undefined>(
     sortConfig,
   );
-  const [columnWidths, setColumnWidths] = React.useState<
-    Record<string, number>
-  >({});
 
   // Get row key
   const getRowKey = React.useCallback(
@@ -261,7 +258,7 @@ export const DataGrid = <T extends Record<string, any>>({
   );
 
   // Format cell value based on column type
-  const formatCellValue = React.useCallback((column: Column<T>, value: any) => {
+  const formatCellValue = React.useCallback((column: Column<T>, value: unknown) => {
     if (value === null || value === undefined) return "—";
 
     if (column.format) {
@@ -269,29 +266,34 @@ export const DataGrid = <T extends Record<string, any>>({
     }
 
     switch (column.type) {
-      case "currency":
+      case "currency": {
         const symbol = column.currencySymbol || "$";
         const decimals = column.decimalPlaces ?? 2;
         return `${symbol}${Number(value).toFixed(decimals)}`;
+      }
 
-      case "percentage":
+      case "percentage": {
         const pctDecimals = column.decimalPlaces ?? 2;
         const pctValue = Number(value).toFixed(pctDecimals);
-        return `${value >= 0 ? "+" : ""}${pctValue}%`;
+        return `${Number(value) >= 0 ? "+" : ""}${pctValue}%`;
+      }
 
-      case "number":
+      case "number": {
         const numDecimals = column.decimalPlaces ?? 2;
         return Number(value).toFixed(numDecimals);
+      }
 
-      case "date":
+      case "date": {
         if (value instanceof Date) {
           return value.toLocaleDateString();
         }
-        return new Date(value).toLocaleDateString();
+        return new Date(value as string | number).toLocaleDateString();
+      }
 
-      case "enum":
+      case "enum": {
         const option = column.enumOptions?.find((opt) => opt.value === value);
-        return option?.label || value;
+        return option?.label || String(value);
+      }
 
       case "text":
       default:
@@ -301,7 +303,7 @@ export const DataGrid = <T extends Record<string, any>>({
 
   // Get cell styling for financial values
   const getCellClassName = React.useCallback(
-    (column: Column<T>, value: any, row: T) => {
+    (column: Column<T>, value: unknown, row: T) => {
       let classes = "";
 
       if (typeof column.cellClassName === "function") {
@@ -430,7 +432,7 @@ export const DataGrid = <T extends Record<string, any>>({
                     column.headerClassName,
                   )}
                   style={{
-                    width: columnWidths[column.key] || column.width,
+                    width: column.width,
                     minWidth: column.minWidth,
                   }}
                   onClick={() => column.sortable && handleSort(column.key)}
