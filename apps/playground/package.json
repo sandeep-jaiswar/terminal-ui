@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@sandeep-jaiswar/icons": "workspace:*",
+    "@sandeep-jaiswar/navigation": "workspace:*",
     "@sandeep-jaiswar/tokens": "workspace:*",
     "@sandeep-jaiswar/ui": "workspace:*",
     "@sandeep-jaiswar/utils": "workspace:*",

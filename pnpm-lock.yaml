@@ -32,6 +32,9 @@ importers:
       '@sandeep-jaiswar/icons':
         specifier: workspace:*
         version: link:../../packages/icons
+      '@sandeep-jaiswar/navigation':
+        specifier: workspace:*
+        version: link:../../packages/navigation
       '@sandeep-jaiswar/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -145,6 +148,9 @@ importers:
       '@sandeep-jaiswar/icons':
         specifier: workspace:*
         version: link:../../packages/icons
+      '@sandeep-jaiswar/navigation':
+        specifier: workspace:*
+        version: link:../../packages/navigation
       '@sandeep-jaiswar/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
