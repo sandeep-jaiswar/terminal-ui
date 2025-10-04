@@ -1,7 +1,8 @@
 {
   "name": "@sandeep-jaiswar/tokens",
   "version": "0.0.0",
-  "description": "Design tokens for @sandeep-jaiswar/ui",
+  "description": "Design tokens for @sandeep-jaiswar/ui Bloomberg Terminal components",
+  "keywords": ["design-tokens", "ui", "financial", "bloomberg", "terminal"],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -11,9 +12,45 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
+    "./colors": {
+      "types": "./dist/colors.d.ts",
+      "import": "./dist/colors.mjs",
+      "require": "./dist/colors.js"
+    },
+    "./typography": {
+      "types": "./dist/typography.d.ts",
+      "import": "./dist/typography.mjs",
+      "require": "./dist/typography.js"
+    },
+    "./spacing": {
+      "types": "./dist/spacing.d.ts",
+      "import": "./dist/spacing.mjs",
+      "require": "./dist/spacing.js"
+    },
+    "./shadows": {
+      "types": "./dist/shadows.d.ts",
+      "import": "./dist/shadows.mjs",
+      "require": "./dist/shadows.js"
+    },
+    "./radius": {
+      "types": "./dist/radius.d.ts",
+      "import": "./dist/radius.mjs",
+      "require": "./dist/radius.js"
+    },
+    "./z-index": {
+      "types": "./dist/z-index.d.ts",
+      "import": "./dist/z-index.mjs",
+      "require": "./dist/z-index.js"
+    },
+    "./css-variables": {
+      "types": "./dist/css-variables.d.ts",
+      "import": "./dist/css-variables.mjs",
+      "require": "./dist/css-variables.js"
+    },
     "./tailwind-preset": "./dist/tailwind-preset.js"
   },
   "files": ["dist"],
+  "sideEffects": false,
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
