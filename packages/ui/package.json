@@ -1,7 +1,7 @@
 {
   "name": "@sandeep-jaiswar/ui",
   "version": "0.0.0",
-  "description": "Bloomberg Terminal-inspired React UI components",
+  "description": "Complete Bloomberg Terminal-inspired React UI component library",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -15,12 +15,29 @@
   },
   "files": ["dist"],
   "sideEffects": ["**/*.css"],
+  "keywords": ["react", "ui", "components", "financial", "trading", "bloomberg", "terminal"],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
     "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@sandeep-jaiswar/tokens": "workspace:*",
+    "@sandeep-jaiswar/theme": "workspace:*",
+    "@sandeep-jaiswar/utils": "workspace:*",
+    "@sandeep-jaiswar/icons": "workspace:*",
+    "@sandeep-jaiswar/button": "workspace:*",
+    "@sandeep-jaiswar/input": "workspace:*",
+    "@sandeep-jaiswar/badge": "workspace:*",
+    "@sandeep-jaiswar/card": "workspace:*",
+    "@sandeep-jaiswar/modal": "workspace:*",
+    "@sandeep-jaiswar/navigation": "workspace:*",
+    "@sandeep-jaiswar/data-grid": "workspace:*",
+    "@sandeep-jaiswar/charts": "workspace:*",
+    "@sandeep-jaiswar/trading": "workspace:*",
+    "@sandeep-jaiswar/dashboard": "workspace:*"
   },
   "devDependencies": {
     "@sandeep-jaiswar/eslint-config": "workspace:*",

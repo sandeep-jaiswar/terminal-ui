@@ -177,7 +177,374 @@ importers:
         specifier: ^5.3.3
         version: 5.9.3
 
+  packages/badge:
+    dependencies:
+      '@sandeep-jaiswar/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      '@sandeep-jaiswar/utils':
+        specifier: workspace:*
+        version: link:../utils
+      react-dom:
+        specifier: '>=18.0.0'
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@sandeep-jaiswar/eslint-config':
+        specifier: workspace:*
+        version: link:../../tools/eslint-config
+      '@sandeep-jaiswar/tsconfig':
+        specifier: workspace:*
+        version: link:../../tools/tsconfig
+      '@types/react':
+        specifier: ^18.2.45
+        version: 18.3.25
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.3.7(@types/react@18.3.25)
+      eslint:
+        specifier: ^8.56.0
+        version: 8.57.1
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      tsup:
+        specifier: ^8.0.1
+        version: 8.5.0(typescript@5.9.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
+
+  packages/button:
+    dependencies:
+      '@sandeep-jaiswar/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      '@sandeep-jaiswar/utils':
+        specifier: workspace:*
+        version: link:../utils
+      react-dom:
+        specifier: '>=18.0.0'
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@sandeep-jaiswar/eslint-config':
+        specifier: workspace:*
+        version: link:../../tools/eslint-config
+      '@sandeep-jaiswar/tsconfig':
+        specifier: workspace:*
+        version: link:../../tools/tsconfig
+      '@types/react':
+        specifier: ^18.2.45
+        version: 18.3.25
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.3.7(@types/react@18.3.25)
+      eslint:
+        specifier: ^8.56.0
+        version: 8.57.1
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      tsup:
+        specifier: ^8.0.1
+        version: 8.5.0(typescript@5.9.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
+
+  packages/card:
+    dependencies:
+      '@sandeep-jaiswar/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      '@sandeep-jaiswar/utils':
+        specifier: workspace:*
+        version: link:../utils
+      react-dom:
+        specifier: '>=18.0.0'
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@sandeep-jaiswar/eslint-config':
+        specifier: workspace:*
+        version: link:../../tools/eslint-config
+      '@sandeep-jaiswar/tsconfig':
+        specifier: workspace:*
+        version: link:../../tools/tsconfig
+      '@types/react':
+        specifier: ^18.2.45
+        version: 18.3.25
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.3.7(@types/react@18.3.25)
+      eslint:
+        specifier: ^8.56.0
+        version: 8.57.1
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      tsup:
+        specifier: ^8.0.1
+        version: 8.5.0(typescript@5.9.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
+
+  packages/charts:
+    dependencies:
+      '@sandeep-jaiswar/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      '@sandeep-jaiswar/utils':
+        specifier: workspace:*
+        version: link:../utils
+      react-dom:
+        specifier: '>=18.0.0'
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@sandeep-jaiswar/eslint-config':
+        specifier: workspace:*
+        version: link:../../tools/eslint-config
+      '@sandeep-jaiswar/tsconfig':
+        specifier: workspace:*
+        version: link:../../tools/tsconfig
+      '@types/react':
+        specifier: ^18.2.45
+        version: 18.3.25
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.3.7(@types/react@18.3.25)
+      eslint:
+        specifier: ^8.56.0
+        version: 8.57.1
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      tsup:
+        specifier: ^8.0.1
+        version: 8.5.0(typescript@5.9.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
+
+  packages/dashboard:
+    dependencies:
+      '@sandeep-jaiswar/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      '@sandeep-jaiswar/utils':
+        specifier: workspace:*
+        version: link:../utils
+      react-dom:
+        specifier: '>=18.0.0'
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@sandeep-jaiswar/eslint-config':
+        specifier: workspace:*
+        version: link:../../tools/eslint-config
+      '@sandeep-jaiswar/tsconfig':
+        specifier: workspace:*
+        version: link:../../tools/tsconfig
+      '@types/react':
+        specifier: ^18.2.45
+        version: 18.3.25
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.3.7(@types/react@18.3.25)
+      eslint:
+        specifier: ^8.56.0
+        version: 8.57.1
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      tsup:
+        specifier: ^8.0.1
+        version: 8.5.0(typescript@5.9.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
+
+  packages/data-grid:
+    dependencies:
+      '@sandeep-jaiswar/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      '@sandeep-jaiswar/utils':
+        specifier: workspace:*
+        version: link:../utils
+      react-dom:
+        specifier: '>=18.0.0'
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@sandeep-jaiswar/eslint-config':
+        specifier: workspace:*
+        version: link:../../tools/eslint-config
+      '@sandeep-jaiswar/tsconfig':
+        specifier: workspace:*
+        version: link:../../tools/tsconfig
+      '@types/react':
+        specifier: ^18.2.45
+        version: 18.3.25
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.3.7(@types/react@18.3.25)
+      eslint:
+        specifier: ^8.56.0
+        version: 8.57.1
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      tsup:
+        specifier: ^8.0.1
+        version: 8.5.0(typescript@5.9.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
+
   packages/icons:
+    devDependencies:
+      '@sandeep-jaiswar/eslint-config':
+        specifier: workspace:*
+        version: link:../../tools/eslint-config
+      '@sandeep-jaiswar/tsconfig':
+        specifier: workspace:*
+        version: link:../../tools/tsconfig
+      '@types/react':
+        specifier: ^18.2.45
+        version: 18.3.25
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.3.7(@types/react@18.3.25)
+      eslint:
+        specifier: ^8.56.0
+        version: 8.57.1
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      tsup:
+        specifier: ^8.0.1
+        version: 8.5.0(typescript@5.9.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
+
+  packages/input:
+    dependencies:
+      '@sandeep-jaiswar/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      '@sandeep-jaiswar/utils':
+        specifier: workspace:*
+        version: link:../utils
+      react-dom:
+        specifier: '>=18.0.0'
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@sandeep-jaiswar/eslint-config':
+        specifier: workspace:*
+        version: link:../../tools/eslint-config
+      '@sandeep-jaiswar/tsconfig':
+        specifier: workspace:*
+        version: link:../../tools/tsconfig
+      '@types/react':
+        specifier: ^18.2.45
+        version: 18.3.25
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.3.7(@types/react@18.3.25)
+      eslint:
+        specifier: ^8.56.0
+        version: 8.57.1
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      tsup:
+        specifier: ^8.0.1
+        version: 8.5.0(typescript@5.9.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
+
+  packages/modal:
+    dependencies:
+      '@sandeep-jaiswar/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      '@sandeep-jaiswar/utils':
+        specifier: workspace:*
+        version: link:../utils
+      react-dom:
+        specifier: '>=18.0.0'
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@sandeep-jaiswar/eslint-config':
+        specifier: workspace:*
+        version: link:../../tools/eslint-config
+      '@sandeep-jaiswar/tsconfig':
+        specifier: workspace:*
+        version: link:../../tools/tsconfig
+      '@types/react':
+        specifier: ^18.2.45
+        version: 18.3.25
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.3.7(@types/react@18.3.25)
+      eslint:
+        specifier: ^8.56.0
+        version: 8.57.1
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      tsup:
+        specifier: ^8.0.1
+        version: 8.5.0(typescript@5.9.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
+
+  packages/navigation:
+    dependencies:
+      '@sandeep-jaiswar/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      '@sandeep-jaiswar/utils':
+        specifier: workspace:*
+        version: link:../utils
+      react-dom:
+        specifier: '>=18.0.0'
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@sandeep-jaiswar/eslint-config':
+        specifier: workspace:*
+        version: link:../../tools/eslint-config
+      '@sandeep-jaiswar/tsconfig':
+        specifier: workspace:*
+        version: link:../../tools/tsconfig
+      '@types/react':
+        specifier: ^18.2.45
+        version: 18.3.25
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.3.7(@types/react@18.3.25)
+      eslint:
+        specifier: ^8.56.0
+        version: 8.57.1
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      tsup:
+        specifier: ^8.0.1
+        version: 8.5.0(typescript@5.9.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
+
+  packages/theme:
+    dependencies:
+      '@sandeep-jaiswar/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      react-dom:
+        specifier: '>=18.0.0'
+        version: 18.3.1(react@18.3.1)
     devDependencies:
       '@sandeep-jaiswar/eslint-config':
         specifier: workspace:*
@@ -222,8 +589,87 @@ importers:
         specifier: ^5.3.3
         version: 5.9.3
 
+  packages/trading:
+    dependencies:
+      '@sandeep-jaiswar/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      '@sandeep-jaiswar/utils':
+        specifier: workspace:*
+        version: link:../utils
+      react-dom:
+        specifier: '>=18.0.0'
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@sandeep-jaiswar/eslint-config':
+        specifier: workspace:*
+        version: link:../../tools/eslint-config
+      '@sandeep-jaiswar/tsconfig':
+        specifier: workspace:*
+        version: link:../../tools/tsconfig
+      '@types/react':
+        specifier: ^18.2.45
+        version: 18.3.25
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.3.7(@types/react@18.3.25)
+      eslint:
+        specifier: ^8.56.0
+        version: 8.57.1
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      tsup:
+        specifier: ^8.0.1
+        version: 8.5.0(typescript@5.9.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
+
   packages/ui:
     dependencies:
+      '@sandeep-jaiswar/badge':
+        specifier: workspace:*
+        version: link:../badge
+      '@sandeep-jaiswar/button':
+        specifier: workspace:*
+        version: link:../button
+      '@sandeep-jaiswar/card':
+        specifier: workspace:*
+        version: link:../card
+      '@sandeep-jaiswar/charts':
+        specifier: workspace:*
+        version: link:../charts
+      '@sandeep-jaiswar/dashboard':
+        specifier: workspace:*
+        version: link:../dashboard
+      '@sandeep-jaiswar/data-grid':
+        specifier: workspace:*
+        version: link:../data-grid
+      '@sandeep-jaiswar/icons':
+        specifier: workspace:*
+        version: link:../icons
+      '@sandeep-jaiswar/input':
+        specifier: workspace:*
+        version: link:../input
+      '@sandeep-jaiswar/modal':
+        specifier: workspace:*
+        version: link:../modal
+      '@sandeep-jaiswar/navigation':
+        specifier: workspace:*
+        version: link:../navigation
+      '@sandeep-jaiswar/theme':
+        specifier: workspace:*
+        version: link:../theme
+      '@sandeep-jaiswar/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      '@sandeep-jaiswar/trading':
+        specifier: workspace:*
+        version: link:../trading
+      '@sandeep-jaiswar/utils':
+        specifier: workspace:*
+        version: link:../utils
       react-dom:
         specifier: '>=18.0.0'
         version: 18.3.1(react@18.3.1)
