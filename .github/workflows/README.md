@@ -207,6 +207,14 @@ pnpm changeset
 - `VERCEL_PLAYGROUND_PROJECT_ID`: Playground project ID
 - `VERCEL_EXAMPLES_PROJECT_ID`: Examples project ID
 
+**Vercel Configuration Files**:
+Each app has a `vercel.json` file that specifies:
+- `apps/docs/vercel.json` - Storybook output directory: `storybook-static`
+- `apps/playground/vercel.json` - Next.js output directory: `.next`
+- `apps/examples/vercel.json` - Next.js output directory: `.next`
+
+These files ensure Vercel can locate the build output correctly.
+
 ### Chromatic (Optional)
 - `CHROMATIC_PROJECT_TOKEN`: Chromatic project token
   - Sign up at: https://www.chromatic.com
@@ -278,6 +286,22 @@ Edit `.github/renovate.json`:
 2. Review security audit reports
 3. Update vulnerable packages
 4. Consider alternative packages if needed
+
+### Vercel Deployment Error: "No Output Directory found"?
+1. Ensure `vercel.json` exists in the app directory
+2. For Storybook (docs): Output directory should be `storybook-static`
+3. For Next.js (playground/examples): Output directory should be `.next`
+4. Verify the build completes successfully before deployment
+5. Check that the output directory is created after build
+
+**Example vercel.json for Storybook:**
+```json
+{
+  "buildCommand": "pnpm build",
+  "outputDirectory": "storybook-static",
+  "installCommand": "pnpm install --frozen-lockfile"
+}
+```
 
 ## 📖 Additional Resources
 
