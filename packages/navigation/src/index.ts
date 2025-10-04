@@ -1,15 +1,15 @@
-export { 
-  Sidebar, 
-  NavigationItem, 
-  NavigationGroup, 
-  Tabs, 
-  Breadcrumb 
+export {
+  Sidebar,
+  NavigationItem,
+  NavigationGroup,
+  Tabs,
+  Breadcrumb
 } from './Navigation';
 
-export type { 
-  SidebarProps, 
-  NavigationItemProps, 
-  NavigationGroupProps, 
-  TabsProps, 
-  BreadcrumbProps 
+export type {
+  SidebarProps,
+  NavigationItemProps,
+  NavigationGroupProps,
+  TabsProps,
+  BreadcrumbProps
 } from './Navigation';

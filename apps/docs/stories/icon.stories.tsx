@@ -9,20 +9,34 @@ const meta: Meta<typeof Icon> = {
     layout: "centered",
     backgrounds: {
       default: "terminal",
-      values: [
-        { name: "terminal", value: "#000000" },
-      ],
+      values: [{ name: "terminal", value: "#000000" }],
     },
   },
   argTypes: {
     name: {
       control: { type: "select" },
       options: [
-        'chevron-up', 'chevron-down', 'chevron-left', 'chevron-right',
-        'trending-up', 'trending-down', 'dollar-sign',
-        'buy', 'sell', 'alert-triangle', 'alert-circle',
-        'search', 'close', 'menu', 'settings', 'check', 'info',
-        'chart-line', 'chart-bar', 'refresh', 'filter'
+        "chevron-up",
+        "chevron-down",
+        "chevron-left",
+        "chevron-right",
+        "trending-up",
+        "trending-down",
+        "dollar-sign",
+        "buy",
+        "sell",
+        "alert-triangle",
+        "alert-circle",
+        "search",
+        "close",
+        "menu",
+        "settings",
+        "check",
+        "info",
+        "chart-line",
+        "chart-bar",
+        "refresh",
+        "filter",
       ] as IconName[],
       description: "The icon to render",
     },
@@ -64,15 +78,21 @@ export const Navigation: Story = {
       </div>
       <div style={{ textAlign: "center" }}>
         <Icon name="chevron-down" size={32} className="text-terminal-white" />
-        <div style={{ marginTop: "0.5rem", fontSize: "12px" }}>chevron-down</div>
+        <div style={{ marginTop: "0.5rem", fontSize: "12px" }}>
+          chevron-down
+        </div>
       </div>
       <div style={{ textAlign: "center" }}>
         <Icon name="chevron-left" size={32} className="text-terminal-white" />
-        <div style={{ marginTop: "0.5rem", fontSize: "12px" }}>chevron-left</div>
+        <div style={{ marginTop: "0.5rem", fontSize: "12px" }}>
+          chevron-left
+        </div>
       </div>
       <div style={{ textAlign: "center" }}>
         <Icon name="chevron-right" size={32} className="text-terminal-white" />
-        <div style={{ marginTop: "0.5rem", fontSize: "12px" }}>chevron-right</div>
+        <div style={{ marginTop: "0.5rem", fontSize: "12px" }}>
+          chevron-right
+        </div>
       </div>
     </div>
   ),
@@ -90,7 +110,9 @@ export const Financial: Story = {
       </div>
       <div style={{ textAlign: "center" }}>
         <Icon name="trending-down" size={32} className="text-danger-300" />
-        <div style={{ marginTop: "0.5rem", fontSize: "12px" }}>trending-down</div>
+        <div style={{ marginTop: "0.5rem", fontSize: "12px" }}>
+          trending-down
+        </div>
       </div>
       <div style={{ textAlign: "center" }}>
         <Icon name="dollar-sign" size={32} className="text-terminal-white" />
@@ -116,11 +138,15 @@ export const Trading: Story = {
       </div>
       <div style={{ textAlign: "center" }}>
         <Icon name="alert-triangle" size={40} className="text-warning-500" />
-        <div style={{ marginTop: "0.5rem", fontSize: "12px" }}>alert-triangle</div>
+        <div style={{ marginTop: "0.5rem", fontSize: "12px" }}>
+          alert-triangle
+        </div>
       </div>
       <div style={{ textAlign: "center" }}>
         <Icon name="alert-circle" size={40} className="text-warning-500" />
-        <div style={{ marginTop: "0.5rem", fontSize: "12px" }}>alert-circle</div>
+        <div style={{ marginTop: "0.5rem", fontSize: "12px" }}>
+          alert-circle
+        </div>
       </div>
     </div>
   ),
@@ -131,7 +157,14 @@ export const Trading: Story = {
  */
 export const UI: Story = {
   render: () => (
-    <div style={{ display: "flex", gap: "2rem", alignItems: "center", flexWrap: "wrap" }}>
+    <div
+      style={{
+        display: "flex",
+        gap: "2rem",
+        alignItems: "center",
+        flexWrap: "wrap",
+      }}
+    >
       <div style={{ textAlign: "center" }}>
         <Icon name="search" size={32} className="text-terminal-white" />
         <div style={{ marginTop: "0.5rem", fontSize: "12px" }}>search</div>
@@ -192,28 +225,48 @@ export const Data: Story = {
 export const AllIcons: Story = {
   render: () => {
     const allIconNames: IconName[] = [
-      'chevron-up', 'chevron-down', 'chevron-left', 'chevron-right',
-      'trending-up', 'trending-down', 'dollar-sign',
-      'buy', 'sell', 'alert-triangle', 'alert-circle',
-      'search', 'close', 'menu', 'settings', 'check', 'info',
-      'chart-line', 'chart-bar', 'refresh', 'filter'
+      "chevron-up",
+      "chevron-down",
+      "chevron-left",
+      "chevron-right",
+      "trending-up",
+      "trending-down",
+      "dollar-sign",
+      "buy",
+      "sell",
+      "alert-triangle",
+      "alert-circle",
+      "search",
+      "close",
+      "menu",
+      "settings",
+      "check",
+      "info",
+      "chart-line",
+      "chart-bar",
+      "refresh",
+      "filter",
     ];
 
     return (
-      <div style={{ 
-        display: "grid", 
-        gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))", 
-        gap: "1.5rem",
-        maxWidth: "800px"
-      }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
+          gap: "1.5rem",
+          maxWidth: "800px",
+        }}
+      >
         {allIconNames.map((iconName) => (
           <div key={iconName} style={{ textAlign: "center" }}>
             <Icon name={iconName} size={32} className="text-terminal-white" />
-            <div style={{ 
-              marginTop: "0.5rem", 
-              fontSize: "11px",
-              wordBreak: "break-word"
-            }}>
+            <div
+              style={{
+                marginTop: "0.5rem",
+                fontSize: "11px",
+                wordBreak: "break-word",
+              }}
+            >
               {iconName}
             </div>
           </div>
@@ -258,30 +311,50 @@ export const Sizes: Story = {
  */
 export const FinancialUseCase: Story = {
   render: () => (
-    <div style={{ 
-      display: "flex", 
-      flexDirection: "column",
-      gap: "1rem",
-      backgroundColor: "#1a1a1a",
-      padding: "1.5rem",
-      borderRadius: "4px",
-      minWidth: "300px"
-    }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "1rem",
+        backgroundColor: "#1a1a1a",
+        padding: "1.5rem",
+        borderRadius: "4px",
+        minWidth: "300px",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         <span style={{ fontSize: "14px" }}>AAPL</span>
         <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
           <Icon name="trending-up" size={20} className="text-success-500" />
           <span style={{ color: "#4af6c3", fontSize: "14px" }}>+2.5%</span>
         </div>
       </div>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         <span style={{ fontSize: "14px" }}>TSLA</span>
         <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
           <Icon name="trending-down" size={20} className="text-danger-300" />
           <span style={{ color: "#ff433d", fontSize: "14px" }}>-1.2%</span>
         </div>
       </div>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         <span style={{ fontSize: "14px" }}>MSFT</span>
         <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
           <Icon name="trending-up" size={20} className="text-success-500" />

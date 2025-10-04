@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { cn } from '@sandeep-jaiswar/utils';
 
 /**
@@ -56,7 +56,7 @@ export const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
   }
 );
 
-Sidebar.displayName = 'Sidebar';
+Sidebar.displayName = "Sidebar";
 
 export interface NavigationItemProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Navigation item content */
@@ -235,17 +235,28 @@ export interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function Tabs({ children, ...props }: TabsProps): JSX.Element {
-  return <div role="tablist" {...props}>{children}</div>;
+  return (
+    <div role="tablist" {...props}>
+      {children}
+    </div>
+  );
 }
 
-Tabs.displayName = 'Tabs';
+Tabs.displayName = "Tabs";
 
 export interface BreadcrumbProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
 }
 
-export function Breadcrumb({ children, ...props }: BreadcrumbProps): JSX.Element {
-  return <nav aria-label="breadcrumb" {...props}>{children}</nav>;
+export function Breadcrumb({
+  children,
+  ...props
+}: BreadcrumbProps): JSX.Element {
+  return (
+    <nav aria-label="breadcrumb" {...props}>
+      {children}
+    </nav>
+  );
 }
 
-Breadcrumb.displayName = 'Breadcrumb';
+Breadcrumb.displayName = "Breadcrumb";

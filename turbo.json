@@ -5,7 +5,12 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["src/**/*.tsx", "src/**/*.ts", "package.json"],
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**", "storybook-static/**"]
+      "outputs": [
+        "dist/**",
+        ".next/**",
+        "!.next/cache/**",
+        "storybook-static/**"
+      ]
     },
     "lint": {
       "dependsOn": ["^build"],
@@ -13,7 +18,12 @@
     },
     "test": {
       "dependsOn": ["^build"],
-      "inputs": ["src/**/*.tsx", "src/**/*.ts", "**/*.test.ts", "**/*.test.tsx"],
+      "inputs": [
+        "src/**/*.tsx",
+        "src/**/*.ts",
+        "**/*.test.ts",
+        "**/*.test.tsx"
+      ],
       "outputs": ["coverage/**"]
     },
     "type-check": {

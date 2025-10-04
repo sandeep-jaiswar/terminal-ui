@@ -6,7 +6,7 @@ export default defineConfig((options) => ({
     "src/cn.ts",
     "src/accessibility.ts",
     "src/format.ts",
-    "src/hooks/index.ts"
+    "src/hooks/index.ts",
   ],
   format: ["cjs", "esm"],
   dts: true,

@@ -1,32 +1,33 @@
-import React from 'react';
-import { cn } from '@sandeep-jaiswar/utils';
+import React from "react";
+import { cn } from "@sandeep-jaiswar/utils";
 
 /**
  * Professional input component for financial trading applications.
- * 
+ *
  * Features Bloomberg Terminal-inspired styling with:
  * - High contrast colors optimized for terminal environments
  * - Validation states (error, success)
  * - Support for labels, helper text, and error messages
  * - Icon support (left and right addons)
  * - WCAG 2.1 AA compliant accessibility
- * 
+ *
  * @example
  * ```tsx
- * <Input 
+ * <Input
  *   label="Stock Symbol"
  *   placeholder="Enter symbol"
  *   helperText="Enter a valid ticker symbol"
  * />
- * 
- * <Input 
+ *
+ * <Input
  *   label="Price"
  *   state="error"
  *   error="Invalid price"
  * />
  * ```
  */
-export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
+export interface InputProps
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   /** Label text displayed above the input */
   label?: string;
   /** Helper text displayed below the input */
@@ -34,9 +35,9 @@ export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElem
   /** Error message displayed when state is "error" */
   error?: string;
   /** Visual state of the input */
-  state?: 'default' | 'error' | 'success';
+  state?: "default" | "error" | "success";
   /** Size of the input */
-  size?: 'sm' | 'md' | 'lg';
+  size?: "sm" | "md" | "lg";
   /** Content to display on the left side of the input */
   leftAddon?: React.ReactNode;
   /** Content to display on the right side of the input */
@@ -53,8 +54,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       label,
       helperText,
       error,
-      state = 'default',
-      size = 'md',
+      state = "default",
+      size = "md",
       leftAddon,
       rightAddon,
       wrapperClassName,
@@ -63,61 +64,61 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       id,
       ...props
     },
-    ref
+    ref,
   ) => {
     const generatedId = React.useId();
     const inputId = id || generatedId;
     const helperTextId = `${inputId}-helper`;
     const errorId = `${inputId}-error`;
-    const actualState = error ? 'error' : state;
+    const actualState = error ? "error" : state;
 
     const baseStyles = cn(
       // Base styles
-      'w-full font-terminal-sans transition-all duration-150',
-      'bg-terminal-dark-gray text-terminal-white',
-      'border-2 rounded',
-      'focus:outline-none focus:ring-0',
-      'placeholder:text-terminal-light-gray',
-      'disabled:opacity-50 disabled:cursor-not-allowed disabled:border-dashed'
+      "w-full font-terminal-sans transition-all duration-150",
+      "bg-terminal-dark-gray text-terminal-white",
+      "border-2 rounded",
+      "focus:outline-none focus:ring-0",
+      "placeholder:text-terminal-light-gray",
+      "disabled:opacity-50 disabled:cursor-not-allowed disabled:border-dashed",
     );
 
     const stateStyles = {
       default: cn(
-        'border-primary-500',
-        'focus:border-primary-500 focus:shadow-[0_0_0_3px_rgba(0,104,255,0.2)]',
-        'hover:border-primary-400'
+        "border-primary-500",
+        "focus:border-primary-500 focus:shadow-[0_0_0_3px_rgba(0,104,255,0.2)]",
+        "hover:border-primary-400",
       ),
       error: cn(
-        'border-danger-300',
-        'focus:border-danger-300 focus:shadow-[0_0_0_3px_rgba(255,67,61,0.2)]',
-        'hover:border-danger-400'
+        "border-danger-300",
+        "focus:border-danger-300 focus:shadow-[0_0_0_3px_rgba(255,67,61,0.2)]",
+        "hover:border-danger-400",
       ),
       success: cn(
-        'border-success-500',
-        'focus:border-success-500 focus:shadow-[0_0_0_3px_rgba(74,246,195,0.2)]',
-        'hover:border-success-400'
+        "border-success-500",
+        "focus:border-success-500 focus:shadow-[0_0_0_3px_rgba(74,246,195,0.2)]",
+        "hover:border-success-400",
       ),
     };
 
     const sizeStyles = {
-      sm: 'h-8 text-xs px-3',
-      md: 'h-10 text-sm px-4',
-      lg: 'h-12 text-base px-5',
+      sm: "h-8 text-xs px-3",
+      md: "h-10 text-sm px-4",
+      lg: "h-12 text-base px-5",
     };
 
     const labelStyles = cn(
-      'block text-sm font-medium text-terminal-white mb-2 uppercase tracking-wide'
+      "block text-sm font-medium text-terminal-white mb-2 uppercase tracking-wide",
     );
 
     const helperTextStyles = cn(
-      'mt-2 text-xs',
-      actualState === 'error' ? 'text-danger-300' : 'text-terminal-light-gray'
+      "mt-2 text-xs",
+      actualState === "error" ? "text-danger-300" : "text-terminal-light-gray",
     );
 
     const iconStyles = cn(
-      'flex items-center justify-center',
-      'text-terminal-light-gray',
-      size === 'sm' ? 'text-xs' : size === 'lg' ? 'text-base' : 'text-sm'
+      "flex items-center justify-center",
+      "text-terminal-light-gray",
+      size === "sm" ? "text-xs" : size === "lg" ? "text-base" : "text-sm",
     );
 
     return (
@@ -129,7 +130,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
         <div className="relative">
           {leftAddon && (
-            <div className={cn(iconStyles, 'absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none')}>
+            <div
+              className={cn(
+                iconStyles,
+                "absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none",
+              )}
+            >
               {leftAddon}
             </div>
           )}
@@ -141,18 +147,23 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
               baseStyles,
               stateStyles[actualState],
               sizeStyles[size],
-              leftAddon && 'pl-10',
-              rightAddon && 'pr-10',
-              className
+              leftAddon && "pl-10",
+              rightAddon && "pr-10",
+              className,
             )}
-            aria-invalid={actualState === 'error'}
+            aria-invalid={actualState === "error"}
             aria-describedby={
               error ? errorId : helperText ? helperTextId : undefined
             }
             {...props}
           />
           {rightAddon && (
-            <div className={cn(iconStyles, 'absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none')}>
+            <div
+              className={cn(
+                iconStyles,
+                "absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none",
+              )}
+            >
               {rightAddon}
             </div>
           )}
@@ -161,37 +172,38 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <p
             id={error ? errorId : helperTextId}
             className={helperTextStyles}
-            role={error ? 'alert' : undefined}
+            role={error ? "alert" : undefined}
           >
             {error || helperText}
           </p>
         )}
       </div>
     );
-  }
+  },
 );
 
-Input.displayName = 'Input';
+Input.displayName = "Input";
 
 /**
  * Number input component with currency prefix ($) for financial applications.
- * 
+ *
  * @example
  * ```tsx
- * <NumberInput 
+ * <NumberInput
  *   label="Price"
  *   placeholder="0.00"
  *   defaultValue={150.25}
  * />
  * ```
  */
-export interface NumberInputProps extends Omit<InputProps, 'type' | 'leftAddon'> {
+export interface NumberInputProps
+  extends Omit<InputProps, "type" | "leftAddon"> {
   /** Currency symbol to display (default: $) */
   currencySymbol?: string;
 }
 
 export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
-  ({ currencySymbol = '$', ...props }, ref) => {
+  ({ currencySymbol = "$", ...props }, ref) => {
     return (
       <Input
         ref={ref}
@@ -200,23 +212,24 @@ export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
-NumberInput.displayName = 'NumberInput';
+NumberInput.displayName = "NumberInput";
 
 /**
  * Search input component with magnifying glass icon.
- * 
+ *
  * @example
  * ```tsx
- * <SearchInput 
+ * <SearchInput
  *   placeholder="Search..."
  *   onChange={handleSearch}
  * />
  * ```
  */
-export interface SearchInputProps extends Omit<InputProps, 'type' | 'leftAddon'> {
+export interface SearchInputProps
+  extends Omit<InputProps, "type" | "leftAddon"> {
   /** Whether to show the search icon on the left */
   showIcon?: boolean;
 }
@@ -257,24 +270,25 @@ export const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
-SearchInput.displayName = 'SearchInput';
+SearchInput.displayName = "SearchInput";
 
 /**
  * Textarea component for multiline text input.
- * 
+ *
  * @example
  * ```tsx
- * <Textarea 
+ * <Textarea
  *   label="Notes"
  *   placeholder="Enter trading notes..."
  *   rows={4}
  * />
  * ```
  */
-export interface TextareaProps extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'> {
+export interface TextareaProps
+  extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, "size"> {
   /** Label text displayed above the textarea */
   label?: string;
   /** Helper text displayed below the textarea */
@@ -282,9 +296,9 @@ export interface TextareaProps extends Omit<React.TextareaHTMLAttributes<HTMLTex
   /** Error message displayed when state is "error" */
   error?: string;
   /** Visual state of the textarea */
-  state?: 'default' | 'error' | 'success';
+  state?: "default" | "error" | "success";
   /** Size of the textarea */
-  size?: 'sm' | 'md' | 'lg';
+  size?: "sm" | "md" | "lg";
   /** Additional CSS classes for the wrapper */
   wrapperClassName?: string;
   /** Additional CSS classes for the textarea */
@@ -297,8 +311,8 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       label,
       helperText,
       error,
-      state = 'default',
-      size = 'md',
+      state = "default",
+      size = "md",
       wrapperClassName,
       className,
       disabled,
@@ -306,56 +320,56 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       rows = 3,
       ...props
     },
-    ref
+    ref,
   ) => {
     const generatedId = React.useId();
     const textareaId = id || generatedId;
     const helperTextId = `${textareaId}-helper`;
     const errorId = `${textareaId}-error`;
-    const actualState = error ? 'error' : state;
+    const actualState = error ? "error" : state;
 
     const baseStyles = cn(
       // Base styles
-      'w-full font-terminal-sans transition-all duration-150',
-      'bg-terminal-dark-gray text-terminal-white',
-      'border-2 rounded',
-      'focus:outline-none focus:ring-0',
-      'placeholder:text-terminal-light-gray',
-      'disabled:opacity-50 disabled:cursor-not-allowed disabled:border-dashed',
-      'resize-y'
+      "w-full font-terminal-sans transition-all duration-150",
+      "bg-terminal-dark-gray text-terminal-white",
+      "border-2 rounded",
+      "focus:outline-none focus:ring-0",
+      "placeholder:text-terminal-light-gray",
+      "disabled:opacity-50 disabled:cursor-not-allowed disabled:border-dashed",
+      "resize-y",
     );
 
     const stateStyles = {
       default: cn(
-        'border-primary-500',
-        'focus:border-primary-500 focus:shadow-[0_0_0_3px_rgba(0,104,255,0.2)]',
-        'hover:border-primary-400'
+        "border-primary-500",
+        "focus:border-primary-500 focus:shadow-[0_0_0_3px_rgba(0,104,255,0.2)]",
+        "hover:border-primary-400",
       ),
       error: cn(
-        'border-danger-300',
-        'focus:border-danger-300 focus:shadow-[0_0_0_3px_rgba(255,67,61,0.2)]',
-        'hover:border-danger-400'
+        "border-danger-300",
+        "focus:border-danger-300 focus:shadow-[0_0_0_3px_rgba(255,67,61,0.2)]",
+        "hover:border-danger-400",
       ),
       success: cn(
-        'border-success-500',
-        'focus:border-success-500 focus:shadow-[0_0_0_3px_rgba(74,246,195,0.2)]',
-        'hover:border-success-400'
+        "border-success-500",
+        "focus:border-success-500 focus:shadow-[0_0_0_3px_rgba(74,246,195,0.2)]",
+        "hover:border-success-400",
       ),
     };
 
     const sizeStyles = {
-      sm: 'min-h-[6rem] text-xs p-3',
-      md: 'min-h-[8rem] text-sm p-4',
-      lg: 'min-h-[10rem] text-base p-5',
+      sm: "min-h-[6rem] text-xs p-3",
+      md: "min-h-[8rem] text-sm p-4",
+      lg: "min-h-[10rem] text-base p-5",
     };
 
     const labelStyles = cn(
-      'block text-sm font-medium text-terminal-white mb-2 uppercase tracking-wide'
+      "block text-sm font-medium text-terminal-white mb-2 uppercase tracking-wide",
     );
 
     const helperTextStyles = cn(
-      'mt-2 text-xs',
-      actualState === 'error' ? 'text-danger-300' : 'text-terminal-light-gray'
+      "mt-2 text-xs",
+      actualState === "error" ? "text-danger-300" : "text-terminal-light-gray",
     );
 
     return (
@@ -374,9 +388,9 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             baseStyles,
             stateStyles[actualState],
             sizeStyles[size],
-            className
+            className,
           )}
-          aria-invalid={actualState === 'error'}
+          aria-invalid={actualState === "error"}
           aria-describedby={
             error ? errorId : helperText ? helperTextId : undefined
           }
@@ -386,14 +400,14 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           <p
             id={error ? errorId : helperTextId}
             className={helperTextStyles}
-            role={error ? 'alert' : undefined}
+            role={error ? "alert" : undefined}
           >
             {error || helperText}
           </p>
         )}
       </div>
     );
-  }
+  },
 );
 
-Textarea.displayName = 'Textarea';
+Textarea.displayName = "Textarea";

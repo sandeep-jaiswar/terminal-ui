@@ -1,6 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { Modal, ModalHeader, ModalContent, ModalFooter, Button } from "@sandeep-jaiswar/ui";
+import {
+  Modal,
+  ModalHeader,
+  ModalContent,
+  ModalFooter,
+  Button,
+} from "@sandeep-jaiswar/ui";
 
 const meta: Meta<typeof Modal> = {
   title: "Components/Modal",
@@ -9,9 +15,7 @@ const meta: Meta<typeof Modal> = {
     layout: "fullscreen",
     backgrounds: {
       default: "terminal",
-      values: [
-        { name: "terminal", value: "#000000" },
-      ],
+      values: [{ name: "terminal", value: "#000000" }],
     },
   },
   argTypes: {
@@ -95,10 +99,18 @@ export const Small: Story = {
             <p>Are you sure you want to proceed?</p>
           </ModalContent>
           <ModalFooter>
-            <Button variant="secondary" size="sm" onClick={() => setIsOpen(false)}>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => setIsOpen(false)}
+            >
               Cancel
             </Button>
-            <Button variant="success" size="sm" onClick={() => setIsOpen(false)}>
+            <Button
+              variant="success"
+              size="sm"
+              onClick={() => setIsOpen(false)}
+            >
               Confirm
             </Button>
           </ModalFooter>
@@ -125,18 +137,44 @@ export const Medium: Story = {
             Terminal Settings
           </ModalHeader>
           <ModalContent>
-            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
                 <span>Art Battings</span>
-                <Button variant="ghost" size="sm">Toggle</Button>
+                <Button variant="ghost" size="sm">
+                  Toggle
+                </Button>
               </div>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
                 <span>Mehics Todo</span>
-                <Button variant="ghost" size="sm">Toggle</Button>
+                <Button variant="ghost" size="sm">
+                  Toggle
+                </Button>
               </div>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
                 <span>Netiny Padlis</span>
-                <Button variant="ghost" size="sm">Toggle</Button>
+                <Button variant="ghost" size="sm">
+                  Toggle
+                </Button>
               </div>
             </div>
           </ModalContent>
@@ -171,9 +209,18 @@ export const Large: Story = {
             Create New Account
           </ModalHeader>
           <ModalContent>
-            <form style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <form
+              style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+            >
               <div>
-                <label htmlFor="name" style={{ display: "block", marginBottom: "0.5rem", fontSize: "0.875rem" }}>
+                <label
+                  htmlFor="name"
+                  style={{
+                    display: "block",
+                    marginBottom: "0.5rem",
+                    fontSize: "0.875rem",
+                  }}
+                >
                   Name
                 </label>
                 <input
@@ -191,7 +238,14 @@ export const Large: Story = {
                 />
               </div>
               <div>
-                <label htmlFor="email" style={{ display: "block", marginBottom: "0.5rem", fontSize: "0.875rem" }}>
+                <label
+                  htmlFor="email"
+                  style={{
+                    display: "block",
+                    marginBottom: "0.5rem",
+                    fontSize: "0.875rem",
+                  }}
+                >
                   Email
                 </label>
                 <input
@@ -209,7 +263,14 @@ export const Large: Story = {
                 />
               </div>
               <div>
-                <label htmlFor="account-type" style={{ display: "block", marginBottom: "0.5rem", fontSize: "0.875rem" }}>
+                <label
+                  htmlFor="account-type"
+                  style={{
+                    display: "block",
+                    marginBottom: "0.5rem",
+                    fontSize: "0.875rem",
+                  }}
+                >
                   Account Type
                 </label>
                 <select
@@ -230,7 +291,14 @@ export const Large: Story = {
                 </select>
               </div>
               <div>
-                <label htmlFor="notes" style={{ display: "block", marginBottom: "0.5rem", fontSize: "0.875rem" }}>
+                <label
+                  htmlFor="notes"
+                  style={{
+                    display: "block",
+                    marginBottom: "0.5rem",
+                    fontSize: "0.875rem",
+                  }}
+                >
                   Notes
                 </label>
                 <textarea
@@ -283,7 +351,13 @@ export const TradingBuy: Story = {
             Confirm Buy Order
           </ModalHeader>
           <ModalContent>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.75rem",
+              }}
+            >
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <span style={{ color: "#666666" }}>Symbol:</span>
                 <span style={{ fontFamily: "monospace" }}>AAPL</span>
@@ -296,17 +370,34 @@ export const TradingBuy: Story = {
                 <span style={{ color: "#666666" }}>Price:</span>
                 <span style={{ fontFamily: "monospace" }}>$150.25</span>
               </div>
-              <div style={{ display: "flex", justifyContent: "space-between", borderTop: "1px solid #333333", paddingTop: "0.75rem" }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  borderTop: "1px solid #333333",
+                  paddingTop: "0.75rem",
+                }}
+              >
                 <span style={{ color: "#666666" }}>Total:</span>
-                <span style={{ fontFamily: "monospace", fontWeight: "bold" }}>$15,025.00</span>
+                <span style={{ fontFamily: "monospace", fontWeight: "bold" }}>
+                  $15,025.00
+                </span>
               </div>
             </div>
           </ModalContent>
           <ModalFooter>
-            <Button variant="secondary" size="sm" onClick={() => setIsOpen(false)}>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => setIsOpen(false)}
+            >
               Cancel
             </Button>
-            <Button variant="success" size="sm" onClick={() => setIsOpen(false)}>
+            <Button
+              variant="success"
+              size="sm"
+              onClick={() => setIsOpen(false)}
+            >
               Execute Order
             </Button>
           </ModalFooter>
@@ -335,7 +426,13 @@ export const TradingSell: Story = {
             Confirm Sell Order
           </ModalHeader>
           <ModalContent>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.75rem",
+              }}
+            >
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <span style={{ color: "#666666" }}>Symbol:</span>
                 <span style={{ fontFamily: "monospace" }}>TSLA</span>
@@ -348,14 +445,27 @@ export const TradingSell: Story = {
                 <span style={{ color: "#666666" }}>Price:</span>
                 <span style={{ fontFamily: "monospace" }}>$245.80</span>
               </div>
-              <div style={{ display: "flex", justifyContent: "space-between", borderTop: "1px solid #333333", paddingTop: "0.75rem" }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  borderTop: "1px solid #333333",
+                  paddingTop: "0.75rem",
+                }}
+              >
                 <span style={{ color: "#666666" }}>Total:</span>
-                <span style={{ fontFamily: "monospace", fontWeight: "bold" }}>$12,290.00</span>
+                <span style={{ fontFamily: "monospace", fontWeight: "bold" }}>
+                  $12,290.00
+                </span>
               </div>
             </div>
           </ModalContent>
           <ModalFooter>
-            <Button variant="secondary" size="sm" onClick={() => setIsOpen(false)}>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => setIsOpen(false)}
+            >
               Cancel
             </Button>
             <Button variant="danger" size="sm" onClick={() => setIsOpen(false)}>
@@ -388,8 +498,8 @@ export const Warning: Story = {
           </ModalHeader>
           <ModalContent>
             <p>
-              This operation involves high risk. Please ensure you understand the
-              implications before proceeding.
+              This operation involves high risk. Please ensure you understand
+              the implications before proceeding.
             </p>
           </ModalContent>
           <ModalFooter>
@@ -416,7 +526,9 @@ export const NoBackdropDismiss: Story = {
     return (
       <>
         <div style={{ padding: "2rem" }}>
-          <Button onClick={() => setIsOpen(true)}>Open Modal (No Backdrop Dismiss)</Button>
+          <Button onClick={() => setIsOpen(true)}>
+            Open Modal (No Backdrop Dismiss)
+          </Button>
         </div>
         <Modal
           isOpen={isOpen}
@@ -429,8 +541,8 @@ export const NoBackdropDismiss: Story = {
           </ModalHeader>
           <ModalContent>
             <p>
-              This modal cannot be dismissed by clicking outside. You must use the
-              close button or cancel action.
+              This modal cannot be dismissed by clicking outside. You must use
+              the close button or cancel action.
             </p>
           </ModalContent>
           <ModalFooter>
@@ -457,7 +569,9 @@ export const NoEscapeDismiss: Story = {
     return (
       <>
         <div style={{ padding: "2rem" }}>
-          <Button onClick={() => setIsOpen(true)}>Open Modal (No Escape Key)</Button>
+          <Button onClick={() => setIsOpen(true)}>
+            Open Modal (No Escape Key)
+          </Button>
         </div>
         <Modal
           isOpen={isOpen}
@@ -470,8 +584,8 @@ export const NoEscapeDismiss: Story = {
           </ModalHeader>
           <ModalContent>
             <p>
-              This modal cannot be dismissed with the Escape key. You must explicitly
-              choose an action.
+              This modal cannot be dismissed with the Escape key. You must
+              explicitly choose an action.
             </p>
           </ModalContent>
           <ModalFooter>
@@ -499,7 +613,14 @@ export const AllSizes: Story = {
 
     return (
       <>
-        <div style={{ padding: "2rem", display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+        <div
+          style={{
+            padding: "2rem",
+            display: "flex",
+            gap: "1rem",
+            flexWrap: "wrap",
+          }}
+        >
           <Button onClick={() => setSmallOpen(true)}>Small (360px)</Button>
           <Button onClick={() => setMediumOpen(true)}>Medium (480px)</Button>
           <Button onClick={() => setLargeOpen(true)}>Large (720px)</Button>
@@ -510,16 +631,26 @@ export const AllSizes: Story = {
             Small Modal
           </ModalHeader>
           <ModalContent>
-            <p>This is a small modal (360px width) for compact confirmations.</p>
+            <p>
+              This is a small modal (360px width) for compact confirmations.
+            </p>
           </ModalContent>
           <ModalFooter>
-            <Button variant="secondary" size="sm" onClick={() => setSmallOpen(false)}>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => setSmallOpen(false)}
+            >
               Close
             </Button>
           </ModalFooter>
         </Modal>
 
-        <Modal isOpen={mediumOpen} onClose={() => setMediumOpen(false)} size="md">
+        <Modal
+          isOpen={mediumOpen}
+          onClose={() => setMediumOpen(false)}
+          size="md"
+        >
           <ModalHeader onClose={() => setMediumOpen(false)}>
             Medium Modal
           </ModalHeader>
@@ -538,7 +669,10 @@ export const AllSizes: Story = {
             Large Modal
           </ModalHeader>
           <ModalContent>
-            <p>This is a large modal (720px width) for data forms and complex content.</p>
+            <p>
+              This is a large modal (720px width) for data forms and complex
+              content.
+            </p>
           </ModalContent>
           <ModalFooter>
             <Button variant="secondary" onClick={() => setLargeOpen(false)}>

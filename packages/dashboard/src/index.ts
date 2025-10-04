@@ -1,2 +1,2 @@
-export { Dashboard, Widget } from './Dashboard';
-export type { DashboardProps, WidgetProps } from './Dashboard';
+export { Dashboard, Widget } from "./Dashboard";
+export type { DashboardProps, WidgetProps } from "./Dashboard";
