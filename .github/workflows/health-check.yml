@@ -1,0 +1,304 @@
+name: Health Check
+
+on:
+  schedule:
+    # Run daily at 8 AM UTC
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  code-health:
+    name: Code Health Metrics
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.15.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Calculate Code Metrics
+        run: |
+          echo "## 📊 Code Health Metrics" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Count lines of code
+          total_lines=$(find packages -name "*.ts" -o -name "*.tsx" | xargs wc -l | tail -1 | awk '{print $1}')
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Total Lines of Code | $total_lines |" >> $GITHUB_STEP_SUMMARY
+          
+          # Count files
+          ts_files=$(find packages -name "*.ts" -o -name "*.tsx" | wc -l)
+          echo "| TypeScript Files | $ts_files |" >> $GITHUB_STEP_SUMMARY
+          
+          # Count test files
+          test_files=$(find packages -name "*.test.ts" -o -name "*.test.tsx" | wc -l)
+          echo "| Test Files | $test_files |" >> $GITHUB_STEP_SUMMARY
+          
+          # Calculate test coverage ratio
+          if [ $ts_files -gt 0 ]; then
+            coverage_ratio=$(echo "scale=2; $test_files / $ts_files * 100" | bc)
+            echo "| Test Coverage Ratio | ${coverage_ratio}% |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Check Build Health
+        run: |
+          pnpm build
+          echo "✅ All packages build successfully" >> $GITHUB_STEP_SUMMARY
+
+      - name: Check Test Health
+        run: |
+          pnpm test
+          echo "✅ All tests passing" >> $GITHUB_STEP_SUMMARY
+
+  dependency-health:
+    name: Dependency Health
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.15.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Analyze Dependencies
+        run: |
+          echo "## 📦 Dependency Health" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          pnpm audit --json > audit.json || true
+          
+          if [ -s audit.json ]; then
+            vulnerabilities=$(jq -r '.metadata.vulnerabilities | to_entries[] | "\(.key): \(.value)"' audit.json 2>/dev/null || echo "None")
+            echo "### Security Vulnerabilities" >> $GITHUB_STEP_SUMMARY
+            echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+            echo "$vulnerabilities" >> $GITHUB_STEP_SUMMARY
+            echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ No vulnerabilities found" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Check Outdated Packages
+        run: |
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Outdated Packages" >> $GITHUB_STEP_SUMMARY
+          pnpm outdated --recursive > outdated.txt || true
+          
+          if [ -s outdated.txt ]; then
+            echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+            head -20 outdated.txt >> $GITHUB_STEP_SUMMARY
+            echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ All packages up to date" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  pr-health:
+    name: Pull Request Health
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Analyze PR Status
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: pullRequests } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+            
+            const now = Date.now();
+            const dayInMs = 24 * 60 * 60 * 1000;
+            
+            let stalePRs = 0;
+            let draftPRs = 0;
+            let readyPRs = 0;
+            
+            for (const pr of pullRequests) {
+              const prAge = now - new Date(pr.created_at).getTime();
+              
+              if (pr.draft) {
+                draftPRs++;
+              } else {
+                readyPRs++;
+              }
+              
+              if (prAge > 7 * dayInMs) {
+                stalePRs++;
+              }
+            }
+            
+            core.summary
+              .addHeading('🔄 Pull Request Health')
+              .addTable([
+                [{data: 'Status', header: true}, {data: 'Count', header: true}],
+                ['Open PRs', pullRequests.length.toString()],
+                ['Ready for Review', readyPRs.toString()],
+                ['Draft PRs', draftPRs.toString()],
+                ['Stale PRs (>7 days)', stalePRs.toString()]
+              ])
+              .write();
+
+  issue-health:
+    name: Issue Health
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Analyze Issue Status
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+            
+            const now = Date.now();
+            const dayInMs = 24 * 60 * 60 * 1000;
+            
+            let bugs = 0;
+            let enhancements = 0;
+            let staleIssues = 0;
+            let needsResponse = 0;
+            
+            for (const issue of issues) {
+              if (issue.pull_request) continue;
+              
+              const labels = issue.labels.map(l => l.name);
+              if (labels.includes('bug')) bugs++;
+              if (labels.includes('enhancement')) enhancements++;
+              
+              const issueAge = now - new Date(issue.created_at).getTime();
+              if (issueAge > 30 * dayInMs) {
+                staleIssues++;
+              }
+              
+              if (labels.includes('needs-response')) {
+                needsResponse++;
+              }
+            }
+            
+            core.summary
+              .addHeading('🐛 Issue Health')
+              .addTable([
+                [{data: 'Status', header: true}, {data: 'Count', header: true}],
+                ['Open Issues', issues.filter(i => !i.pull_request).length.toString()],
+                ['Bugs', bugs.toString()],
+                ['Enhancements', enhancements.toString()],
+                ['Stale Issues (>30 days)', staleIssues.toString()],
+                ['Needs Response', needsResponse.toString()]
+              ])
+              .write();
+
+  workflow-health:
+    name: Workflow Health
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Analyze Workflow Status
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const workflows = await github.rest.actions.listRepoWorkflows({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+            
+            let failingWorkflows = 0;
+            let successfulWorkflows = 0;
+            
+            for (const workflow of workflows.data.workflows) {
+              const runs = await github.rest.actions.listWorkflowRuns({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                workflow_id: workflow.id,
+                per_page: 1
+              });
+              
+              if (runs.data.workflow_runs.length > 0) {
+                const latestRun = runs.data.workflow_runs[0];
+                if (latestRun.conclusion === 'failure') {
+                  failingWorkflows++;
+                } else if (latestRun.conclusion === 'success') {
+                  successfulWorkflows++;
+                }
+              }
+            }
+            
+            core.summary
+              .addHeading('⚙️ Workflow Health')
+              .addTable([
+                [{data: 'Status', header: true}, {data: 'Count', header: true}],
+                ['Total Workflows', workflows.data.workflows.length.toString()],
+                ['Successful', successfulWorkflows.toString()],
+                ['Failing', failingWorkflows.toString()]
+              ])
+              .write();
+
+  create-health-report:
+    name: Create Health Report Issue
+    runs-on: ubuntu-latest
+    needs: [code-health, dependency-health, pr-health, issue-health, workflow-health]
+    if: failure()
+    steps:
+      - name: Create Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = `## ⚠️ Repository Health Check Failed
+            
+            One or more health checks have failed. Please review the workflow run for details.
+            
+            **Run**: ${context.payload.repository.html_url}/actions/runs/${context.runId}
+            
+            ### Action Required
+            - Review failed checks
+            - Address any issues
+            - Re-run health check
+            
+            This issue was automatically created by the Health Check workflow.
+            `;
+            
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '⚠️ Repository Health Check Failed',
+              body: body,
+              labels: ['health-check', 'automated']
+            });
