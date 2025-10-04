@@ -266,19 +266,147 @@ export function Tabs({ children, ...props }: TabsProps): JSX.Element {
 
 Tabs.displayName = "Tabs";
 
+/**
+ * Bloomberg Terminal-inspired Breadcrumb Navigation Component
+ *
+ * Professional breadcrumb navigation optimized for financial trading applications with:
+ * - High contrast design for terminal environments
+ * - Clickable links styled in terminal blue (#0068ff)
+ * - Current page (last item) in white, non-clickable
+ * - Chevron separators (>) between items
+ * - Smooth transitions (100ms ease-in)
+ * - Screen reader accessible (ARIA labels)
+ *
+ * @example
+ * ```tsx
+ * <Breadcrumb>
+ *   <BreadcrumbItem href="/">Home</BreadcrumbItem>
+ *   <BreadcrumbSeparator />
+ *   <BreadcrumbItem href="/portfolio">Portfolio</BreadcrumbItem>
+ *   <BreadcrumbSeparator />
+ *   <BreadcrumbItem>AAPL</BreadcrumbItem>
+ * </Breadcrumb>
+ * ```
+ */
+
 export interface BreadcrumbProps extends React.HTMLAttributes<HTMLElement> {
+  /** Breadcrumb items and separators */
   children: React.ReactNode;
+  /** Additional CSS classes */
+  className?: string;
 }
 
-export function Breadcrumb({
-  children,
-  ...props
-}: BreadcrumbProps): JSX.Element {
-  return (
-    <nav aria-label="breadcrumb" {...props}>
-      {children}
-    </nav>
-  );
-}
+export const Breadcrumb = React.forwardRef<HTMLElement, BreadcrumbProps>(
+  ({ children, className, ...props }, ref) => {
+    return (
+      <nav
+        ref={ref}
+        aria-label="breadcrumb"
+        className={cn(
+          "flex items-center",
+          "pt-10 pb-3.5", // 40px top, 14px bottom
+          className,
+        )}
+        {...props}
+      >
+        <ol className="flex items-center gap-2">
+          {children}
+        </ol>
+      </nav>
+    );
+  },
+);
 
 Breadcrumb.displayName = "Breadcrumb";
+
+export interface BreadcrumbItemProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  /** Item content */
+  children: React.ReactNode;
+  /** Optional href for navigation (if omitted, renders as current page) */
+  href?: string;
+  /** Whether this is the current page */
+  current?: boolean;
+  /** Additional CSS classes */
+  className?: string;
+}
+
+export const BreadcrumbItem = React.forwardRef<
+  HTMLAnchorElement,
+  BreadcrumbItemProps
+>(({ children, href, current = false, className, ...props }, ref) => {
+  const isCurrentPage = current || !href;
+
+  const baseStyles = cn(
+    "font-terminal-mono text-sm", // 12px font size
+    "px-2", // 8px horizontal padding
+    "transition-colors duration-100 ease-in-out",
+    "focus:outline-none focus:ring-2 focus:ring-primary-500",
+    isCurrentPage
+      ? "text-terminal-white cursor-default" // Current page styling
+      : [
+          "text-primary-500", // Terminal blue
+          "hover:text-primary-400", // Lighter blue on hover
+          "cursor-pointer",
+          "underline-offset-4",
+        ],
+    className,
+  );
+
+  if (isCurrentPage) {
+    return (
+      <li>
+        <span
+          className={baseStyles}
+          aria-current="page"
+          {...(props as React.HTMLAttributes<HTMLSpanElement>)}
+        >
+          {children}
+        </span>
+      </li>
+    );
+  }
+
+  return (
+    <li>
+      <a ref={ref} href={href} className={baseStyles} {...props}>
+        {children}
+      </a>
+    </li>
+  );
+});
+
+BreadcrumbItem.displayName = "BreadcrumbItem";
+
+export interface BreadcrumbSeparatorProps
+  extends React.HTMLAttributes<HTMLLIElement> {
+  /** Custom separator character (default: ">") */
+  separator?: React.ReactNode;
+  /** Additional CSS classes */
+  className?: string;
+}
+
+export const BreadcrumbSeparator = React.forwardRef<
+  HTMLLIElement,
+  BreadcrumbSeparatorProps
+>(({ separator = ">", className, ...props }, ref) => {
+  return (
+    <li
+      ref={ref}
+      role="presentation"
+      aria-hidden="true"
+      className={cn(
+        "flex items-center",
+        "text-terminal-light-gray", // #666666 for separator
+        "font-terminal-mono text-sm",
+        "select-none",
+        className,
+      )}
+      {...props}
+    >
+      {separator}
+    </li>
+  );
+});
+
+BreadcrumbSeparator.displayName = "BreadcrumbSeparator";
