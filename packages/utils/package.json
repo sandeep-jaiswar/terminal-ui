@@ -2,7 +2,14 @@
   "name": "@sandeep-jaiswar/utils",
   "version": "0.0.0",
   "description": "Shared utilities for @sandeep-jaiswar/ui Bloomberg Terminal components",
-  "keywords": ["utils", "utilities", "accessibility", "financial", "react", "hooks"],
+  "keywords": [
+    "utils",
+    "utilities",
+    "accessibility",
+    "financial",
+    "react",
+    "hooks"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -33,7 +40,9 @@
       "require": "./dist/hooks/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "tsup",

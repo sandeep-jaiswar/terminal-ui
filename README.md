@@ -16,15 +16,18 @@ A professional, Bloomberg Terminal-inspired React UI component library built wit
 This Turborepo includes the following packages and applications with **component-per-package architecture** for optimal tree-shaking and granular versioning:
 
 ### Apps
+
 - `apps/docs` - Storybook documentation and component showcase
 
 ### Foundation Packages
+
 - `packages/tokens` - Design tokens (colors, spacing, typography)
 - `packages/theme` - Theme provider and context
 - `packages/utils` - Shared utility functions (formatCurrency, cn, a11y helpers)
 - `packages/icons` - Icon library
 
 ### Component Packages
+
 - `packages/button` - Button component
 - `packages/input` - Input, NumberInput, SearchInput components
 - `packages/badge` - Badge component
@@ -37,9 +40,11 @@ This Turborepo includes the following packages and applications with **component
 - `packages/dashboard` - Dashboard, Widget components
 
 ### Meta Package
+
 - `packages/ui` - Re-exports all components for convenience imports
 
 ### Tools
+
 - `tools/eslint-config` - Shared ESLint configuration
 - `tools/tsconfig` - Shared TypeScript configurations
 
@@ -95,18 +100,18 @@ Import individual components for the best tree-shaking and smallest bundle size:
 
 ```tsx
 // Import only what you need from individual packages
-import { Button } from '@sandeep-jaiswar/button';
-import { Input, NumberInput } from '@sandeep-jaiswar/input';
-import { DataGrid } from '@sandeep-jaiswar/data-grid';
-import { ThemeProvider } from '@sandeep-jaiswar/theme';
-import { formatCurrency } from '@sandeep-jaiswar/utils';
+import { Button } from "@sandeep-jaiswar/button";
+import { Input, NumberInput } from "@sandeep-jaiswar/input";
+import { DataGrid } from "@sandeep-jaiswar/data-grid";
+import { ThemeProvider } from "@sandeep-jaiswar/theme";
+import { formatCurrency } from "@sandeep-jaiswar/utils";
 
 function TradingInterface() {
   return (
     <ThemeProvider theme="dark">
       <DataGrid data={stocks} />
       <Input placeholder="Enter symbol" />
-      <Button onClick={() => console.log('Buy order placed!')}>
+      <Button onClick={() => console.log("Buy order placed!")}>
         Buy 100 AAPL @ {formatCurrency(150.25)}
       </Button>
     </ThemeProvider>
@@ -120,20 +125,20 @@ Import everything from the meta package for quick prototyping:
 
 ```tsx
 // Import from meta package
-import { 
-  Button, 
+import {
+  Button,
   Input,
   DataGrid,
   ThemeProvider,
-  formatCurrency 
-} from '@sandeep-jaiswar/ui';
+  formatCurrency,
+} from "@sandeep-jaiswar/ui";
 
 function TradingInterface() {
   return (
     <ThemeProvider theme="dark">
       <DataGrid data={stocks} />
       <Input placeholder="Enter symbol" />
-      <Button onClick={() => console.log('Buy order placed!')}>
+      <Button onClick={() => console.log("Buy order placed!")}>
         Buy 100 AAPL @ {formatCurrency(150.25)}
       </Button>
     </ThemeProvider>
@@ -165,11 +170,13 @@ function TradingInterface() {
 ### Build Caching
 
 Turborepo caches the output of all tasks, meaning:
+
 - Unchanged packages are never rebuilt
 - Full turbo mode achieves subsecond builds
 - Local caching works out of the box
 
 Example cache performance:
+
 ```bash
 # First build
 pnpm build
@@ -185,6 +192,7 @@ pnpm build
 ### Compilation
 
 All packages use `tsup` for fast TypeScript compilation with `esbuild`. Each package exports:
+
 - **CommonJS** (`dist/index.js`) - for Node.js environments
 - **ESM** (`dist/index.mjs`) - for modern bundlers
 - **TypeScript Definitions** (`dist/index.d.ts`) - for type safety
@@ -208,6 +216,7 @@ Packages use conditional exports for optimal tree-shaking:
 ## 🎨 Design System
 
 ### Color Palette
+
 - `terminal-black` - Primary background (#000000)
 - `terminal-blue` - Primary actions (#0068ff)
 - `terminal-green` - Success/gains (#4af6c3)
@@ -215,10 +224,12 @@ Packages use conditional exports for optimal tree-shaking:
 - `terminal-orange` - Warnings (#fb8b1e)
 
 ### Typography
+
 - **Font Families**: SF Mono (monospace), Inter (sans-serif)
 - **Sizes**: xs (10px), sm (12px), base (14px), lg (16px), xl (18px)
 
 ### Spacing System
+
 Based on 4px scale: 1 (4px), 2 (8px), 3 (12px), 4 (16px), etc.
 
 ## 📚 Storybook
@@ -239,6 +250,7 @@ Visit http://localhost:6006 to view the component library.
 ## 🧪 Testing
 
 Each package should include comprehensive tests:
+
 - Unit tests with Jest + React Testing Library
 - Accessibility tests with jest-axe
 - Visual regression tests with Chromatic
@@ -254,6 +266,7 @@ pnpm changeset
 ```
 
 Follow the prompts to:
+
 1. Select packages to include
 2. Choose version bump type (major, minor, patch)
 3. Write a summary of changes
@@ -287,4 +300,3 @@ Sandeep Jaiswar <sandeep.jaiswar.dev@gmail.com>
 ---
 
 Built with ❤️ for the financial trading community
-

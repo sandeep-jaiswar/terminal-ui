@@ -8,15 +8,20 @@ const meta: Meta<typeof Button> = {
     layout: "centered",
     backgrounds: {
       default: "terminal",
-      values: [
-        { name: "terminal", value: "#000000" },
-      ],
+      values: [{ name: "terminal", value: "#000000" }],
     },
   },
   argTypes: {
     variant: {
       control: { type: "select" },
-      options: ["primary", "secondary", "success", "danger", "warning", "ghost"],
+      options: [
+        "primary",
+        "secondary",
+        "success",
+        "danger",
+        "warning",
+        "ghost",
+      ],
       description: "The visual variant of the button",
     },
     size: {
@@ -191,7 +196,14 @@ export const AllSizes: Story = {
  */
 export const TradingExample: Story = {
   render: () => (
-    <div style={{ display: "flex", flexDirection: "column", gap: "1rem", padding: "2rem" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "1rem",
+        padding: "2rem",
+      }}
+    >
       <h3 style={{ color: "#ffffff", marginBottom: "1rem" }}>AAPL - $150.25</h3>
       <div style={{ display: "flex", gap: "1rem" }}>
         <Button variant="success" size="lg">

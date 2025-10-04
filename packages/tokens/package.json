@@ -2,7 +2,13 @@
   "name": "@sandeep-jaiswar/tokens",
   "version": "0.0.0",
   "description": "Design tokens for @sandeep-jaiswar/ui Bloomberg Terminal components",
-  "keywords": ["design-tokens", "ui", "financial", "bloomberg", "terminal"],
+  "keywords": [
+    "design-tokens",
+    "ui",
+    "financial",
+    "bloomberg",
+    "terminal"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -49,7 +55,9 @@
     },
     "./tailwind-preset": "./dist/tailwind-preset.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "tsup",
