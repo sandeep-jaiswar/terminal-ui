@@ -299,7 +299,7 @@ export const AccessibilityFeatures: Story = {
               ✓ Focus indicators (2px blue ring)
             </li>
             <li style={{ marginBottom: "0.5rem" }}>
-              ✓ aria-current="page" for active items
+              ✓ aria-current=&quot;page&quot; for active items
             </li>
           </ul>
         </div>
