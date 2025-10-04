@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Sidebar, NavigationItem, NavigationGroup } from "@sandeep-jaiswar/navigation";
+import {
+  Sidebar,
+  NavigationItem,
+  NavigationGroup,
+} from "@sandeep-jaiswar/navigation";
 import { Icon } from "@sandeep-jaiswar/icons";
 import React from "react";
 
@@ -10,9 +14,7 @@ const meta: Meta<typeof Sidebar> = {
     layout: "fullscreen",
     backgrounds: {
       default: "terminal",
-      values: [
-        { name: "terminal", value: "#000000" },
-      ],
+      values: [{ name: "terminal", value: "#000000" }],
     },
   },
   tags: ["autodocs"],
@@ -36,17 +38,14 @@ export const Default: Story = {
           <NavigationItem icon={<Icon name="chart-line" size={20} />}>
             News
           </NavigationItem>
-          <NavigationItem 
-            icon={<Icon name="chart-line" size={20} />}
-            active
-          >
+          <NavigationItem icon={<Icon name="chart-line" size={20} />} active>
             Dashboard
           </NavigationItem>
           <NavigationItem icon={<Icon name="trending-up" size={20} />}>
             Markets
           </NavigationItem>
         </NavigationGroup>
-        
+
         <NavigationGroup label="TOOLS">
           <NavigationItem icon={<Icon name="search" size={20} />}>
             Research
@@ -56,10 +55,14 @@ export const Default: Story = {
           </NavigationItem>
         </NavigationGroup>
       </Sidebar>
-      
+
       <main style={{ flex: 1, padding: "2rem", color: "#fff" }}>
-        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Main Content Area</h1>
-        <p style={{ color: "#666" }}>Select a navigation item to see interaction states.</p>
+        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>
+          Main Content Area
+        </h1>
+        <p style={{ color: "#666" }}>
+          Select a navigation item to see interaction states.
+        </p>
       </main>
     </div>
   ),
@@ -73,13 +76,13 @@ export const WithBadges: Story = {
     <div style={{ display: "flex", height: "100vh" }}>
       <Sidebar>
         <NavigationGroup label="MESSAGES">
-          <NavigationItem 
+          <NavigationItem
             icon={<Icon name="trending-up" size={20} />}
             badge="3"
           >
             Inbox
           </NavigationItem>
-          <NavigationItem 
+          <NavigationItem
             icon={<Icon name="alert-circle" size={20} />}
             badge="12"
           >
@@ -89,9 +92,9 @@ export const WithBadges: Story = {
             Sent
           </NavigationItem>
         </NavigationGroup>
-        
+
         <NavigationGroup label="PORTFOLIO">
-          <NavigationItem 
+          <NavigationItem
             icon={<Icon name="chart-line" size={20} />}
             badge="NEW"
             active
@@ -103,10 +106,14 @@ export const WithBadges: Story = {
           </NavigationItem>
         </NavigationGroup>
       </Sidebar>
-      
+
       <main style={{ flex: 1, padding: "2rem", color: "#fff" }}>
-        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Notifications</h1>
-        <p style={{ color: "#666" }}>Navigation items can show badges for counts or status.</p>
+        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>
+          Notifications
+        </h1>
+        <p style={{ color: "#666" }}>
+          Navigation items can show badges for counts or status.
+        </p>
       </main>
     </div>
   ),
@@ -133,7 +140,7 @@ export const CollapsibleGroups: Story = {
             Commodities
           </NavigationItem>
         </NavigationGroup>
-        
+
         <NavigationGroup label="ANALYTICS" collapsible defaultCollapsed>
           <NavigationItem icon={<Icon name="chart-line" size={20} />}>
             Charts
@@ -145,7 +152,7 @@ export const CollapsibleGroups: Story = {
             Research
           </NavigationItem>
         </NavigationGroup>
-        
+
         <NavigationGroup label="SETTINGS" collapsible>
           <NavigationItem icon={<Icon name="settings" size={20} />}>
             Preferences
@@ -155,10 +162,14 @@ export const CollapsibleGroups: Story = {
           </NavigationItem>
         </NavigationGroup>
       </Sidebar>
-      
+
       <main style={{ flex: 1, padding: "2rem", color: "#fff" }}>
-        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Collapsible Groups</h1>
-        <p style={{ color: "#666" }}>Click group labels to expand/collapse sections.</p>
+        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>
+          Collapsible Groups
+        </h1>
+        <p style={{ color: "#666" }}>
+          Click group labels to expand/collapse sections.
+        </p>
       </main>
     </div>
   ),
@@ -175,57 +186,78 @@ export const InteractiveStates: Story = {
           <NavigationItem icon={<Icon name="trending-up" size={20} />}>
             Normal State (Hover me)
           </NavigationItem>
-          <NavigationItem 
-            icon={<Icon name="chart-line" size={20} />}
-            active
-          >
+          <NavigationItem icon={<Icon name="chart-line" size={20} />} active>
             Active State (4px blue border)
           </NavigationItem>
-          <NavigationItem 
-            icon={<Icon name="settings" size={20} />}
-            disabled
-          >
+          <NavigationItem icon={<Icon name="settings" size={20} />} disabled>
             Disabled State
           </NavigationItem>
         </NavigationGroup>
       </Sidebar>
-      
+
       <main style={{ flex: 1, padding: "2rem", color: "#fff" }}>
-        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Interactive States</h1>
+        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>
+          Interactive States
+        </h1>
         <div style={{ color: "#666", marginBottom: "2rem" }}>
-          <h2 style={{ fontSize: "1.25rem", color: "#fff", marginBottom: "0.5rem" }}>States:</h2>
+          <h2
+            style={{
+              fontSize: "1.25rem",
+              color: "#fff",
+              marginBottom: "0.5rem",
+            }}
+          >
+            States:
+          </h2>
           <ul style={{ listStyle: "none", padding: 0 }}>
             <li style={{ marginBottom: "0.5rem" }}>
-              <strong style={{ color: "#0068ff" }}>Normal:</strong> Default appearance
+              <strong style={{ color: "#0068ff" }}>Normal:</strong> Default
+              appearance
             </li>
             <li style={{ marginBottom: "0.5rem" }}>
-              <strong style={{ color: "#0068ff" }}>Hover:</strong> Background changes to #1a1a1a
+              <strong style={{ color: "#0068ff" }}>Hover:</strong> Background
+              changes to #1a1a1a
             </li>
             <li style={{ marginBottom: "0.5rem" }}>
-              <strong style={{ color: "#0068ff" }}>Focus:</strong> Blue ring indicator (Tab navigation)
+              <strong style={{ color: "#0068ff" }}>Focus:</strong> Blue ring
+              indicator (Tab navigation)
             </li>
             <li style={{ marginBottom: "0.5rem" }}>
-              <strong style={{ color: "#0068ff" }}>Active:</strong> 4px blue left border + blue tint background
+              <strong style={{ color: "#0068ff" }}>Active:</strong> 4px blue
+              left border + blue tint background
             </li>
             <li style={{ marginBottom: "0.5rem" }}>
-              <strong style={{ color: "#0068ff" }}>Disabled:</strong> 50% opacity, no interaction
+              <strong style={{ color: "#0068ff" }}>Disabled:</strong> 50%
+              opacity, no interaction
             </li>
           </ul>
         </div>
         <div style={{ color: "#666" }}>
-          <h2 style={{ fontSize: "1.25rem", color: "#fff", marginBottom: "0.5rem" }}>Transitions:</h2>
+          <h2
+            style={{
+              fontSize: "1.25rem",
+              color: "#fff",
+              marginBottom: "0.5rem",
+            }}
+          >
+            Transitions:
+          </h2>
           <ul style={{ listStyle: "none", padding: 0 }}>
             <li style={{ marginBottom: "0.5rem" }}>
-              <strong style={{ color: "#4af6c3" }}>NORMAL → HOVER:</strong> 100ms ease-in-out
+              <strong style={{ color: "#4af6c3" }}>NORMAL → HOVER:</strong>{" "}
+              100ms ease-in-out
             </li>
             <li style={{ marginBottom: "0.5rem" }}>
-              <strong style={{ color: "#4af6c3" }}>HOVER → NORMAL:</strong> 100ms ease-out
+              <strong style={{ color: "#4af6c3" }}>HOVER → NORMAL:</strong>{" "}
+              100ms ease-out
             </li>
             <li style={{ marginBottom: "0.5rem" }}>
-              <strong style={{ color: "#4af6c3" }}>FOCUS → ACTIVE:</strong> 200ms linear
+              <strong style={{ color: "#4af6c3" }}>FOCUS → ACTIVE:</strong>{" "}
+              200ms linear
             </li>
             <li style={{ marginBottom: "0.5rem" }}>
-              <strong style={{ color: "#4af6c3" }}>CLICK → ACTIVE:</strong> 50ms instant
+              <strong style={{ color: "#4af6c3" }}>CLICK → ACTIVE:</strong> 50ms
+              instant
             </li>
           </ul>
         </div>
@@ -248,10 +280,7 @@ export const AccessibilityFeatures: Story = {
           <NavigationItem icon={<Icon name="chart-line" size={20} />}>
             Markets (Arrow Keys)
           </NavigationItem>
-          <NavigationItem 
-            icon={<Icon name="dollar-sign" size={20} />}
-            active
-          >
+          <NavigationItem icon={<Icon name="dollar-sign" size={20} />} active>
             Portfolio (Enter to Activate)
           </NavigationItem>
           <NavigationItem icon={<Icon name="settings" size={20} />}>
@@ -259,11 +288,19 @@ export const AccessibilityFeatures: Story = {
           </NavigationItem>
         </NavigationGroup>
       </Sidebar>
-      
+
       <main style={{ flex: 1, padding: "2rem", color: "#fff" }}>
-        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Accessibility Features</h1>
+        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>
+          Accessibility Features
+        </h1>
         <div style={{ color: "#666", marginBottom: "2rem" }}>
-          <h2 style={{ fontSize: "1.25rem", color: "#fff", marginBottom: "0.5rem" }}>
+          <h2
+            style={{
+              fontSize: "1.25rem",
+              color: "#fff",
+              marginBottom: "0.5rem",
+            }}
+          >
             🔤 Keyboard Navigation:
           </h2>
           <ul style={{ listStyle: "none", padding: 0 }}>
@@ -271,15 +308,23 @@ export const AccessibilityFeatures: Story = {
               <strong style={{ color: "#4af6c3" }}>TAB:</strong> Focus next item
             </li>
             <li style={{ marginBottom: "0.5rem" }}>
-              <strong style={{ color: "#4af6c3" }}>SHIFT+TAB:</strong> Focus previous item
+              <strong style={{ color: "#4af6c3" }}>SHIFT+TAB:</strong> Focus
+              previous item
             </li>
             <li style={{ marginBottom: "0.5rem" }}>
-              <strong style={{ color: "#4af6c3" }}>ENTER:</strong> Activate focused item
+              <strong style={{ color: "#4af6c3" }}>ENTER:</strong> Activate
+              focused item
             </li>
           </ul>
         </div>
         <div style={{ color: "#666" }}>
-          <h2 style={{ fontSize: "1.25rem", color: "#fff", marginBottom: "0.5rem" }}>
+          <h2
+            style={{
+              fontSize: "1.25rem",
+              color: "#fff",
+              marginBottom: "0.5rem",
+            }}
+          >
             ♿ Screen Reader Support:
           </h2>
           <ul style={{ listStyle: "none", padding: 0 }}>
@@ -314,19 +359,19 @@ export const AccessibilityFeatures: Story = {
 export const TradingDashboard: Story = {
   render: () => {
     const [activeItem, setActiveItem] = React.useState("Dashboard");
-    
+
     return (
       <div style={{ display: "flex", height: "100vh" }}>
         <Sidebar>
           <NavigationGroup label="MAIN">
-            <NavigationItem 
+            <NavigationItem
               icon={<Icon name="trending-up" size={20} />}
               active={activeItem === "Home"}
               onClick={() => setActiveItem("Home")}
             >
               Home
             </NavigationItem>
-            <NavigationItem 
+            <NavigationItem
               icon={<Icon name="chart-line" size={20} />}
               active={activeItem === "Dashboard"}
               onClick={() => setActiveItem("Dashboard")}
@@ -334,7 +379,7 @@ export const TradingDashboard: Story = {
             >
               Dashboard
             </NavigationItem>
-            <NavigationItem 
+            <NavigationItem
               icon={<Icon name="trending-up" size={20} />}
               active={activeItem === "Markets"}
               onClick={() => setActiveItem("Markets")}
@@ -342,16 +387,16 @@ export const TradingDashboard: Story = {
               Markets
             </NavigationItem>
           </NavigationGroup>
-          
+
           <NavigationGroup label="PORTFOLIO">
-            <NavigationItem 
+            <NavigationItem
               icon={<Icon name="dollar-sign" size={20} />}
               active={activeItem === "Positions"}
               onClick={() => setActiveItem("Positions")}
             >
               Positions
             </NavigationItem>
-            <NavigationItem 
+            <NavigationItem
               icon={<Icon name="trending-up" size={20} />}
               active={activeItem === "Orders"}
               onClick={() => setActiveItem("Orders")}
@@ -360,16 +405,16 @@ export const TradingDashboard: Story = {
               Orders
             </NavigationItem>
           </NavigationGroup>
-          
+
           <NavigationGroup label="TOOLS">
-            <NavigationItem 
+            <NavigationItem
               icon={<Icon name="search" size={20} />}
               active={activeItem === "Research"}
               onClick={() => setActiveItem("Research")}
             >
               Research
             </NavigationItem>
-            <NavigationItem 
+            <NavigationItem
               icon={<Icon name="alert-circle" size={20} />}
               active={activeItem === "Alerts"}
               onClick={() => setActiveItem("Alerts")}
@@ -377,7 +422,7 @@ export const TradingDashboard: Story = {
             >
               Alerts
             </NavigationItem>
-            <NavigationItem 
+            <NavigationItem
               icon={<Icon name="settings" size={20} />}
               active={activeItem === "Settings"}
               onClick={() => setActiveItem("Settings")}
@@ -386,48 +431,63 @@ export const TradingDashboard: Story = {
             </NavigationItem>
           </NavigationGroup>
         </Sidebar>
-        
-        <main style={{ 
-          flex: 1, 
-          padding: "2rem", 
-          backgroundColor: "#000", 
-          color: "#fff",
-          overflow: "auto"
-        }}>
+
+        <main
+          style={{
+            flex: 1,
+            padding: "2rem",
+            backgroundColor: "#000",
+            color: "#fff",
+            overflow: "auto",
+          }}
+        >
           <div style={{ marginBottom: "2rem" }}>
             <h1 style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>
               {activeItem}
             </h1>
             <p style={{ color: "#666" }}>
-              {activeItem === "Dashboard" && "Real-time market overview and portfolio performance"}
-              {activeItem === "Markets" && "Live market data and trading opportunities"}
-              {activeItem === "Positions" && "View and manage your current positions"}
+              {activeItem === "Dashboard" &&
+                "Real-time market overview and portfolio performance"}
+              {activeItem === "Markets" &&
+                "Live market data and trading opportunities"}
+              {activeItem === "Positions" &&
+                "View and manage your current positions"}
               {activeItem === "Orders" && "Active and pending orders"}
-              {activeItem === "Research" && "Market research and analysis tools"}
+              {activeItem === "Research" &&
+                "Market research and analysis tools"}
               {activeItem === "Alerts" && "Price alerts and notifications"}
-              {activeItem === "Settings" && "Application preferences and configuration"}
+              {activeItem === "Settings" &&
+                "Application preferences and configuration"}
               {activeItem === "Home" && "Your personalized trading workspace"}
             </p>
           </div>
-          
+
           {/* Mock trading interface */}
-          <div style={{ 
-            display: "grid", 
-            gridTemplateColumns: "repeat(3, 1fr)", 
-            gap: "1rem",
-            marginTop: "2rem"
-          }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "1rem",
+              marginTop: "2rem",
+            }}
+          >
             {[1, 2, 3].map((i) => (
-              <div 
+              <div
                 key={i}
-                style={{ 
-                  backgroundColor: "#1a1a1a", 
+                style={{
+                  backgroundColor: "#1a1a1a",
                   padding: "1.5rem",
                   borderRadius: "4px",
-                  border: "1px solid #333"
+                  border: "1px solid #333",
                 }}
               >
-                <h3 style={{ fontSize: "0.875rem", color: "#666", marginBottom: "0.5rem" }}>
+                <h3
+                  style={{
+                    fontSize: "0.875rem",
+                    color: "#666",
+                    marginBottom: "0.5rem",
+                  }}
+                >
                   AAPL · Apple Inc.
                 </h3>
                 <div style={{ fontSize: "1.5rem", marginBottom: "0.25rem" }}>
@@ -452,35 +512,61 @@ export const CompactMode: Story = {
   render: () => (
     <div style={{ display: "flex", height: "100vh" }}>
       <Sidebar width={80}>
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", padding: "1rem 0" }}>
-          <NavigationItem 
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.5rem",
+            padding: "1rem 0",
+          }}
+        >
+          <NavigationItem
             icon={<Icon name="trending-up" size={24} />}
-            style={{ justifyContent: "center", paddingLeft: 0, paddingRight: 0 }}
+            style={{
+              justifyContent: "center",
+              paddingLeft: 0,
+              paddingRight: 0,
+            }}
             title="Home"
           />
-          <NavigationItem 
+          <NavigationItem
             icon={<Icon name="chart-line" size={24} />}
             active
-            style={{ justifyContent: "center", paddingLeft: 0, paddingRight: 0 }}
+            style={{
+              justifyContent: "center",
+              paddingLeft: 0,
+              paddingRight: 0,
+            }}
             title="Dashboard"
           />
-          <NavigationItem 
+          <NavigationItem
             icon={<Icon name="dollar-sign" size={24} />}
-            style={{ justifyContent: "center", paddingLeft: 0, paddingRight: 0 }}
+            style={{
+              justifyContent: "center",
+              paddingLeft: 0,
+              paddingRight: 0,
+            }}
             title="Portfolio"
           />
-          <NavigationItem 
+          <NavigationItem
             icon={<Icon name="settings" size={24} />}
-            style={{ justifyContent: "center", paddingLeft: 0, paddingRight: 0 }}
+            style={{
+              justifyContent: "center",
+              paddingLeft: 0,
+              paddingRight: 0,
+            }}
             title="Settings"
           />
         </div>
       </Sidebar>
-      
+
       <main style={{ flex: 1, padding: "2rem", color: "#fff" }}>
-        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Compact Sidebar</h1>
+        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>
+          Compact Sidebar
+        </h1>
         <p style={{ color: "#666" }}>
-          Icon-only navigation for space-constrained layouts. Hover for tooltips.
+          Icon-only navigation for space-constrained layouts. Hover for
+          tooltips.
         </p>
       </main>
     </div>

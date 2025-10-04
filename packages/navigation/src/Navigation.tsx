@@ -1,9 +1,9 @@
 import React from "react";
-import { cn } from '@sandeep-jaiswar/utils';
+import { cn } from "@sandeep-jaiswar/utils";
 
 /**
  * Bloomberg Terminal-inspired Sidebar Navigation Component
- * 
+ *
  * Professional sidebar navigation optimized for financial trading applications with:
  * - 256px fixed width for consistent layout
  * - High contrast design for terminal environments
@@ -11,7 +11,7 @@ import { cn } from '@sandeep-jaiswar/utils';
  * - Smooth transitions (100ms ease-in/out)
  * - Full keyboard navigation support
  * - Screen reader accessible (ARIA labels)
- * 
+ *
  * @example
  * ```tsx
  * <Sidebar>
@@ -36,15 +36,15 @@ export interface SidebarProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 export const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
-  ({ children, width = '256px', className, ...props }, ref) => {
+  ({ children, width = "256px", className, ...props }, ref) => {
     return (
       <aside
         ref={ref}
         className={cn(
-          'flex flex-col',
-          'bg-terminal-black border-r border-terminal-medium-gray',
-          'h-screen overflow-y-auto overflow-x-hidden',
-          className
+          "flex flex-col",
+          "bg-terminal-black border-r border-terminal-medium-gray",
+          "h-screen overflow-y-auto overflow-x-hidden",
+          className,
         )}
         style={{ width }}
         aria-label="Main navigation"
@@ -53,12 +53,13 @@ export const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
         {children}
       </aside>
     );
-  }
+  },
 );
 
 Sidebar.displayName = "Sidebar";
 
-export interface NavigationItemProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface NavigationItemProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Navigation item content */
   children: React.ReactNode;
   /** Icon component or icon name */
@@ -73,29 +74,35 @@ export interface NavigationItemProps extends React.ButtonHTMLAttributes<HTMLButt
   href?: string;
 }
 
-export const NavigationItem = React.forwardRef<HTMLButtonElement, NavigationItemProps>(
-  ({ children, icon, active = false, badge, className, href, ...props }, ref) => {
+export const NavigationItem = React.forwardRef<
+  HTMLButtonElement,
+  NavigationItemProps
+>(
+  (
+    { children, icon, active = false, badge, className, href, ...props },
+    ref,
+  ) => {
     const baseStyles = cn(
       // Base layout - 48px height, 12px vertical padding, 16px horizontal
-      'flex items-center gap-3 w-full h-12 px-4 py-3',
+      "flex items-center gap-3 w-full h-12 px-4 py-3",
       // Typography - 14px monospace
-      'font-terminal-mono text-sm',
+      "font-terminal-mono text-sm",
       // Colors and states
-      'text-terminal-white bg-transparent',
-      'transition-all duration-100 ease-in-out',
+      "text-terminal-white bg-transparent",
+      "transition-all duration-100 ease-in-out",
       // Border and focus
-      'border-l-4 border-transparent',
-      'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset',
+      "border-l-4 border-transparent",
+      "focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset",
       // Hover state
-      'hover:bg-terminal-dark-gray hover:text-terminal-white',
+      "hover:bg-terminal-dark-gray hover:text-terminal-white",
       // Active state - blue border and background
       active && [
-        'border-l-primary-500 bg-primary-500/10',
-        'text-terminal-white'
+        "border-l-primary-500 bg-primary-500/10",
+        "text-terminal-white",
       ],
       // Disabled state
-      'disabled:opacity-50 disabled:cursor-not-allowed',
-      className
+      "disabled:opacity-50 disabled:cursor-not-allowed",
+      className,
     );
 
     const content = (
@@ -119,7 +126,7 @@ export const NavigationItem = React.forwardRef<HTMLButtonElement, NavigationItem
         <a
           href={href}
           className={baseStyles}
-          aria-current={active ? 'page' : undefined}
+          aria-current={active ? "page" : undefined}
           role="button"
           tabIndex={0}
         >
@@ -133,18 +140,19 @@ export const NavigationItem = React.forwardRef<HTMLButtonElement, NavigationItem
         ref={ref}
         type="button"
         className={baseStyles}
-        aria-current={active ? 'page' : undefined}
+        aria-current={active ? "page" : undefined}
         {...props}
       >
         {content}
       </button>
     );
-  }
+  },
 );
 
-NavigationItem.displayName = 'NavigationItem';
+NavigationItem.displayName = "NavigationItem";
 
-export interface NavigationGroupProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface NavigationGroupProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   /** Navigation items within this group */
   children: React.ReactNode;
   /** Optional group label */
@@ -157,8 +165,21 @@ export interface NavigationGroupProps extends React.HTMLAttributes<HTMLDivElemen
   className?: string;
 }
 
-export const NavigationGroup = React.forwardRef<HTMLDivElement, NavigationGroupProps>(
-  ({ children, label, collapsible = false, defaultCollapsed = false, className, ...props }, ref) => {
+export const NavigationGroup = React.forwardRef<
+  HTMLDivElement,
+  NavigationGroupProps
+>(
+  (
+    {
+      children,
+      label,
+      collapsible = false,
+      defaultCollapsed = false,
+      className,
+      ...props
+    },
+    ref,
+  ) => {
     const [isCollapsed, setIsCollapsed] = React.useState(defaultCollapsed);
 
     const toggleCollapsed = () => {
@@ -170,7 +191,7 @@ export const NavigationGroup = React.forwardRef<HTMLDivElement, NavigationGroupP
     return (
       <div
         ref={ref}
-        className={cn('flex flex-col', className)}
+        className={cn("flex flex-col", className)}
         role="group"
         aria-label={label}
         {...props}
@@ -178,19 +199,20 @@ export const NavigationGroup = React.forwardRef<HTMLDivElement, NavigationGroupP
         {label && (
           <div
             className={cn(
-              'flex items-center justify-between px-4 py-2',
-              'text-xs font-terminal-sans uppercase tracking-wider',
-              'text-terminal-light-gray',
-              collapsible && 'cursor-pointer hover:text-terminal-white transition-colors'
+              "flex items-center justify-between px-4 py-2",
+              "text-xs font-terminal-sans uppercase tracking-wider",
+              "text-terminal-light-gray",
+              collapsible &&
+                "cursor-pointer hover:text-terminal-white transition-colors",
             )}
             onClick={toggleCollapsed}
             onKeyDown={(e) => {
-              if (collapsible && (e.key === 'Enter' || e.key === ' ')) {
+              if (collapsible && (e.key === "Enter" || e.key === " ")) {
                 e.preventDefault();
                 toggleCollapsed();
               }
             }}
-            role={collapsible ? 'button' : undefined}
+            role={collapsible ? "button" : undefined}
             tabIndex={collapsible ? 0 : undefined}
             aria-expanded={collapsible ? !isCollapsed : undefined}
           >
@@ -198,8 +220,8 @@ export const NavigationGroup = React.forwardRef<HTMLDivElement, NavigationGroupP
             {collapsible && (
               <svg
                 className={cn(
-                  'w-4 h-4 transition-transform duration-200',
-                  isCollapsed ? 'rotate-0' : 'rotate-90'
+                  "w-4 h-4 transition-transform duration-200",
+                  isCollapsed ? "rotate-0" : "rotate-90",
                 )}
                 fill="none"
                 stroke="currentColor"
@@ -225,10 +247,10 @@ export const NavigationGroup = React.forwardRef<HTMLDivElement, NavigationGroupP
         <div className="h-2" aria-hidden="true" />
       </div>
     );
-  }
+  },
 );
 
-NavigationGroup.displayName = 'NavigationGroup';
+NavigationGroup.displayName = "NavigationGroup";
 
 export interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
