@@ -1,6 +1,6 @@
 {
   "name": "@sandeep-jaiswar/ui",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Complete Bloomberg Terminal-inspired React UI component library",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
