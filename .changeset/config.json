@@ -6,7 +6,5 @@
   "linked": [],
   "access": "public",
   "updateInternalDependencies": "patch",
-  "ignore": [
-    "@sandeep-jaiswar/docs"
-  ]
+  "ignore": []
 }
