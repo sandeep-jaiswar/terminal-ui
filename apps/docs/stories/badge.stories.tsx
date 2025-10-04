@@ -8,15 +8,21 @@ const meta: Meta<typeof Badge> = {
     layout: "centered",
     backgrounds: {
       default: "terminal",
-      values: [
-        { name: "terminal", value: "#000000" },
-      ],
+      values: [{ name: "terminal", value: "#000000" }],
     },
   },
   argTypes: {
     variant: {
       control: { type: "select" },
-      options: ["primary", "secondary", "success", "danger", "warning", "info", "dot"],
+      options: [
+        "primary",
+        "secondary",
+        "success",
+        "danger",
+        "warning",
+        "info",
+        "dot",
+      ],
       description: "The visual variant of the badge",
     },
     size: {
@@ -159,7 +165,14 @@ export const Large: Story = {
 export const AllVariants: Story = {
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-      <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: "1rem",
+          flexWrap: "wrap",
+          alignItems: "center",
+        }}
+      >
         <Badge variant="primary">Primary</Badge>
         <Badge variant="secondary">Secondary</Badge>
         <Badge variant="success">Success</Badge>
@@ -177,9 +190,15 @@ export const AllVariants: Story = {
 export const AllSizes: Story = {
   render: () => (
     <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
-      <Badge size="sm" variant="danger">Small</Badge>
-      <Badge size="md" variant="danger">Medium</Badge>
-      <Badge size="lg" variant="danger">Large</Badge>
+      <Badge size="sm" variant="danger">
+        Small
+      </Badge>
+      <Badge size="md" variant="danger">
+        Medium
+      </Badge>
+      <Badge size="lg" variant="danger">
+        Large
+      </Badge>
     </div>
   ),
 };
@@ -191,34 +210,74 @@ export const DotVariants: Story = {
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
       <div>
-        <h4 style={{ color: "#ffffff", marginBottom: "1rem", fontSize: "14px" }}>Dot Variants (8px)</h4>
-        <div style={{ display: "flex", gap: "1rem", alignItems: "center", flexWrap: "wrap" }}>
+        <h4
+          style={{ color: "#ffffff", marginBottom: "1rem", fontSize: "14px" }}
+        >
+          Dot Variants (8px)
+        </h4>
+        <div
+          style={{
+            display: "flex",
+            gap: "1rem",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
           <Badge variant="dot" className="bg-danger-300 border-danger-400" />
           <Badge variant="dot" className="bg-danger-500 border-danger-600" />
           <Badge variant="dot" className="bg-primary-500 border-primary-600" />
           <Badge variant="dot" className="bg-primary-600 border-primary-700" />
           <Badge variant="dot" className="bg-primary-700 border-primary-800" />
-          <Badge variant="dot" className="bg-terminal-light-gray border-terminal-white" />
+          <Badge
+            variant="dot"
+            className="bg-terminal-light-gray border-terminal-white"
+          />
         </div>
       </div>
       <div>
-        <div style={{ display: "flex", gap: "1rem", alignItems: "center", flexWrap: "wrap" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "1rem",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
           <Badge variant="dot" className="bg-danger-600 border-danger-700" />
           <Badge variant="dot" className="bg-primary-500 border-primary-600" />
           <Badge variant="dot" className="bg-success-500 border-success-600" />
           <Badge variant="dot" className="bg-success-600 border-success-700" />
           <Badge variant="dot" className="bg-success-700 border-success-800" />
-          <Badge variant="dot" className="bg-terminal-white border-terminal-white" />
+          <Badge
+            variant="dot"
+            className="bg-terminal-white border-terminal-white"
+          />
         </div>
       </div>
       <div>
-        <div style={{ display: "flex", gap: "1rem", alignItems: "center", flexWrap: "wrap" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "1rem",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
           <Badge variant="dot" className="bg-danger-700 border-danger-800" />
           <Badge variant="dot" className="bg-primary-800 border-primary-900" />
           <Badge variant="dot" className="bg-success-800 border-success-900" />
-          <Badge variant="dot" className="bg-success-900 border-terminal-black" />
-          <Badge variant="dot" className="bg-terminal-medium-gray border-terminal-light-gray" />
-          <Badge variant="dot" className="bg-terminal-light-gray border-terminal-white" />
+          <Badge
+            variant="dot"
+            className="bg-success-900 border-terminal-black"
+          />
+          <Badge
+            variant="dot"
+            className="bg-terminal-medium-gray border-terminal-light-gray"
+          />
+          <Badge
+            variant="dot"
+            className="bg-terminal-light-gray border-terminal-white"
+          />
         </div>
       </div>
     </div>
@@ -232,8 +291,19 @@ export const CountBadges: Story = {
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
       <div>
-        <h4 style={{ color: "#ffffff", marginBottom: "1rem", fontSize: "14px" }}>Count Badges</h4>
-        <div style={{ display: "flex", gap: "1rem", alignItems: "center", flexWrap: "wrap" }}>
+        <h4
+          style={{ color: "#ffffff", marginBottom: "1rem", fontSize: "14px" }}
+        >
+          Count Badges
+        </h4>
+        <div
+          style={{
+            display: "flex",
+            gap: "1rem",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
           <Badge variant="danger" count={1} />
           <Badge variant="danger" count={5} />
           <Badge variant="danger" count={99} />
@@ -251,7 +321,14 @@ export const CountBadges: Story = {
  */
 export const NotificationBadges: Story = {
   render: () => (
-    <div style={{ display: "flex", gap: "2rem", alignItems: "start", flexWrap: "wrap" }}>
+    <div
+      style={{
+        display: "flex",
+        gap: "2rem",
+        alignItems: "start",
+        flexWrap: "wrap",
+      }}
+    >
       {/* Icon with badge */}
       <div style={{ position: "relative", display: "inline-block" }}>
         <div
@@ -311,7 +388,11 @@ export const NotificationBadges: Story = {
         >
           #ff433d
         </Badge>
-        <h4 style={{ color: "#ffffff", fontSize: "14px", marginBottom: "0.5rem" }}>Portfolio</h4>
+        <h4
+          style={{ color: "#ffffff", fontSize: "14px", marginBottom: "0.5rem" }}
+        >
+          Portfolio
+        </h4>
         <p style={{ color: "#666666", fontSize: "12px" }}>View your holdings</p>
       </div>
 
@@ -330,7 +411,9 @@ export const NotificationBadges: Story = {
         }}
       >
         <div>
-          <div style={{ color: "#ffffff", fontSize: "14px", fontWeight: "500" }}>
+          <div
+            style={{ color: "#ffffff", fontSize: "14px", fontWeight: "500" }}
+          >
             AAPL
           </div>
           <div style={{ color: "#666666", fontSize: "12px" }}>Apple Inc.</div>
@@ -346,11 +429,20 @@ export const NotificationBadges: Story = {
  */
 export const TradingExample: Story = {
   render: () => (
-    <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", padding: "1rem" }}>
-      <h3 style={{ color: "#ffffff", fontSize: "16px", marginBottom: "0.5rem" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "1.5rem",
+        padding: "1rem",
+      }}
+    >
+      <h3
+        style={{ color: "#ffffff", fontSize: "16px", marginBottom: "0.5rem" }}
+      >
         Market Activity
       </h3>
-      
+
       <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
         {/* Stock item */}
         <div
@@ -364,16 +456,31 @@ export const TradingExample: Story = {
             border: "1px solid #333333",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-            <Badge variant="dot" className="bg-success-500 border-success-600" />
+          <div
+            style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}
+          >
+            <Badge
+              variant="dot"
+              className="bg-success-500 border-success-600"
+            />
             <div>
-              <div style={{ color: "#ffffff", fontSize: "14px", fontWeight: "500" }}>
+              <div
+                style={{
+                  color: "#ffffff",
+                  fontSize: "14px",
+                  fontWeight: "500",
+                }}
+              >
                 GOOGL - Alphabet Inc.
               </div>
-              <div style={{ color: "#666666", fontSize: "12px" }}>+2.5% Today</div>
+              <div style={{ color: "#666666", fontSize: "12px" }}>
+                +2.5% Today
+              </div>
             </div>
           </div>
-          <Badge variant="success" size="sm">Buy</Badge>
+          <Badge variant="success" size="sm">
+            Buy
+          </Badge>
         </div>
 
         {/* Stock item with alert */}
@@ -388,17 +495,29 @@ export const TradingExample: Story = {
             border: "1px solid #333333",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+          <div
+            style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}
+          >
             <Badge variant="dot" className="bg-danger-300 border-danger-400" />
             <div>
-              <div style={{ color: "#ffffff", fontSize: "14px", fontWeight: "500" }}>
+              <div
+                style={{
+                  color: "#ffffff",
+                  fontSize: "14px",
+                  fontWeight: "500",
+                }}
+              >
                 TSLA - Tesla Inc.
               </div>
-              <div style={{ color: "#666666", fontSize: "12px" }}>-1.8% Today</div>
+              <div style={{ color: "#666666", fontSize: "12px" }}>
+                -1.8% Today
+              </div>
             </div>
           </div>
           <div style={{ display: "flex", gap: "0.5rem" }}>
-            <Badge variant="warning" size="sm">Alert</Badge>
+            <Badge variant="warning" size="sm">
+              Alert
+            </Badge>
             <Badge variant="danger" count={3} size="sm" />
           </div>
         </div>
@@ -415,16 +534,31 @@ export const TradingExample: Story = {
             border: "1px solid #333333",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-            <Badge variant="dot" className="bg-terminal-light-gray border-terminal-white" />
+          <div
+            style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}
+          >
+            <Badge
+              variant="dot"
+              className="bg-terminal-light-gray border-terminal-white"
+            />
             <div>
-              <div style={{ color: "#ffffff", fontSize: "14px", fontWeight: "500" }}>
+              <div
+                style={{
+                  color: "#ffffff",
+                  fontSize: "14px",
+                  fontWeight: "500",
+                }}
+              >
                 MSFT - Microsoft Corp.
               </div>
-              <div style={{ color: "#666666", fontSize: "12px" }}>0.0% Today</div>
+              <div style={{ color: "#666666", fontSize: "12px" }}>
+                0.0% Today
+              </div>
             </div>
           </div>
-          <Badge variant="secondary" size="sm">Watch</Badge>
+          <Badge variant="secondary" size="sm">
+            Watch
+          </Badge>
         </div>
       </div>
     </div>

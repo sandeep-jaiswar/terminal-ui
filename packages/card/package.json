@@ -12,8 +12,17 @@
       "require": "./dist/index.js"
     }
   },
-  "files": ["dist"],
-  "keywords": ["react", "card", "ui", "financial", "trading", "bloomberg"],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "card",
+    "ui",
+    "financial",
+    "trading",
+    "bloomberg"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",

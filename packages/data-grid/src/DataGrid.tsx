@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export interface DataGridProps {
   children?: React.ReactNode;
@@ -14,4 +14,4 @@ export function DataGrid({ children, data }: DataGridProps): JSX.Element {
   );
 }
 
-DataGrid.displayName = 'DataGrid';
+DataGrid.displayName = "DataGrid";

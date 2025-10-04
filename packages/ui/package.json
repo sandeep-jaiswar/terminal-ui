@@ -13,9 +13,21 @@
     },
     "./styles.css": "./dist/styles.css"
   },
-  "files": ["dist"],
-  "sideEffects": ["**/*.css"],
-  "keywords": ["react", "ui", "components", "financial", "trading", "bloomberg", "terminal"],
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "financial",
+    "trading",
+    "bloomberg",
+    "terminal"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",

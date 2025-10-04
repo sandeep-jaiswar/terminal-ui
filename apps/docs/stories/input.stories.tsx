@@ -8,9 +8,7 @@ const meta: Meta<typeof Input> = {
     layout: "centered",
     backgrounds: {
       default: "terminal",
-      values: [
-        { name: "terminal", value: "#000000" },
-      ],
+      values: [{ name: "terminal", value: "#000000" }],
     },
   },
   argTypes: {
@@ -170,7 +168,14 @@ export const Large: Story = {
  */
 export const AllStates: Story = {
   render: () => (
-    <div style={{ display: "flex", flexDirection: "column", gap: "2rem", minWidth: "400px" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "2rem",
+        minWidth: "400px",
+      }}
+    >
       <Input
         label="Default State"
         placeholder="Input goes here"
@@ -203,12 +208,15 @@ export const AllStates: Story = {
  */
 export const NumberInputExample: Story = {
   render: () => (
-    <div style={{ display: "flex", flexDirection: "column", gap: "2rem", minWidth: "400px" }}>
-      <NumberInput
-        label="Price"
-        placeholder="0.00"
-        defaultValue="150.25"
-      />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "2rem",
+        minWidth: "400px",
+      }}
+    >
+      <NumberInput label="Price" placeholder="0.00" defaultValue="150.25" />
       <NumberInput
         label="Stop Loss"
         placeholder="0.00"
@@ -230,19 +238,21 @@ export const NumberInputExample: Story = {
  */
 export const SearchInputExample: Story = {
   render: () => (
-    <div style={{ display: "flex", flexDirection: "column", gap: "2rem", minWidth: "400px" }}>
-      <SearchInput
-        placeholder="Search..."
-      />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "2rem",
+        minWidth: "400px",
+      }}
+    >
+      <SearchInput placeholder="Search..." />
       <SearchInput
         label="Search Stocks"
         placeholder="Search..."
         helperText="Enter ticker symbol or company name"
       />
-      <SearchInput
-        placeholder="Search..."
-        defaultValue="AAPL"
-      />
+      <SearchInput placeholder="Search..." defaultValue="AAPL" />
     </div>
   ),
 };
@@ -252,7 +262,14 @@ export const SearchInputExample: Story = {
  */
 export const TextareaExample: Story = {
   render: () => (
-    <div style={{ display: "flex", flexDirection: "column", gap: "2rem", minWidth: "400px" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "2rem",
+        minWidth: "400px",
+      }}
+    >
       <Textarea
         label="Trading Notes"
         placeholder="Multiline text...
@@ -281,40 +298,38 @@ First line... Second... Second"
  */
 export const TradingExamples: Story = {
   render: () => (
-    <div style={{ 
-      display: "flex", 
-      flexDirection: "column", 
-      gap: "2rem",
-      minWidth: "500px",
-      backgroundColor: "#1a1a1a",
-      padding: "2rem",
-      borderRadius: "8px",
-      border: "1px solid #333"
-    }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "2rem",
+        minWidth: "500px",
+        backgroundColor: "#1a1a1a",
+        padding: "2rem",
+        borderRadius: "8px",
+        border: "1px solid #333",
+      }}
+    >
       <h3 style={{ marginBottom: "1rem", fontSize: "1.25rem", color: "#fff" }}>
         Create Buy Order
       </h3>
-      
-      <SearchInput
-        label="Symbol"
-        placeholder="Search..."
-        defaultValue="AAPL"
-      />
-      
+
+      <SearchInput label="Symbol" placeholder="Search..." defaultValue="AAPL" />
+
       <NumberInput
         label="Price"
         placeholder="0.00"
         defaultValue="150.25"
         helperText="Current market price"
       />
-      
+
       <NumberInput
         label="Quantity"
         placeholder="0"
         defaultValue="100"
         currencySymbol=""
       />
-      
+
       <NumberInput
         label="Total"
         placeholder="0.00"
@@ -322,7 +337,7 @@ export const TradingExamples: Story = {
         state="success"
         disabled
       />
-      
+
       <Textarea
         label="Order Notes"
         placeholder="Enter notes (optional)..."
@@ -337,22 +352,17 @@ export const TradingExamples: Story = {
  */
 export const AllSizes: Story = {
   render: () => (
-    <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", minWidth: "400px" }}>
-      <Input
-        label="Small Input"
-        placeholder="Small size"
-        size="sm"
-      />
-      <Input
-        label="Medium Input"
-        placeholder="Medium size"
-        size="md"
-      />
-      <Input
-        label="Large Input"
-        placeholder="Large size"
-        size="lg"
-      />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "1.5rem",
+        minWidth: "400px",
+      }}
+    >
+      <Input label="Small Input" placeholder="Small size" size="sm" />
+      <Input label="Medium Input" placeholder="Medium size" size="md" />
+      <Input label="Large Input" placeholder="Large size" size="lg" />
     </div>
   ),
 };

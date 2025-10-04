@@ -36,23 +36,27 @@ import { Icon } from '@sandeep-jaiswar/icons';
 ## 🎨 Available Icons
 
 ### Navigation Icons
+
 - `chevron-up` - Up arrow
 - `chevron-down` - Down arrow
 - `chevron-left` - Left arrow
 - `chevron-right` - Right arrow
 
 ### Financial Icons
+
 - `trending-up` - Upward trend indicator (gains)
 - `trending-down` - Downward trend indicator (losses)
 - `dollar-sign` - Currency symbol
 
 ### Trading Icons
+
 - `buy` - Buy action indicator
 - `sell` - Sell action indicator
 - `alert-triangle` - Warning alert
 - `alert-circle` - Information alert
 
 ### UI Icons
+
 - `search` - Search functionality
 - `close` - Close/dismiss action
 - `menu` - Menu toggle
@@ -61,6 +65,7 @@ import { Icon } from '@sandeep-jaiswar/icons';
 - `info` - Information indicator
 
 ### Data Icons
+
 - `chart-line` - Line chart
 - `chart-bar` - Bar chart
 - `refresh` - Refresh/reload
@@ -71,15 +76,15 @@ import { Icon } from '@sandeep-jaiswar/icons';
 ### Price Movement Indicators
 
 ```tsx
-import { Icon } from '@sandeep-jaiswar/icons';
+import { Icon } from "@sandeep-jaiswar/icons";
 
 function PriceChange({ symbol, change }) {
   const isPositive = change > 0;
-  
+
   return (
     <div>
       <span>{symbol}</span>
-      <Icon 
+      <Icon
         name={isPositive ? "trending-up" : "trending-down"}
         size={20}
         className={isPositive ? "text-success-500" : "text-danger-300"}
@@ -93,17 +98,17 @@ function PriceChange({ symbol, change }) {
 ### Trading Actions
 
 ```tsx
-import { Icon } from '@sandeep-jaiswar/icons';
+import { Icon } from "@sandeep-jaiswar/icons";
 
 function TradeButton({ action }) {
   return (
     <button>
-      <Icon 
-        name={action === 'buy' ? 'buy' : 'sell'}
+      <Icon
+        name={action === "buy" ? "buy" : "sell"}
         size={24}
-        className={action === 'buy' ? 'text-success-500' : 'text-danger-300'}
+        className={action === "buy" ? "text-success-500" : "text-danger-300"}
       />
-      {action === 'buy' ? 'Buy' : 'Sell'}
+      {action === "buy" ? "Buy" : "Sell"}
     </button>
   );
 }
@@ -112,21 +117,17 @@ function TradeButton({ action }) {
 ### Search Input
 
 ```tsx
-import { Icon } from '@sandeep-jaiswar/icons';
+import { Icon } from "@sandeep-jaiswar/icons";
 
 function SearchBar() {
   return (
     <div className="relative">
-      <Icon 
-        name="search" 
+      <Icon
+        name="search"
         size={20}
         className="absolute left-3 top-1/2 -translate-y-1/2 text-terminal-light-gray"
       />
-      <input 
-        type="text"
-        placeholder="Search..."
-        className="pl-10"
-      />
+      <input type="text" placeholder="Search..." className="pl-10" />
     </div>
   );
 }
@@ -146,28 +147,28 @@ All icons follow Bloomberg Terminal design principles:
 
 The `Icon` component accepts the following props:
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `name` | `IconName` | required | Name of the icon to render |
-| `size` | `number` | `24` | Size of the icon in pixels |
-| `className` | `string` | `''` | Additional CSS classes |
-| `...props` | `SVGProps` | - | Any valid SVG element props |
+| Prop        | Type       | Default  | Description                 |
+| ----------- | ---------- | -------- | --------------------------- |
+| `name`      | `IconName` | required | Name of the icon to render  |
+| `size`      | `number`   | `24`     | Size of the icon in pixels  |
+| `className` | `string`   | `''`     | Additional CSS classes      |
+| `...props`  | `SVGProps` | -        | Any valid SVG element props |
 
 ## 🎨 TypeScript Support
 
 Full TypeScript support with type-safe icon names:
 
 ```tsx
-import type { IconName, IconProps } from '@sandeep-jaiswar/icons';
+import type { IconName, IconProps } from "@sandeep-jaiswar/icons";
 
 // Type-safe icon name
-const iconName: IconName = 'trending-up';
+const iconName: IconName = "trending-up";
 
 // Type-safe component props
 const iconProps: IconProps = {
-  name: 'buy',
+  name: "buy",
   size: 32,
-  className: 'text-success-500'
+  className: "text-success-500",
 };
 ```
 
@@ -180,7 +181,7 @@ Icons can be customized using:
 3. **Standard SVG props** - Pass any SVG attribute (stroke-width, opacity, etc.)
 
 ```tsx
-<Icon 
+<Icon
   name="trending-up"
   size={48}
   className="text-success-500 hover:text-success-400"

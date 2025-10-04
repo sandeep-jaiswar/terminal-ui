@@ -29,21 +29,21 @@ yarn add @sandeep-jaiswar/tokens
 
 ```typescript
 // Import all tokens (larger bundle)
-import { colors, typography, spacing } from '@sandeep-jaiswar/tokens'
+import { colors, typography, spacing } from "@sandeep-jaiswar/tokens";
 
 // Use the tokens
-const primaryColor = colors.primary[500]  // '#0068ff'
-const baseFont = typography.fontSize.base // ['14px', { lineHeight: '20px', ... }]
-const padding = spacing[4]                 // '16px'
+const primaryColor = colors.primary[500]; // '#0068ff'
+const baseFont = typography.fontSize.base; // ['14px', { lineHeight: '20px', ... }]
+const padding = spacing[4]; // '16px'
 ```
 
 ### Tree-Shakeable Imports (Recommended)
 
 ```typescript
 // Import specific token categories for smaller bundle
-import { colors } from '@sandeep-jaiswar/tokens/colors'
-import { typography } from '@sandeep-jaiswar/tokens/typography'
-import { spacing } from '@sandeep-jaiswar/tokens/spacing'
+import { colors } from "@sandeep-jaiswar/tokens/colors";
+import { typography } from "@sandeep-jaiswar/tokens/typography";
+import { spacing } from "@sandeep-jaiswar/tokens/spacing";
 ```
 
 ## 🎨 Token Categories
@@ -53,23 +53,23 @@ import { spacing } from '@sandeep-jaiswar/tokens/spacing'
 Complete color palette with terminal colors and financial semantic colors:
 
 ```typescript
-import { colors, semanticColors } from '@sandeep-jaiswar/tokens/colors'
+import { colors, semanticColors } from "@sandeep-jaiswar/tokens/colors";
 
 // Terminal base colors
-colors.terminal.black           // '#000000'
-colors.terminal['dark-gray']    // '#1a1a1a'
-colors.terminal.white           // '#ffffff'
+colors.terminal.black; // '#000000'
+colors.terminal["dark-gray"]; // '#1a1a1a'
+colors.terminal.white; // '#ffffff'
 
 // Financial semantic colors with shade scales
-colors.primary[500]    // '#0068ff' - Blue
-colors.success[500]    // '#4af6c3' - Green
-colors.danger[300]     // '#ff433d' - Red
-colors.warning[500]    // '#fb8b1e' - Orange
+colors.primary[500]; // '#0068ff' - Blue
+colors.success[500]; // '#4af6c3' - Green
+colors.danger[300]; // '#ff433d' - Red
+colors.warning[500]; // '#fb8b1e' - Orange
 
 // Semantic color mappings
-semanticColors.background.primary   // '#000000'
-semanticColors.text.primary         // '#ffffff'
-semanticColors.state.success        // '#4af6c3'
+semanticColors.background.primary; // '#000000'
+semanticColors.text.primary; // '#ffffff'
+semanticColors.state.success; // '#4af6c3'
 ```
 
 ### Typography
@@ -77,19 +77,19 @@ semanticColors.state.success        // '#4af6c3'
 Font families, sizes, weights, and spacing optimized for financial data:
 
 ```typescript
-import { typography } from '@sandeep-jaiswar/tokens/typography'
+import { typography } from "@sandeep-jaiswar/tokens/typography";
 
 // Font families
-typography.fontFamily['terminal-mono']  // ['SF Mono', 'Monaco', ...]
-typography.fontFamily['terminal-sans']  // ['Inter', 'SF Pro Display', ...]
+typography.fontFamily["terminal-mono"]; // ['SF Mono', 'Monaco', ...]
+typography.fontFamily["terminal-sans"]; // ['Inter', 'SF Pro Display', ...]
 
 // Font sizes with line heights
-typography.fontSize.xs    // ['10px', { lineHeight: '14px', ... }]
-typography.fontSize.base  // ['14px', { lineHeight: '20px', ... }]
+typography.fontSize.xs; // ['10px', { lineHeight: '14px', ... }]
+typography.fontSize.base; // ['14px', { lineHeight: '20px', ... }]
 
 // Font weights
-typography.fontWeight.normal    // '400'
-typography.fontWeight.semibold  // '600'
+typography.fontWeight.normal; // '400'
+typography.fontWeight.semibold; // '600'
 ```
 
 ### Spacing
@@ -97,13 +97,13 @@ typography.fontWeight.semibold  // '600'
 4px base scale for consistent layouts:
 
 ```typescript
-import { spacing } from '@sandeep-jaiswar/tokens/spacing'
+import { spacing } from "@sandeep-jaiswar/tokens/spacing";
 
-spacing[1]    // '4px'   - 1 * 4px
-spacing[2]    // '8px'   - 2 * 4px
-spacing[4]    // '16px'  - 4 * 4px
-spacing[8]    // '32px'  - 8 * 4px
-spacing[0.5]  // '2px'   - 0.5 * 4px
+spacing[1]; // '4px'   - 1 * 4px
+spacing[2]; // '8px'   - 2 * 4px
+spacing[4]; // '16px'  - 4 * 4px
+spacing[8]; // '32px'  - 8 * 4px
+spacing[0.5]; // '2px'   - 0.5 * 4px
 ```
 
 ### Shadows
@@ -111,20 +111,20 @@ spacing[0.5]  // '2px'   - 0.5 * 4px
 Elevation shadows and terminal-specific glow effects:
 
 ```typescript
-import { shadows } from '@sandeep-jaiswar/tokens/shadows'
+import { shadows } from "@sandeep-jaiswar/tokens/shadows";
 
 // Standard elevation
-shadows.sm    // Subtle elevation
-shadows.md    // Moderate elevation
-shadows.xl    // High elevation
+shadows.sm; // Subtle elevation
+shadows.md; // Moderate elevation
+shadows.xl; // High elevation
 
 // Terminal-specific
-shadows.terminal.card   // Card shadow for dark backgrounds
-shadows.terminal.modal  // Modal overlay shadow
+shadows.terminal.card; // Card shadow for dark backgrounds
+shadows.terminal.modal; // Modal overlay shadow
 
 // Glow effects for focus states
-shadows.glow.blue    // Primary focus glow
-shadows.glow.green   // Success state glow
+shadows.glow.blue; // Primary focus glow
+shadows.glow.green; // Success state glow
 ```
 
 ### Border Radius
@@ -132,12 +132,12 @@ shadows.glow.green   // Success state glow
 Consistent corner rounding:
 
 ```typescript
-import { radius } from '@sandeep-jaiswar/tokens/radius'
+import { radius } from "@sandeep-jaiswar/tokens/radius";
 
-radius.sm    // '2px'  - Subtle corners
-radius.base  // '4px'  - Standard components
-radius.md    // '6px'  - Cards and containers
-radius.full  // '9999px' - Circular elements
+radius.sm; // '2px'  - Subtle corners
+radius.base; // '4px'  - Standard components
+radius.md; // '6px'  - Cards and containers
+radius.full; // '9999px' - Circular elements
 ```
 
 ### Z-Index
@@ -145,11 +145,11 @@ radius.full  // '9999px' - Circular elements
 Layering system for overlays:
 
 ```typescript
-import { zIndex } from '@sandeep-jaiswar/tokens/z-index'
+import { zIndex } from "@sandeep-jaiswar/tokens/z-index";
 
-zIndex.dropdown  // 1000 - Dropdown menus
-zIndex.modal     // 1050 - Modal dialogs
-zIndex.tooltip   // 1090 - Tooltips (highest)
+zIndex.dropdown; // 1000 - Dropdown menus
+zIndex.modal; // 1050 - Modal dialogs
+zIndex.tooltip; // 1090 - Tooltips (highest)
 ```
 
 ## 🎨 CSS Variables
@@ -183,36 +183,33 @@ Use the Tailwind preset to integrate all tokens:
 ```javascript
 // tailwind.config.js
 module.exports = {
-  presets: [require('@sandeep-jaiswar/tokens/tailwind-preset')],
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  presets: [require("@sandeep-jaiswar/tokens/tailwind-preset")],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   // ... other config
-}
+};
 ```
 
 Then use tokens in your components:
 
 ```tsx
 <div className="bg-terminal-black text-terminal-white p-4">
-  <h1 className="text-lg font-semibold text-primary-500">
-    Trading Dashboard
-  </h1>
-  <p className="text-sm text-secondary">
-    Real-time market data
-  </p>
+  <h1 className="text-lg font-semibold text-primary-500">Trading Dashboard</h1>
+  <p className="text-sm text-secondary">Real-time market data</p>
 </div>
 ```
 
 ## 📚 Token Structure
 
 All tokens use TypeScript's `as const` assertion for:
+
 - **Type Safety** - Exact literal types instead of general string types
 - **Autocomplete** - Better IDE support with precise values
 - **Immutability** - Tokens cannot be accidentally modified
 
 ```typescript
 // Token values are exact literal types
-const color: '#0068ff' = colors.primary[500]  // ✅ Type-safe
-const color2: string = colors.primary[500]    // ✅ Also works
+const color: "#0068ff" = colors.primary[500]; // ✅ Type-safe
+const color2: string = colors.primary[500]; // ✅ Also works
 ```
 
 ## 🔧 Development
