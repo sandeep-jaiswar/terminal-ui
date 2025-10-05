@@ -1,6 +1,6 @@
 {
   "name": "@sandeep-jaiswar/navigation",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Navigation components for financial trading applications",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

@@ -1,6 +1,6 @@
 {
   "name": "@sandeep-jaiswar/data-grid",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "DataGrid component for financial trading applications",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
