@@ -80,8 +80,9 @@ function generatePath(data: number[], width: number, height: number): string {
 }
 
 /**
- * Generate area path (filled below line)
+ * Generate area path (filled below line) - unused in current implementation
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function generateAreaPath(
   data: number[],
   width: number,
@@ -506,7 +507,7 @@ export const AreaChart = React.forwardRef<HTMLDivElement, AreaChartProps>(
       color,
       fillColor,
       fillOpacity = 0.2,
-      stacked = false,
+      // stacked = false, // Future enhancement for stacked area charts
       className,
       "aria-label": ariaLabel,
       ...props
@@ -563,7 +564,7 @@ export const AreaChart = React.forwardRef<HTMLDivElement, AreaChartProps>(
       : strokeColors;
 
     // Generate paths for each series
-    const paths = series.map((seriesData, seriesIndex) => {
+    const paths = series.map((seriesData) => {
       const points = seriesData.map((point, i) => {
         const x = (i / (seriesData.length - 1)) * chartWidth;
         const y = chartHeight - ((point.y - minY) / yRange) * chartHeight;
