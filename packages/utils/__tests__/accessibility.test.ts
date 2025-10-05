@@ -166,7 +166,6 @@ describe("manageFocus", () => {
     manageFocus(container, true);
 
     const btn1 = document.getElementById("btn1") as HTMLElement;
-    const btn3 = document.getElementById("btn3") as HTMLElement;
 
     // Shift+Tab from first element should cycle to last
     btn1.focus();
