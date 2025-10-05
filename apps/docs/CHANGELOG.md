@@ -1,5 +1,13 @@
 # docs
 
+## 0.0.2
+
+### Patch Changes
+
+- Updated dependencies [dfacfe3]
+  - @sandeep-jaiswar/navigation@0.1.1
+  - @sandeep-jaiswar/ui@0.0.2
+
 ## 0.0.1
 
 ### Patch Changes
