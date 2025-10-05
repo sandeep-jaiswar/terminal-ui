@@ -4,6 +4,8 @@ export {
   NavigationGroup,
   Tabs,
   Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbSeparator,
 } from "./Navigation";
 
 export type {
@@ -12,4 +14,6 @@ export type {
   NavigationGroupProps,
   TabsProps,
   BreadcrumbProps,
+  BreadcrumbItemProps,
+  BreadcrumbSeparatorProps,
 } from "./Navigation";
