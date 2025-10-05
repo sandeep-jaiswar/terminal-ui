@@ -222,7 +222,7 @@ export const Accessibility: Story = {
         </li>
         <li style={{ marginBottom: "0.5rem" }}>
           ✓ <strong style={{ color: "#0068ff" }}>Current page:</strong>{" "}
-          aria-current="page"
+          aria-current=&quot;page&quot;
         </li>
         <li style={{ marginBottom: "0.5rem" }}>
           ✓ <strong style={{ color: "#0068ff" }}>Keyboard navigation:</strong>{" "}
