@@ -175,9 +175,8 @@ export const DataGrid = <T extends Record<string, unknown>>({
   className,
   "data-testid": testId,
 }: DataGridProps<T>): JSX.Element => {
-  const [localFilters, setLocalFilters] = React.useState<FilterConfig>(
-    filterConfig,
-  );
+  const [localFilters, setLocalFilters] =
+    React.useState<FilterConfig>(filterConfig);
   const [localSort, setLocalSort] = React.useState<SortConfig | undefined>(
     sortConfig,
   );
@@ -233,7 +232,9 @@ export const DataGrid = <T extends Record<string, unknown>>({
             ? null
             : "asc";
 
-      const newSort = newDirection ? { key, direction: newDirection } : undefined;
+      const newSort = newDirection
+        ? { key, direction: newDirection }
+        : undefined;
       setLocalSort(newSort);
       if (onSortChange && newSort) {
         onSortChange(newSort);
@@ -258,48 +259,51 @@ export const DataGrid = <T extends Record<string, unknown>>({
   );
 
   // Format cell value based on column type
-  const formatCellValue = React.useCallback((column: Column<T>, value: unknown) => {
-    if (value === null || value === undefined) return "—";
+  const formatCellValue = React.useCallback(
+    (column: Column<T>, value: unknown) => {
+      if (value === null || value === undefined) return "—";
 
-    if (column.format) {
-      return column.format(value);
-    }
-
-    switch (column.type) {
-      case "currency": {
-        const symbol = column.currencySymbol || "$";
-        const decimals = column.decimalPlaces ?? 2;
-        return `${symbol}${Number(value).toFixed(decimals)}`;
+      if (column.format) {
+        return column.format(value);
       }
 
-      case "percentage": {
-        const pctDecimals = column.decimalPlaces ?? 2;
-        const pctValue = Number(value).toFixed(pctDecimals);
-        return `${Number(value) >= 0 ? "+" : ""}${pctValue}%`;
-      }
-
-      case "number": {
-        const numDecimals = column.decimalPlaces ?? 2;
-        return Number(value).toFixed(numDecimals);
-      }
-
-      case "date": {
-        if (value instanceof Date) {
-          return value.toLocaleDateString();
+      switch (column.type) {
+        case "currency": {
+          const symbol = column.currencySymbol || "$";
+          const decimals = column.decimalPlaces ?? 2;
+          return `${symbol}${Number(value).toFixed(decimals)}`;
         }
-        return new Date(value as string | number).toLocaleDateString();
-      }
 
-      case "enum": {
-        const option = column.enumOptions?.find((opt) => opt.value === value);
-        return option?.label || String(value);
-      }
+        case "percentage": {
+          const pctDecimals = column.decimalPlaces ?? 2;
+          const pctValue = Number(value).toFixed(pctDecimals);
+          return `${Number(value) >= 0 ? "+" : ""}${pctValue}%`;
+        }
 
-      case "text":
-      default:
-        return String(value);
-    }
-  }, []);
+        case "number": {
+          const numDecimals = column.decimalPlaces ?? 2;
+          return Number(value).toFixed(numDecimals);
+        }
+
+        case "date": {
+          if (value instanceof Date) {
+            return value.toLocaleDateString();
+          }
+          return new Date(value as string | number).toLocaleDateString();
+        }
+
+        case "enum": {
+          const option = column.enumOptions?.find((opt) => opt.value === value);
+          return option?.label || String(value);
+        }
+
+        case "text":
+        default:
+          return String(value);
+      }
+    },
+    [],
+  );
 
   // Get cell styling for financial values
   const getCellClassName = React.useCallback(
@@ -425,8 +429,10 @@ export const DataGrid = <T extends Record<string, unknown>>({
                   className={cn(
                     "text-left px-4 font-medium text-terminal-white uppercase tracking-wide",
                     headerDensityClasses[density],
-                    bordered && "border-r border-terminal-medium-gray last:border-r-0",
-                    column.sortable && "cursor-pointer select-none hover:bg-terminal-medium-gray",
+                    bordered &&
+                      "border-r border-terminal-medium-gray last:border-r-0",
+                    column.sortable &&
+                      "cursor-pointer select-none hover:bg-terminal-medium-gray",
                     column.align === "right" && "text-right",
                     column.align === "center" && "text-center",
                     column.headerClassName,
@@ -468,7 +474,8 @@ export const DataGrid = <T extends Record<string, unknown>>({
                     key={`filter-${column.key}`}
                     className={cn(
                       "px-4 py-2",
-                      bordered && "border-r border-terminal-medium-gray last:border-r-0",
+                      bordered &&
+                        "border-r border-terminal-medium-gray last:border-r-0",
                     )}
                   >
                     {column.filterable && (
@@ -499,9 +506,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
           {loading ? (
             <tr>
               <td
-                colSpan={
-                  columns.length + (rowSelection === "multi" ? 1 : 0)
-                }
+                colSpan={columns.length + (rowSelection === "multi" ? 1 : 0)}
                 className="text-center py-8 text-terminal-light-gray"
               >
                 Loading...
@@ -510,9 +515,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
           ) : processedData.length === 0 ? (
             <tr>
               <td
-                colSpan={
-                  columns.length + (rowSelection === "multi" ? 1 : 0)
-                }
+                colSpan={columns.length + (rowSelection === "multi" ? 1 : 0)}
                 className="text-center py-8 text-terminal-light-gray"
               >
                 {emptyMessage}
@@ -529,9 +532,12 @@ export const DataGrid = <T extends Record<string, unknown>>({
                   className={cn(
                     "border-b border-terminal-medium-gray",
                     densityClasses[density],
-                    hoverable && "hover:bg-terminal-dark-gray transition-colors",
+                    hoverable &&
+                      "hover:bg-terminal-dark-gray transition-colors",
                     isSelected && "bg-primary-500 bg-opacity-10",
-                    striped && rowIndex % 2 === 1 && "bg-terminal-dark-gray bg-opacity-50",
+                    striped &&
+                      rowIndex % 2 === 1 &&
+                      "bg-terminal-dark-gray bg-opacity-50",
                     onRowClick && "cursor-pointer",
                   )}
                   onClick={() => onRowClick?.(row, rowIndex)}
@@ -564,7 +570,8 @@ export const DataGrid = <T extends Record<string, unknown>>({
                         key={`${rowId}-${column.key}`}
                         className={cn(
                           "px-4 text-terminal-white",
-                          bordered && "border-r border-terminal-medium-gray last:border-r-0",
+                          bordered &&
+                            "border-r border-terminal-medium-gray last:border-r-0",
                           column.align === "right" && "text-right tabular-nums",
                           column.align === "center" && "text-center",
                           getCellClassName(column, value, row),
