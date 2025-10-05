@@ -30,12 +30,17 @@ import { DataGrid, Column } from "@sandeep-jaiswar/data-grid";
 const columns: Column[] = [
   { key: "symbol", label: "Symbol", type: "text", sortable: true },
   { key: "price", label: "Price", type: "currency", align: "right" },
-  { key: "change", label: "Change", type: "percentage", financialStyling: true },
+  {
+    key: "change",
+    label: "Change",
+    type: "percentage",
+    financialStyling: true,
+  },
 ];
 
 const data = [
   { id: "1", symbol: "AAPL", price: 150.25, change: 2.45 },
-  { id: "2", symbol: "GOOGL", price: 2750.80, change: -1.2 },
+  { id: "2", symbol: "GOOGL", price: 2750.8, change: -1.2 },
 ];
 
 function MyComponent() {
@@ -54,6 +59,7 @@ function MyComponent() {
 ## Column Types
 
 ### TEXT
+
 Basic text column with optional sorting and filtering.
 
 ```tsx
@@ -68,6 +74,7 @@ Basic text column with optional sorting and filtering.
 ```
 
 ### NUMBER
+
 Numeric column with configurable decimal places.
 
 ```tsx
@@ -85,6 +92,7 @@ Numeric column with configurable decimal places.
 ```
 
 ### CURRENCY
+
 Currency column with symbol and decimal configuration.
 
 ```tsx
@@ -99,6 +107,7 @@ Currency column with symbol and decimal configuration.
 ```
 
 ### PERCENTAGE
+
 Percentage column with automatic +/- prefix and financial styling.
 
 ```tsx
@@ -113,6 +122,7 @@ Percentage column with automatic +/- prefix and financial styling.
 ```
 
 ### DATE
+
 Date column with localized formatting.
 
 ```tsx
@@ -125,6 +135,7 @@ Date column with localized formatting.
 ```
 
 ### ENUM
+
 Enum column with custom rendering for status badges.
 
 ```tsx
@@ -320,48 +331,48 @@ function TradingDataGrid() {
 
 ### DataGridProps
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `columns` | `Column[]` | **required** | Column definitions |
-| `data` | `T[]` | **required** | Data rows |
-| `rowKey` | `keyof T \| ((row: T) => string)` | `"id"` | Unique row key |
-| `rowSelection` | `"none" \| "single" \| "multi"` | `"none"` | Row selection mode |
-| `selectedRows` | `string[]` | `[]` | Selected row keys |
-| `onSelectionChange` | `(keys: string[]) => void` | - | Selection change callback |
-| `sortConfig` | `SortConfig` | - | Sort configuration |
-| `onSortChange` | `(config: SortConfig) => void` | - | Sort change callback |
-| `filterConfig` | `FilterConfig` | `{}` | Filter configuration |
-| `onFilterChange` | `(config: FilterConfig) => void` | - | Filter change callback |
-| `onRowClick` | `(row: T, index: number) => void` | - | Row click callback |
-| `onRowDoubleClick` | `(row: T, index: number) => void` | - | Row double-click callback |
-| `showHeader` | `boolean` | `true` | Show header row |
-| `showFilters` | `boolean` | `false` | Show filter inputs |
-| `density` | `"compact" \| "normal" \| "comfortable"` | `"normal"` | Row height density |
-| `hoverable` | `boolean` | `true` | Enable hover effects |
-| `striped` | `boolean` | `false` | Striped row background |
-| `bordered` | `boolean` | `true` | Show borders |
-| `loading` | `boolean` | `false` | Loading state |
-| `emptyMessage` | `string` | `"No data available"` | Empty state message |
-| `className` | `string` | - | Additional CSS classes |
+| Prop                | Type                                     | Default               | Description               |
+| ------------------- | ---------------------------------------- | --------------------- | ------------------------- |
+| `columns`           | `Column[]`                               | **required**          | Column definitions        |
+| `data`              | `T[]`                                    | **required**          | Data rows                 |
+| `rowKey`            | `keyof T \| ((row: T) => string)`        | `"id"`                | Unique row key            |
+| `rowSelection`      | `"none" \| "single" \| "multi"`          | `"none"`              | Row selection mode        |
+| `selectedRows`      | `string[]`                               | `[]`                  | Selected row keys         |
+| `onSelectionChange` | `(keys: string[]) => void`               | -                     | Selection change callback |
+| `sortConfig`        | `SortConfig`                             | -                     | Sort configuration        |
+| `onSortChange`      | `(config: SortConfig) => void`           | -                     | Sort change callback      |
+| `filterConfig`      | `FilterConfig`                           | `{}`                  | Filter configuration      |
+| `onFilterChange`    | `(config: FilterConfig) => void`         | -                     | Filter change callback    |
+| `onRowClick`        | `(row: T, index: number) => void`        | -                     | Row click callback        |
+| `onRowDoubleClick`  | `(row: T, index: number) => void`        | -                     | Row double-click callback |
+| `showHeader`        | `boolean`                                | `true`                | Show header row           |
+| `showFilters`       | `boolean`                                | `false`               | Show filter inputs        |
+| `density`           | `"compact" \| "normal" \| "comfortable"` | `"normal"`            | Row height density        |
+| `hoverable`         | `boolean`                                | `true`                | Enable hover effects      |
+| `striped`           | `boolean`                                | `false`               | Striped row background    |
+| `bordered`          | `boolean`                                | `true`                | Show borders              |
+| `loading`           | `boolean`                                | `false`               | Loading state             |
+| `emptyMessage`      | `string`                                 | `"No data available"` | Empty state message       |
+| `className`         | `string`                                 | -                     | Additional CSS classes    |
 
 ### Column
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `key` | `string` | **required** | Unique column key |
-| `label` | `string` | **required** | Column header label |
-| `type` | `ColumnType` | **required** | Column type |
-| `width` | `number` | - | Column width in pixels |
-| `minWidth` | `number` | - | Minimum width for resizing |
-| `sortable` | `boolean` | `false` | Enable sorting |
-| `filterable` | `boolean` | `false` | Enable filtering |
-| `align` | `"left" \| "center" \| "right"` | `"left"` | Cell alignment |
-| `render` | `(value, row, index) => ReactNode` | - | Custom cell renderer |
-| `format` | `(value) => string` | - | Value formatter |
-| `currencySymbol` | `string` | `"$"` | Currency symbol |
-| `decimalPlaces` | `number` | `2` | Decimal places |
-| `enumOptions` | `EnumOption[]` | - | Enum options |
-| `financialStyling` | `boolean` | `false` | Color code positive/negative |
+| Prop               | Type                               | Default      | Description                  |
+| ------------------ | ---------------------------------- | ------------ | ---------------------------- |
+| `key`              | `string`                           | **required** | Unique column key            |
+| `label`            | `string`                           | **required** | Column header label          |
+| `type`             | `ColumnType`                       | **required** | Column type                  |
+| `width`            | `number`                           | -            | Column width in pixels       |
+| `minWidth`         | `number`                           | -            | Minimum width for resizing   |
+| `sortable`         | `boolean`                          | `false`      | Enable sorting               |
+| `filterable`       | `boolean`                          | `false`      | Enable filtering             |
+| `align`            | `"left" \| "center" \| "right"`    | `"left"`     | Cell alignment               |
+| `render`           | `(value, row, index) => ReactNode` | -            | Custom cell renderer         |
+| `format`           | `(value) => string`                | -            | Value formatter              |
+| `currencySymbol`   | `string`                           | `"$"`        | Currency symbol              |
+| `decimalPlaces`    | `number`                           | `2`          | Decimal places               |
+| `enumOptions`      | `EnumOption[]`                     | -            | Enum options                 |
+| `financialStyling` | `boolean`                          | `false`      | Color code positive/negative |
 
 ## Styling
 

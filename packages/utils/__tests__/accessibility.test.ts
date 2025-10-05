@@ -158,7 +158,7 @@ describe("manageFocus", () => {
     });
     container.dispatchEvent(tabEvent);
 
-    expect(document.activeElement?.id).toBe("btn1");
+    expect(document.activeElement?.id).toBe(btn1.id);
   });
 
   it("handles Shift+Tab for reverse focus cycling", () => {
@@ -177,7 +177,7 @@ describe("manageFocus", () => {
     });
     container.dispatchEvent(shiftTabEvent);
 
-    expect(document.activeElement?.id).toBe("btn3");
+    expect(document.activeElement?.id).toBe(btn3.id);
   });
 
   it("dispatches modal-escape event on Escape key", () => {
