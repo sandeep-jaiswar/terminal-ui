@@ -309,9 +309,7 @@ export const Breadcrumb = React.forwardRef<HTMLElement, BreadcrumbProps>(
         )}
         {...props}
       >
-        <ol className="flex items-center gap-2">
-          {children}
-        </ol>
+        <ol className="flex items-center gap-2">{children}</ol>
       </nav>
     );
   },

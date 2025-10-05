@@ -68,7 +68,9 @@ export const DeepHierarchy: Story = {
       <BreadcrumbSeparator />
       <BreadcrumbItem href="/markets/equities/us">US</BreadcrumbItem>
       <BreadcrumbSeparator />
-      <BreadcrumbItem href="/markets/equities/us/tech">Technology</BreadcrumbItem>
+      <BreadcrumbItem href="/markets/equities/us/tech">
+        Technology
+      </BreadcrumbItem>
       <BreadcrumbSeparator />
       <BreadcrumbItem current>AAPL</BreadcrumbItem>
     </Breadcrumb>
@@ -84,9 +86,15 @@ export const InteractiveStates: Story = {
       <h3 style={{ marginBottom: "2rem", fontSize: "1.25rem" }}>
         Breadcrumb States
       </h3>
-      
+
       <div style={{ marginBottom: "2rem" }}>
-        <h4 style={{ marginBottom: "0.5rem", color: "#666", fontSize: "0.875rem" }}>
+        <h4
+          style={{
+            marginBottom: "0.5rem",
+            color: "#666",
+            fontSize: "0.875rem",
+          }}
+        >
           Clickable Item (Blue):
         </h4>
         <Breadcrumb>
@@ -97,7 +105,13 @@ export const InteractiveStates: Story = {
       </div>
 
       <div style={{ marginBottom: "2rem" }}>
-        <h4 style={{ marginBottom: "0.5rem", color: "#666", fontSize: "0.875rem" }}>
+        <h4
+          style={{
+            marginBottom: "0.5rem",
+            color: "#666",
+            fontSize: "0.875rem",
+          }}
+        >
           Current Page (White, Non-clickable):
         </h4>
         <Breadcrumb>
@@ -108,10 +122,18 @@ export const InteractiveStates: Story = {
       </div>
 
       <div>
-        <h4 style={{ marginBottom: "0.5rem", color: "#666", fontSize: "0.875rem" }}>
+        <h4
+          style={{
+            marginBottom: "0.5rem",
+            color: "#666",
+            fontSize: "0.875rem",
+          }}
+        >
           Hover State (Lighter Blue):
         </h4>
-        <p style={{ fontSize: "0.75rem", color: "#666", marginBottom: "0.5rem" }}>
+        <p
+          style={{ fontSize: "0.75rem", color: "#666", marginBottom: "0.5rem" }}
+        >
           Hover over clickable items to see the transition
         </p>
         <Breadcrumb>
@@ -131,7 +153,9 @@ export const InteractiveStates: Story = {
  */
 export const TradingContext: Story = {
   render: () => (
-    <div style={{ backgroundColor: "#000", minHeight: "100vh", padding: "2rem" }}>
+    <div
+      style={{ backgroundColor: "#000", minHeight: "100vh", padding: "2rem" }}
+    >
       <div style={{ marginBottom: "2rem" }}>
         <Breadcrumb>
           <BreadcrumbItem href="/">Home</BreadcrumbItem>
@@ -183,22 +207,34 @@ export const Accessibility: Story = {
       <h3 style={{ marginBottom: "1rem", fontSize: "1.25rem" }}>
         Accessibility Features
       </h3>
-      
-      <ul style={{ listStyle: "none", padding: 0, marginBottom: "2rem", color: "#666" }}>
+
+      <ul
+        style={{
+          listStyle: "none",
+          padding: 0,
+          marginBottom: "2rem",
+          color: "#666",
+        }}
+      >
         <li style={{ marginBottom: "0.5rem" }}>
-          ✓ <strong style={{ color: "#0068ff" }}>ARIA labels:</strong> Proper breadcrumb landmark
+          ✓ <strong style={{ color: "#0068ff" }}>ARIA labels:</strong> Proper
+          breadcrumb landmark
         </li>
         <li style={{ marginBottom: "0.5rem" }}>
-          ✓ <strong style={{ color: "#0068ff" }}>Current page:</strong> aria-current="page"
+          ✓ <strong style={{ color: "#0068ff" }}>Current page:</strong>{" "}
+          aria-current="page"
         </li>
         <li style={{ marginBottom: "0.5rem" }}>
-          ✓ <strong style={{ color: "#0068ff" }}>Keyboard navigation:</strong> Tab through links
+          ✓ <strong style={{ color: "#0068ff" }}>Keyboard navigation:</strong>{" "}
+          Tab through links
         </li>
         <li style={{ marginBottom: "0.5rem" }}>
-          ✓ <strong style={{ color: "#0068ff" }}>Focus indicators:</strong> 2px blue ring
+          ✓ <strong style={{ color: "#0068ff" }}>Focus indicators:</strong> 2px
+          blue ring
         </li>
         <li style={{ marginBottom: "0.5rem" }}>
-          ✓ <strong style={{ color: "#0068ff" }}>Screen reader:</strong> Separators hidden with aria-hidden
+          ✓ <strong style={{ color: "#0068ff" }}>Screen reader:</strong>{" "}
+          Separators hidden with aria-hidden
         </li>
       </ul>
 
@@ -223,28 +259,36 @@ export const DesignSpecs: Story = {
         Design Specifications
       </h3>
 
-      <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: "1rem", marginBottom: "2rem", fontSize: "0.875rem" }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "200px 1fr",
+          gap: "1rem",
+          marginBottom: "2rem",
+          fontSize: "0.875rem",
+        }}
+      >
         <div style={{ color: "#666" }}>Font Size:</div>
         <div>12px (text-sm)</div>
-        
+
         <div style={{ color: "#666" }}>Item Spacing:</div>
         <div>8px horizontal padding per side (px-2)</div>
-        
+
         <div style={{ color: "#666" }}>Separator:</div>
         <div>Chevron (&gt;) with gray color (#666666)</div>
-        
+
         <div style={{ color: "#666" }}>Clickable Color:</div>
         <div>Terminal Blue (#0068ff)</div>
-        
+
         <div style={{ color: "#666" }}>Current Page Color:</div>
         <div>White (#ffffff)</div>
-        
+
         <div style={{ color: "#666" }}>Top Padding:</div>
         <div>40px (pt-10)</div>
-        
+
         <div style={{ color: "#666" }}>Bottom Padding:</div>
         <div>14px (pb-3.5)</div>
-        
+
         <div style={{ color: "#666" }}>Transition:</div>
         <div>100ms ease-in-out</div>
       </div>
