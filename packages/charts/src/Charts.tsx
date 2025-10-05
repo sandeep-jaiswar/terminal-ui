@@ -80,9 +80,8 @@ function generatePath(data: number[], width: number, height: number): string {
 }
 
 /**
- * Generate area path (filled below line) - unused in current implementation
+ * Generate area path (filled below line)
  */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function generateAreaPath(
   data: number[],
   width: number,
@@ -139,6 +138,10 @@ export interface SparklineProps {
   showPercentage?: boolean;
   /** Stroke width */
   strokeWidth?: number;
+  /** Enable gradient fill below the line */
+  showFill?: boolean;
+  /** Fill opacity when showFill is enabled */
+  fillOpacity?: number;
   /** Additional CSS classes */
   className?: string;
   /** Accessible label */
@@ -154,6 +157,8 @@ export const Sparkline = React.forwardRef<SVGSVGElement, SparklineProps>(
       trend,
       showPercentage = false,
       strokeWidth = 1.5,
+      showFill = false,
+      fillOpacity = 0.2,
       className,
       "aria-label": ariaLabel,
       ...props
@@ -189,6 +194,13 @@ export const Sparkline = React.forwardRef<SVGSVGElement, SparklineProps>(
       smooth: "#0068ff", // primary-500
     }[detectedTrend];
 
+    // Generate area path for fill
+    const areaPath = showFill
+      ? generateAreaPath(data, width, height)
+      : "";
+
+    const gradientId = `sparkline-gradient-${Math.random().toString(36).substr(2, 9)}`;
+
     return (
       <div className={cn("inline-flex items-center gap-1", className)}>
         <svg
@@ -204,6 +216,28 @@ export const Sparkline = React.forwardRef<SVGSVGElement, SparklineProps>(
           role="img"
           {...props}
         >
+          {showFill && (
+            <defs>
+              <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
+                <stop
+                  offset="0%"
+                  stopColor={strokeColor}
+                  stopOpacity={fillOpacity}
+                />
+                <stop
+                  offset="100%"
+                  stopColor={strokeColor}
+                  stopOpacity={0}
+                />
+              </linearGradient>
+            </defs>
+          )}
+          {showFill && (
+            <path
+              d={areaPath}
+              fill={`url(#${gradientId})`}
+            />
+          )}
           <path
             d={path}
             fill="none"

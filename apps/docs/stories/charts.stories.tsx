@@ -1239,3 +1239,1039 @@ export const AllChartTypes: StoryObj = {
     );
   },
 };
+
+// ====================
+// ADDITIONAL EXTENSIVE STORIES
+// ====================
+
+/**
+ * Sparkline with gradient fill - positive trend
+ */
+export const SparklineGradientPositive: StoryObj = {
+  render: () => {
+    const data = [100, 105, 103, 110, 115, 112, 120, 125];
+    return (
+      <div style={{ padding: "2rem" }}>
+        <div
+          style={{
+            backgroundColor: "#1a1a1a",
+            padding: "1.5rem",
+            borderRadius: "4px",
+            border: "1px solid #333",
+          }}
+        >
+          <h3
+            style={{
+              color: "#0068ff",
+              fontSize: "12px",
+              marginBottom: "1.5rem",
+              fontWeight: 600,
+              letterSpacing: "0.05em",
+            }}
+          >
+            SPARKLINE WITH GRADIENT FILL - POSITIVE TREND
+          </h3>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "1rem",
+              padding: "1rem",
+              backgroundColor: "#000",
+              borderRadius: "2px",
+            }}
+          >
+            <span
+              style={{
+                color: "#fff",
+                fontSize: "14px",
+                width: "80px",
+                fontFamily: "monospace",
+              }}
+            >
+              AAPL
+            </span>
+            <span
+              style={{
+                color: "#fff",
+                fontSize: "16px",
+                fontWeight: 600,
+                width: "100px",
+                fontFamily: "monospace",
+              }}
+            >
+              $125.00
+            </span>
+            <Sparkline
+              data={data}
+              width={200}
+              height={60}
+              showFill={true}
+              fillOpacity={0.3}
+              strokeWidth={2}
+            />
+            <span style={{ color: "#4af6c3", fontSize: "14px" }}>
+              POS +15%
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  },
+};
+
+/**
+ * Sparkline with gradient fill - negative trend with color transition
+ */
+export const SparklineGradientNegative: StoryObj = {
+  render: () => {
+    const data = [120, 115, 110, 108, 105, 100, 95, 90];
+    return (
+      <div style={{ padding: "2rem" }}>
+        <div
+          style={{
+            backgroundColor: "#1a1a1a",
+            padding: "1.5rem",
+            borderRadius: "4px",
+            border: "1px solid #333",
+          }}
+        >
+          <h3
+            style={{
+              color: "#0068ff",
+              fontSize: "12px",
+              marginBottom: "1.5rem",
+              fontWeight: 600,
+              letterSpacing: "0.05em",
+            }}
+          >
+            SPARKLINE WITH GRADIENT FILL - NEGATIVE TREND
+          </h3>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "1rem",
+              padding: "1rem",
+              backgroundColor: "#000",
+              borderRadius: "2px",
+            }}
+          >
+            <span
+              style={{
+                color: "#fff",
+                fontSize: "14px",
+                width: "80px",
+                fontFamily: "monospace",
+              }}
+            >
+              TSLA
+            </span>
+            <span
+              style={{
+                color: "#fff",
+                fontSize: "16px",
+                fontWeight: 600,
+                width: "100px",
+                fontFamily: "monospace",
+              }}
+            >
+              $90.00
+            </span>
+            <Sparkline
+              data={data}
+              width={200}
+              height={60}
+              showFill={true}
+              fillOpacity={0.3}
+              strokeWidth={2}
+            />
+            <span style={{ color: "#ff433d", fontSize: "14px" }}>NEG -8%</span>
+          </div>
+        </div>
+      </div>
+    );
+  },
+};
+
+/**
+ * Sparkline size variations showcase
+ */
+export const SparklineSizeVariations: StoryObj = {
+  render: () => {
+    const data = [100, 105, 103, 108, 112, 110, 115, 118];
+    return (
+      <div style={{ padding: "2rem" }}>
+        <div
+          style={{
+            backgroundColor: "#1a1a1a",
+            padding: "1.5rem",
+            borderRadius: "4px",
+            border: "1px solid #333",
+          }}
+        >
+          <h3
+            style={{
+              color: "#0068ff",
+              fontSize: "12px",
+              marginBottom: "1.5rem",
+              fontWeight: 600,
+              letterSpacing: "0.05em",
+            }}
+          >
+            SPARKLINE SIZE VARIATIONS
+          </h3>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}
+          >
+            {/* 80px width, 24px height - Compact */}
+            <div
+              style={{
+                padding: "1rem",
+                backgroundColor: "#000",
+                borderRadius: "2px",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  marginBottom: "0.5rem",
+                }}
+              >
+                <span
+                  style={{
+                    color: "#666",
+                    fontSize: "11px",
+                    width: "150px",
+                    fontFamily: "monospace",
+                  }}
+                >
+                  80px × 24px (Compact)
+                </span>
+                <Sparkline data={data} width={80} height={24} />
+              </div>
+            </div>
+
+            {/* 120px width, 40px height - Standard */}
+            <div
+              style={{
+                padding: "1rem",
+                backgroundColor: "#000",
+                borderRadius: "2px",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  marginBottom: "0.5rem",
+                }}
+              >
+                <span
+                  style={{
+                    color: "#666",
+                    fontSize: "11px",
+                    width: "150px",
+                    fontFamily: "monospace",
+                  }}
+                >
+                  120px × 40px (Standard)
+                </span>
+                <Sparkline data={data} width={120} height={40} />
+              </div>
+            </div>
+
+            {/* 200px width, 60px height - Large */}
+            <div
+              style={{
+                padding: "1rem",
+                backgroundColor: "#000",
+                borderRadius: "2px",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  marginBottom: "0.5rem",
+                }}
+              >
+                <span
+                  style={{
+                    color: "#666",
+                    fontSize: "11px",
+                    width: "150px",
+                    fontFamily: "monospace",
+                  }}
+                >
+                  200px × 60px (Large)
+                </span>
+                <Sparkline data={data} width={200} height={60} />
+              </div>
+            </div>
+
+            {/* 300px width, 80px height - Extra Large */}
+            <div
+              style={{
+                padding: "1rem",
+                backgroundColor: "#000",
+                borderRadius: "2px",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1rem",
+                  marginBottom: "0.5rem",
+                }}
+              >
+                <span
+                  style={{
+                    color: "#666",
+                    fontSize: "11px",
+                    width: "150px",
+                    fontFamily: "monospace",
+                  }}
+                >
+                  300px × 80px (X-Large)
+                </span>
+                <Sparkline data={data} width={300} height={80} strokeWidth={2} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  },
+};
+
+/**
+ * Comprehensive sparkline styles showcase
+ */
+export const SparklineStylesShowcase: StoryObj = {
+  render: () => {
+    const positiveBullish = [100, 105, 103, 108, 112, 110, 115, 118];
+    const negativeBearish = [120, 115, 117, 112, 108, 110, 105, 102];
+    const neutral = [100, 101, 100, 99, 100, 101, 100, 100];
+
+    return (
+      <div style={{ padding: "2rem" }}>
+        <div
+          style={{
+            backgroundColor: "#1a1a1a",
+            padding: "1.5rem",
+            borderRadius: "4px",
+            border: "1px solid #333",
+          }}
+        >
+          <h3
+            style={{
+              color: "#0068ff",
+              fontSize: "12px",
+              marginBottom: "1.5rem",
+              fontWeight: 600,
+              letterSpacing: "0.05em",
+            }}
+          >
+            SPARKLINE COMPREHENSIVE STYLES
+          </h3>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "1rem" }}>
+            {/* Standard Line */}
+            <div
+              style={{
+                padding: "1rem",
+                backgroundColor: "#000",
+                borderRadius: "2px",
+              }}
+            >
+              <div style={{ marginBottom: "0.5rem", color: "#666", fontSize: "11px" }}>
+                Standard Line (Positive)
+              </div>
+              <Sparkline data={positiveBullish} width={200} height={50} />
+            </div>
+
+            {/* With Fill */}
+            <div
+              style={{
+                padding: "1rem",
+                backgroundColor: "#000",
+                borderRadius: "2px",
+              }}
+            >
+              <div style={{ marginBottom: "0.5rem", color: "#666", fontSize: "11px" }}>
+                With Gradient Fill (Positive)
+              </div>
+              <Sparkline
+                data={positiveBullish}
+                width={200}
+                height={50}
+                showFill={true}
+                fillOpacity={0.3}
+              />
+            </div>
+
+            {/* With Percentage */}
+            <div
+              style={{
+                padding: "1rem",
+                backgroundColor: "#000",
+                borderRadius: "2px",
+              }}
+            >
+              <div style={{ marginBottom: "0.5rem", color: "#666", fontSize: "11px" }}>
+                With Percentage Change
+              </div>
+              <Sparkline
+                data={positiveBullish}
+                width={200}
+                height={50}
+                showPercentage
+              />
+            </div>
+
+            {/* Full Featured */}
+            <div
+              style={{
+                padding: "1rem",
+                backgroundColor: "#000",
+                borderRadius: "2px",
+              }}
+            >
+              <div style={{ marginBottom: "0.5rem", color: "#666", fontSize: "11px" }}>
+                Full Featured (Fill + Percentage)
+              </div>
+              <Sparkline
+                data={positiveBullish}
+                width={200}
+                height={50}
+                showFill={true}
+                fillOpacity={0.25}
+                showPercentage
+                strokeWidth={2}
+              />
+            </div>
+
+            {/* Negative Full Featured */}
+            <div
+              style={{
+                padding: "1rem",
+                backgroundColor: "#000",
+                borderRadius: "2px",
+              }}
+            >
+              <div style={{ marginBottom: "0.5rem", color: "#666", fontSize: "11px" }}>
+                Negative Trend (Full Featured)
+              </div>
+              <Sparkline
+                data={negativeBearish}
+                width={200}
+                height={50}
+                showFill={true}
+                fillOpacity={0.25}
+                showPercentage
+                strokeWidth={2}
+              />
+            </div>
+
+            {/* Neutral */}
+            <div
+              style={{
+                padding: "1rem",
+                backgroundColor: "#000",
+                borderRadius: "2px",
+              }}
+            >
+              <div style={{ marginBottom: "0.5rem", color: "#666", fontSize: "11px" }}>
+                Neutral Trend (Full Featured)
+              </div>
+              <Sparkline
+                data={neutral}
+                width={200}
+                height={50}
+                showFill={true}
+                fillOpacity={0.25}
+                showPercentage
+                strokeWidth={2}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  },
+};
+
+/**
+ * Financial dashboard with mixed chart types
+ */
+export const FinancialDashboard: StoryObj = {
+  render: () => {
+    const stocks = [
+      {
+        symbol: "AAPL",
+        name: "Apple Inc.",
+        price: 175.43,
+        change: 2.5,
+        data: [165, 168, 170, 172, 169, 174, 176, 175.43],
+      },
+      {
+        symbol: "GOOGL",
+        name: "Alphabet Inc.",
+        price: 142.56,
+        change: -1.68,
+        data: [145, 144, 142, 143, 141, 140, 141, 142.56],
+      },
+      {
+        symbol: "MSFT",
+        name: "Microsoft Corp.",
+        price: 378.91,
+        change: 2.41,
+        data: [370, 375, 373, 378, 380, 377, 379, 378.91],
+      },
+      {
+        symbol: "TSLA",
+        name: "Tesla Inc.",
+        price: 248.42,
+        change: -4.45,
+        data: [260, 258, 255, 252, 250, 248, 249, 248.42],
+      },
+    ];
+
+    return (
+      <div style={{ padding: "2rem" }}>
+        <div
+          style={{
+            backgroundColor: "#1a1a1a",
+            padding: "1.5rem",
+            borderRadius: "4px",
+            border: "1px solid #333",
+          }}
+        >
+          <h3
+            style={{
+              color: "#0068ff",
+              fontSize: "12px",
+              marginBottom: "1rem",
+              fontWeight: 600,
+              letterSpacing: "0.05em",
+            }}
+          >
+            FINANCIAL DASHBOARD - MARKET OVERVIEW
+          </h3>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1px" }}>
+            {stocks.map((stock) => (
+              <div
+                key={stock.symbol}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "100px 200px 120px 200px 100px",
+                  alignItems: "center",
+                  padding: "12px",
+                  backgroundColor: "#000",
+                  gap: "1rem",
+                }}
+              >
+                <div>
+                  <div
+                    style={{
+                      color: "#fff",
+                      fontSize: "14px",
+                      fontFamily: "monospace",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {stock.symbol}
+                  </div>
+                  <div
+                    style={{
+                      color: "#666",
+                      fontSize: "11px",
+                      fontFamily: "monospace",
+                    }}
+                  >
+                    {stock.name}
+                  </div>
+                </div>
+                <div
+                  style={{
+                    color: "#fff",
+                    fontSize: "16px",
+                    fontFamily: "monospace",
+                    fontWeight: 600,
+                  }}
+                >
+                  ${stock.price.toFixed(2)}
+                </div>
+                <div
+                  style={{
+                    color: stock.change >= 0 ? "#4af6c3" : "#ff433d",
+                    fontSize: "14px",
+                    fontFamily: "monospace",
+                  }}
+                >
+                  {stock.change >= 0 ? "+" : ""}
+                  {stock.change.toFixed(2)}%
+                </div>
+                <Sparkline
+                  data={stock.data}
+                  width={180}
+                  height={40}
+                  showFill={true}
+                  fillOpacity={0.2}
+                  strokeWidth={1.5}
+                />
+                <div style={{ display: "flex", gap: "0.5rem" }}>
+                  <button
+                    style={{
+                      padding: "4px 12px",
+                      backgroundColor: "#4af6c3",
+                      color: "#000",
+                      border: "none",
+                      borderRadius: "2px",
+                      fontSize: "11px",
+                      fontWeight: 600,
+                      cursor: "pointer",
+                      fontFamily: "monospace",
+                    }}
+                  >
+                    BUY
+                  </button>
+                  <button
+                    style={{
+                      padding: "4px 12px",
+                      backgroundColor: "#ff433d",
+                      color: "#fff",
+                      border: "none",
+                      borderRadius: "2px",
+                      fontSize: "11px",
+                      fontWeight: 600,
+                      cursor: "pointer",
+                      fontFamily: "monospace",
+                    }}
+                  >
+                    SELL
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  },
+};
+
+/**
+ * Line chart with annotations and markers
+ */
+export const LineChartWithAnnotations: StoryObj = {
+  render: () => {
+    const data: DataPoint[] = [
+      { x: 0, y: 100 },
+      { x: 1, y: 120 },
+      { x: 2, y: 115 },
+      { x: 3, y: 130 },
+      { x: 4, y: 125 },
+      { x: 5, y: 145 },
+      { x: 6, y: 150 },
+      { x: 7, y: 155 },
+    ];
+
+    return (
+      <div style={{ padding: "2rem" }}>
+        <div
+          style={{
+            backgroundColor: "#1a1a1a",
+            padding: "1rem",
+            borderRadius: "4px",
+            border: "1px solid #333",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: "1rem",
+            }}
+          >
+            <h3
+              style={{
+                color: "#fff",
+                fontSize: "14px",
+                fontWeight: 600,
+              }}
+            >
+              Stock Price with Key Events
+            </h3>
+            <div style={{ display: "flex", gap: "1rem", fontSize: "12px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                <div
+                  style={{
+                    width: "16px",
+                    height: "2px",
+                    backgroundColor: "#4af6c3",
+                  }}
+                />
+                <span style={{ color: "#fff" }}>AAPL</span>
+              </div>
+              <span style={{ color: "#4af6c3" }}>+55.0%</span>
+            </div>
+          </div>
+          <LineChart data={data} width={700} height={350} color="#4af6c3" />
+          <div
+            style={{
+              marginTop: "1rem",
+              display: "flex",
+              gap: "1rem",
+              fontSize: "11px",
+              color: "#666",
+            }}
+          >
+            <div>📍 Point 3: Product Launch</div>
+            <div>📍 Point 5: Earnings Beat</div>
+          </div>
+        </div>
+      </div>
+    );
+  },
+};
+
+/**
+ * Candlestick chart variations with different densities
+ */
+export const CandlestickDensityVariations: StoryObj = {
+  render: () => {
+    const sparseData: OHLCDataPoint[] = [
+      {
+        timestamp: "Week 1",
+        open: 150,
+        high: 155,
+        low: 148,
+        close: 153,
+        volume: 1000000,
+      },
+      {
+        timestamp: "Week 2",
+        open: 153,
+        high: 158,
+        low: 152,
+        close: 157,
+        volume: 1200000,
+      },
+      {
+        timestamp: "Week 3",
+        open: 157,
+        high: 160,
+        low: 155,
+        close: 156,
+        volume: 900000,
+      },
+      {
+        timestamp: "Week 4",
+        open: 156,
+        high: 162,
+        low: 154,
+        close: 160,
+        volume: 1500000,
+      },
+    ];
+
+    const denseData: OHLCDataPoint[] = Array.from({ length: 30 }, (_, i) => {
+      const basePrice = 150;
+      const trend = i * 0.5;
+      const volatility = Math.sin(i / 3) * 5;
+      const open = basePrice + trend + volatility;
+      const close = open + (Math.random() - 0.5) * 4;
+      const high = Math.max(open, close) + Math.random() * 3;
+      const low = Math.min(open, close) - Math.random() * 3;
+
+      return {
+        timestamp: `Day ${i + 1}`,
+        open,
+        high,
+        low,
+        close,
+        volume: 900000 + Math.random() * 600000,
+      };
+    });
+
+    return (
+      <div style={{ padding: "2rem" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1.5rem",
+          }}
+        >
+          {/* Sparse - Weekly */}
+          <div
+            style={{
+              backgroundColor: "#1a1a1a",
+              padding: "1rem",
+              borderRadius: "4px",
+              border: "1px solid #333",
+            }}
+          >
+            <h3
+              style={{
+                color: "#fff",
+                fontSize: "14px",
+                marginBottom: "1rem",
+                fontWeight: 600,
+              }}
+            >
+              Weekly Candlestick Chart (Sparse Data)
+            </h3>
+            <CandlestickChart data={sparseData} width={700} height={300} />
+          </div>
+
+          {/* Dense - Daily */}
+          <div
+            style={{
+              backgroundColor: "#1a1a1a",
+              padding: "1rem",
+              borderRadius: "4px",
+              border: "1px solid #333",
+            }}
+          >
+            <h3
+              style={{
+                color: "#fff",
+                fontSize: "14px",
+                marginBottom: "1rem",
+                fontWeight: 600,
+              }}
+            >
+              Daily Candlestick Chart (Dense Data - 30 Days)
+            </h3>
+            <CandlestickChart data={denseData} width={700} height={350} />
+          </div>
+        </div>
+      </div>
+    );
+  },
+};
+
+/**
+ * Area chart with multiple opacity levels
+ */
+export const AreaChartOpacityLevels: StoryObj = {
+  render: () => {
+    const data: DataPoint[] = [
+      { x: 0, y: 30 },
+      { x: 1, y: 40 },
+      { x: 2, y: 45 },
+      { x: 3, y: 50 },
+      { x: 4, y: 49 },
+      { x: 5, y: 60 },
+      { x: 6, y: 70 },
+      { x: 7, y: 91 },
+    ];
+
+    const opacities = [0.1, 0.2, 0.3, 0.4, 0.5];
+
+    return (
+      <div style={{ padding: "2rem" }}>
+        <div
+          style={{
+            backgroundColor: "#1a1a1a",
+            padding: "1.5rem",
+            borderRadius: "4px",
+            border: "1px solid #333",
+          }}
+        >
+          <h3
+            style={{
+              color: "#0068ff",
+              fontSize: "12px",
+              marginBottom: "1.5rem",
+              fontWeight: 600,
+              letterSpacing: "0.05em",
+            }}
+          >
+            AREA CHART - OPACITY VARIATIONS
+          </h3>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: "1rem",
+            }}
+          >
+            {opacities.map((opacity) => (
+              <div
+                key={opacity}
+                style={{
+                  backgroundColor: "#000",
+                  padding: "1rem",
+                  borderRadius: "2px",
+                }}
+              >
+                <div
+                  style={{
+                    color: "#666",
+                    fontSize: "11px",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  Fill Opacity: {opacity}
+                </div>
+                <AreaChart
+                  data={data}
+                  width={320}
+                  height={180}
+                  color="#4af6c3"
+                  fillOpacity={opacity}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  },
+};
+
+/**
+ * Complete trading terminal view
+ */
+export const TradingTerminalView: StoryObj = {
+  render: () => {
+    const mainChartData: OHLCDataPoint[] = Array.from(
+      { length: 20 },
+      (_, i) => {
+        const basePrice = 150;
+        const trend = i * 0.8;
+        const open = basePrice + trend + (Math.random() - 0.5) * 3;
+        const close = open + (Math.random() - 0.5) * 5;
+        const high = Math.max(open, close) + Math.random() * 2;
+        const low = Math.min(open, close) - Math.random() * 2;
+
+        return {
+          timestamp: `${i}`,
+          open,
+          high,
+          low,
+          close,
+          volume: 800000 + Math.random() * 800000,
+        };
+      }
+    );
+
+    const sparklineData = [148, 150, 152, 151, 155, 158, 156, 160, 162, 165];
+
+    return (
+      <div style={{ padding: "2rem" }}>
+        <div
+          style={{
+            backgroundColor: "#000",
+            padding: "1rem",
+            borderRadius: "4px",
+            border: "1px solid #333",
+          }}
+        >
+          {/* Header */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: "1rem",
+              paddingBottom: "1rem",
+              borderBottom: "1px solid #333",
+            }}
+          >
+            <div>
+              <h2
+                style={{
+                  color: "#fff",
+                  fontSize: "18px",
+                  fontWeight: 600,
+                  marginBottom: "0.25rem",
+                  fontFamily: "monospace",
+                }}
+              >
+                AAPL - APPLE INC.
+              </h2>
+              <div style={{ display: "flex", gap: "1rem", fontSize: "12px" }}>
+                <span style={{ color: "#666" }}>NASDAQ</span>
+                <span style={{ color: "#666" }}>•</span>
+                <span style={{ color: "#666" }}>Technology</span>
+              </div>
+            </div>
+            <div style={{ textAlign: "right" }}>
+              <div
+                style={{
+                  color: "#fff",
+                  fontSize: "24px",
+                  fontWeight: 600,
+                  fontFamily: "monospace",
+                }}
+              >
+                $165.28
+              </div>
+              <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+                <Sparkline data={sparklineData} width={80} height={20} />
+                <span style={{ color: "#4af6c3", fontSize: "14px" }}>
+                  +11.52%
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Main Chart */}
+          <CandlestickChart
+            data={mainChartData}
+            width={900}
+            height={400}
+            showVolume={true}
+          />
+
+          {/* Footer Stats */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(6, 1fr)",
+              gap: "1rem",
+              marginTop: "1rem",
+              paddingTop: "1rem",
+              borderTop: "1px solid #333",
+            }}
+          >
+            {[
+              { label: "Open", value: "$148.52" },
+              { label: "High", value: "$166.45" },
+              { label: "Low", value: "$147.23" },
+              { label: "Volume", value: "45.2M" },
+              { label: "Mkt Cap", value: "$2.65T" },
+              { label: "P/E Ratio", value: "28.5" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <div style={{ color: "#666", fontSize: "11px", marginBottom: "0.25rem" }}>
+                  {stat.label}
+                </div>
+                <div
+                  style={{
+                    color: "#fff",
+                    fontSize: "14px",
+                    fontWeight: 600,
+                    fontFamily: "monospace",
+                  }}
+                >
+                  {stat.value}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  },
+};
