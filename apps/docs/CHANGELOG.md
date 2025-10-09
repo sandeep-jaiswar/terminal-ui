@@ -1,5 +1,12 @@
 # docs
 
+## 0.0.4
+
+### Patch Changes
+
+- 5760a77: feat: Implement comprehensive chart components with Bloomberg Terminal styling and extensive variants
+  - @sandeep-jaiswar/ui@0.1.1
+
 ## 0.0.3
 
 ### Patch Changes
