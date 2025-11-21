@@ -25,6 +25,26 @@
           "bundled": false
         }
       ]
+    },
+    {
+      "action": "review",
+      "module": "js-yaml",
+      "resolves": [
+        {
+          "id": 1109754,
+          "path": ".>@changesets/cli>@changesets/read>@changesets/parse>js-yaml",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1109754,
+          "path": "apps__docs>eslint>js-yaml",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
     }
   ],
   "advisories": {
@@ -99,6 +119,47 @@
         "CWE-22"
       ],
       "url": "https://github.com/advisories/GHSA-93m4-6634-74q7"
+    },
+    "1109754": {
+      "findings": [
+        {
+          "version": "3.14.1",
+          "paths": []
+        },
+        {
+          "version": "4.1.0",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/nodeca/js-yaml/security/advisories/GHSA-mh29-5h37-fv8m\n- https://nvd.nist.gov/vuln/detail/CVE-2025-64718\n- https://github.com/nodeca/js-yaml/commit/383665ff4248ec2192d1274e934462bb30426879\n- https://github.com/advisories/GHSA-mh29-5h37-fv8m",
+      "created": "2025-11-14T14:29:48.000Z",
+      "id": 1109754,
+      "npm_advisory_id": null,
+      "overview": "### Impact\n\nIn js-yaml 4.1.0 and below, it's possible for an attacker to modify the prototype of the result of a parsed yaml document via prototype pollution (`__proto__`). All users who parse untrusted yaml documents may be impacted.\n\n### Patches\n\nProblem is patched in js-yaml 4.1.1.\n\n### Workarounds\n\nYou can protect against this kind of attack on the server by using `node --disable-proto=delete` or `deno` (in Deno, pollution protection is on by default).\n\n### References\n\nhttps://cheatsheetseries.owasp.org/cheatsheets/Prototype_Pollution_Prevention_Cheat_Sheet.html",
+      "reported_by": null,
+      "title": "js-yaml has prototype pollution in merge (<<)",
+      "metadata": null,
+      "cves": [
+        "CVE-2025-64718"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "js-yaml",
+      "vulnerable_versions": "<4.1.1",
+      "github_advisory_id": "GHSA-mh29-5h37-fv8m",
+      "recommendation": "Upgrade to version 4.1.1 or later",
+      "patched_versions": ">=4.1.1",
+      "updated": "2025-11-14T14:29:49.000Z",
+      "cvss": {
+        "score": 5.3,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+      },
+      "cwe": [
+        "CWE-1321"
+      ],
+      "url": "https://github.com/advisories/GHSA-mh29-5h37-fv8m"
     }
   },
   "muted": [],
@@ -106,7 +167,7 @@
     "vulnerabilities": {
       "info": 0,
       "low": 0,
-      "moderate": 2,
+      "moderate": 4,
       "high": 0,
       "critical": 0
     },
