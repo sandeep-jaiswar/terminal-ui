@@ -1,0 +1,80 @@
+[
+  {
+    "name": "@sandeep-jaiswar/button",
+    "path": "packages/button/dist/index.js",
+    "limit": "15 KB",
+    "gzip": true
+  },
+  {
+    "name": "@sandeep-jaiswar/input",
+    "path": "packages/input/dist/index.js",
+    "limit": "15 KB",
+    "gzip": true
+  },
+  {
+    "name": "@sandeep-jaiswar/badge",
+    "path": "packages/badge/dist/index.js",
+    "limit": "15 KB",
+    "gzip": true
+  },
+  {
+    "name": "@sandeep-jaiswar/card",
+    "path": "packages/card/dist/index.js",
+    "limit": "15 KB",
+    "gzip": true
+  },
+  {
+    "name": "@sandeep-jaiswar/modal",
+    "path": "packages/modal/dist/index.js",
+    "limit": "15 KB",
+    "gzip": true
+  },
+  {
+    "name": "@sandeep-jaiswar/navigation",
+    "path": "packages/navigation/dist/index.js",
+    "limit": "20 KB",
+    "gzip": true
+  },
+  {
+    "name": "@sandeep-jaiswar/data-grid",
+    "path": "packages/data-grid/dist/index.js",
+    "limit": "50 KB",
+    "gzip": true
+  },
+  {
+    "name": "@sandeep-jaiswar/charts",
+    "path": "packages/charts/dist/index.js",
+    "limit": "40 KB",
+    "gzip": true
+  },
+  {
+    "name": "@sandeep-jaiswar/trading",
+    "path": "packages/trading/dist/index.js",
+    "limit": "30 KB",
+    "gzip": true
+  },
+  {
+    "name": "@sandeep-jaiswar/dashboard",
+    "path": "packages/dashboard/dist/index.js",
+    "limit": "25 KB",
+    "gzip": true
+  },
+  {
+    "name": "@sandeep-jaiswar/utils",
+    "path": "packages/utils/dist/index.js",
+    "limit": "15 KB",
+    "gzip": true
+  },
+  {
+    "name": "@sandeep-jaiswar/tokens",
+    "path": "packages/tokens/dist/index.js",
+    "limit": "5 KB",
+    "gzip": true
+  },
+  {
+    "name": "@sandeep-jaiswar/ui (full bundle)",
+    "path": "packages/ui/dist/index.js",
+    "limit": "200 KB",
+    "gzip": true
+  }
+]

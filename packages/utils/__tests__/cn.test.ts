@@ -12,7 +12,7 @@ describe("cn utility", () => {
 
   it("handles conditional classes", () => {
     expect(cn("btn", true && "btn-active", false && "btn-disabled")).toBe(
-      "btn btn-active",
+      "btn btn-active"
     );
   });
 
@@ -22,13 +22,13 @@ describe("cn utility", () => {
 
   it("handles arrays of classes", () => {
     expect(cn(["btn", "btn-large"], "btn-primary")).toBe(
-      "btn btn-large btn-primary",
+      "btn btn-large btn-primary"
     );
   });
 
   it("handles objects with boolean values", () => {
     expect(cn({ btn: true, "btn-active": true, "btn-disabled": false })).toBe(
-      "btn btn-active",
+      "btn btn-active"
     );
   });
 });

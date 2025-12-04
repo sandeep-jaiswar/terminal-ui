@@ -1,0 +1,39 @@
+{
+  "recommendations": [
+    // Essential for code quality
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+
+    // TypeScript
+    "ms-vscode.vscode-typescript-next",
+
+    // Tailwind CSS
+    "bradlc.vscode-tailwindcss",
+
+    // Testing
+    "orta.vscode-jest",
+    "ms-playwright.playwright",
+
+    // Git
+    "eamodio.gitlens",
+    "github.vscode-pull-request-github",
+
+    // Monorepo
+    "unifiedjs.vscode-mdx",
+
+    // Productivity
+    "github.copilot",
+    "github.copilot-chat",
+    "usernamehw.errorlens",
+    "christian-kohler.path-intellisense",
+    "formulahendry.auto-rename-tag",
+
+    // Documentation
+    "yzhang.markdown-all-in-one",
+    "bierner.markdown-preview-github-styles"
+  ],
+  "unwantedRecommendations": [
+    "hookyqr.beautify",
+    "ms-vscode.vscode-typescript-tslint-plugin"
+  ]
+}

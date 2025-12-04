@@ -1,0 +1,57 @@
+{
+  "$schema": "https://unpkg.com/syncpack@13.0.4/dist/schema.json",
+  "versionGroups": [
+    {
+      "label": "Use workspace protocol for internal packages",
+      "packages": ["**"],
+      "dependencies": ["@sandeep-jaiswar/**"],
+      "dependencyTypes": ["prod", "dev", "peer"],
+      "pinVersion": "workspace:*"
+    },
+    {
+      "label": "Ensure React versions are consistent",
+      "packages": ["**"],
+      "dependencies": ["react", "react-dom"],
+      "dependencyTypes": ["prod", "dev", "peer"]
+    },
+    {
+      "label": "Ensure TypeScript versions are consistent",
+      "packages": ["**"],
+      "dependencies": ["typescript"],
+      "dependencyTypes": ["dev"]
+    },
+    {
+      "label": "Ensure ESLint versions are consistent",
+      "packages": ["**"],
+      "dependencies": ["eslint", "@typescript-eslint/**"],
+      "dependencyTypes": ["dev"]
+    }
+  ],
+  "semverGroups": [
+    {
+      "label": "Use caret ranges for all dependencies",
+      "packages": ["**"],
+      "dependencies": ["**"],
+      "dependencyTypes": ["prod", "dev"],
+      "range": "^"
+    }
+  ],
+  "sortFirst": [
+    "name",
+    "version",
+    "description",
+    "keywords",
+    "author",
+    "license"
+  ],
+  "sortAz": [
+    "bin",
+    "contributors",
+    "dependencies",
+    "devDependencies",
+    "keywords",
+    "peerDependencies",
+    "resolutions",
+    "scripts"
+  ]
+}

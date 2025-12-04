@@ -33,7 +33,7 @@ export function cnVariants<T extends Record<string, Record<string, string>>>(
   base: string,
   variants: T,
   selectedVariants: { [K in keyof T]?: keyof T[K] },
-  className?: string,
+  className?: string
 ): string {
   const variantClasses = Object.entries(selectedVariants)
     .map(([key, value]) => {
@@ -85,6 +85,6 @@ export function cnFinancial({
     neutral && "text-terminal-white",
     large && "font-bold",
     critical && "animate-pulse",
-    className,
+    className
   );
 }

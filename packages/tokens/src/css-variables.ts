@@ -27,7 +27,7 @@ import { typography } from "./typography";
 function flattenObject(
   obj: Record<string, unknown>,
   prefix = "",
-  separator = "-",
+  separator = "-"
 ): Record<string, string> {
   const result: Record<string, string> = {};
 
@@ -37,7 +37,7 @@ function flattenObject(
     if (typeof value === "object" && !Array.isArray(value) && value !== null) {
       Object.assign(
         result,
-        flattenObject(value as Record<string, unknown>, newKey, separator),
+        flattenObject(value as Record<string, unknown>, newKey, separator)
       );
     } else if (Array.isArray(value)) {
       // Handle arrays (like font families)

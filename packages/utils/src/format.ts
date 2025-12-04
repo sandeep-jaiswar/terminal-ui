@@ -16,7 +16,7 @@
 export function formatCurrency(
   value: number,
   currency: string = "USD",
-  options?: Intl.NumberFormatOptions,
+  options?: Intl.NumberFormatOptions
 ): string {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -43,7 +43,7 @@ export function formatCurrency(
  */
 export function formatPercentage(
   value: number,
-  options?: Intl.NumberFormatOptions,
+  options?: Intl.NumberFormatOptions
 ): string {
   return new Intl.NumberFormat("en-US", {
     style: "percent",
@@ -92,7 +92,7 @@ export function formatLargeNumber(value: number): string {
  */
 export function formatPriceChange(
   value: number,
-  options?: { currency?: string; showSign?: boolean },
+  options?: { currency?: string; showSign?: boolean }
 ): string {
   const { currency = "USD", showSign = true } = options || {};
   const formatted = formatCurrency(Math.abs(value), currency);

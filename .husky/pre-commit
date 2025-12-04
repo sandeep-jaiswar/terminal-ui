@@ -1,0 +1,2 @@
+# Run lint-staged on pre-commit
+pnpm lint-staged

@@ -45,7 +45,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
@@ -116,7 +116,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
@@ -130,7 +130,7 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Package | Size | Gzipped |" >> $GITHUB_STEP_SUMMARY
           echo "|---------|------|---------|" >> $GITHUB_STEP_SUMMARY
-          
+
           for pkg in packages/*/dist; do
             if [ -d "$pkg" ]; then
               pkg_name=$(basename $(dirname $pkg))
@@ -152,9 +152,9 @@ jobs:
           script: |
             const labels = context.payload.pull_request.labels.map(l => l.name);
             const validLabels = ['bug', 'enhancement', 'documentation', 'dependencies', 'breaking-change', 'no-changeset'];
-            
+
             const hasValidLabel = labels.some(label => validLabels.includes(label));
-            
+
             if (!hasValidLabel) {
               core.warning(`Consider adding a label: ${validLabels.join(', ')}`);
             } else {

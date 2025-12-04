@@ -422,7 +422,9 @@ export const LineChartMultiSeries: StoryObj = {
               Stock Performance Comparison
             </h3>
             <div style={{ display: "flex", gap: "1rem", fontSize: "12px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "6px" }}
+              >
                 <div
                   style={{
                     width: "16px",
@@ -432,7 +434,9 @@ export const LineChartMultiSeries: StoryObj = {
                 />
                 <span style={{ color: "#fff" }}>AAPL</span>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "6px" }}
+              >
                 <div
                   style={{
                     width: "16px",
@@ -442,7 +446,9 @@ export const LineChartMultiSeries: StoryObj = {
                 />
                 <span style={{ color: "#fff" }}>GOOGL</span>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "6px" }}
+              >
                 <div
                   style={{
                     width: "16px",
@@ -631,7 +637,9 @@ export const AreaChartMultiSeries: StoryObj = {
               Market Share by Sector
             </h3>
             <div style={{ display: "flex", gap: "1rem", fontSize: "12px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "6px" }}
+              >
                 <div
                   style={{
                     width: "12px",
@@ -642,7 +650,9 @@ export const AreaChartMultiSeries: StoryObj = {
                 />
                 <span style={{ color: "#fff" }}>Technology</span>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "6px" }}
+              >
                 <div
                   style={{
                     width: "12px",
@@ -653,7 +663,9 @@ export const AreaChartMultiSeries: StoryObj = {
                 />
                 <span style={{ color: "#fff" }}>Healthcare</span>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "6px" }}
+              >
                 <div
                   style={{
                     width: "12px",
@@ -736,7 +748,9 @@ export const AreaChartIndexReturns: StoryObj = {
               Index Returns (YoY %)
             </h3>
             <div style={{ display: "flex", gap: "1rem", fontSize: "12px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "6px" }}
+              >
                 <div
                   style={{
                     width: "16px",
@@ -746,7 +760,9 @@ export const AreaChartIndexReturns: StoryObj = {
                 />
                 <span style={{ color: "#fff" }}>S&P 500</span>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "6px" }}
+              >
                 <div
                   style={{
                     width: "16px",
@@ -1310,9 +1326,7 @@ export const SparklineGradientPositive: StoryObj = {
               fillOpacity={0.3}
               strokeWidth={2}
             />
-            <span style={{ color: "#4af6c3", fontSize: "14px" }}>
-              POS +15%
-            </span>
+            <span style={{ color: "#4af6c3", fontSize: "14px" }}>POS +15%</span>
           </div>
         </div>
       </div>
@@ -1540,7 +1554,12 @@ export const SparklineSizeVariations: StoryObj = {
                 >
                   300px × 80px (X-Large)
                 </span>
-                <Sparkline data={data} width={300} height={80} strokeWidth={2} />
+                <Sparkline
+                  data={data}
+                  width={300}
+                  height={80}
+                  strokeWidth={2}
+                />
               </div>
             </div>
           </div>
@@ -1580,7 +1599,9 @@ export const SparklineStylesShowcase: StoryObj = {
           >
             SPARKLINE COMPREHENSIVE STYLES
           </h3>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "1rem" }}>
+          <div
+            style={{ display: "grid", gridTemplateColumns: "1fr", gap: "1rem" }}
+          >
             {/* Standard Line */}
             <div
               style={{
@@ -1589,7 +1610,13 @@ export const SparklineStylesShowcase: StoryObj = {
                 borderRadius: "2px",
               }}
             >
-              <div style={{ marginBottom: "0.5rem", color: "#666", fontSize: "11px" }}>
+              <div
+                style={{
+                  marginBottom: "0.5rem",
+                  color: "#666",
+                  fontSize: "11px",
+                }}
+              >
                 Standard Line (Positive)
               </div>
               <Sparkline data={positiveBullish} width={200} height={50} />
@@ -1603,7 +1630,13 @@ export const SparklineStylesShowcase: StoryObj = {
                 borderRadius: "2px",
               }}
             >
-              <div style={{ marginBottom: "0.5rem", color: "#666", fontSize: "11px" }}>
+              <div
+                style={{
+                  marginBottom: "0.5rem",
+                  color: "#666",
+                  fontSize: "11px",
+                }}
+              >
                 With Gradient Fill (Positive)
               </div>
               <Sparkline
@@ -1623,7 +1656,13 @@ export const SparklineStylesShowcase: StoryObj = {
                 borderRadius: "2px",
               }}
             >
-              <div style={{ marginBottom: "0.5rem", color: "#666", fontSize: "11px" }}>
+              <div
+                style={{
+                  marginBottom: "0.5rem",
+                  color: "#666",
+                  fontSize: "11px",
+                }}
+              >
                 With Percentage Change
               </div>
               <Sparkline
@@ -1642,7 +1681,13 @@ export const SparklineStylesShowcase: StoryObj = {
                 borderRadius: "2px",
               }}
             >
-              <div style={{ marginBottom: "0.5rem", color: "#666", fontSize: "11px" }}>
+              <div
+                style={{
+                  marginBottom: "0.5rem",
+                  color: "#666",
+                  fontSize: "11px",
+                }}
+              >
                 Full Featured (Fill + Percentage)
               </div>
               <Sparkline
@@ -1664,7 +1709,13 @@ export const SparklineStylesShowcase: StoryObj = {
                 borderRadius: "2px",
               }}
             >
-              <div style={{ marginBottom: "0.5rem", color: "#666", fontSize: "11px" }}>
+              <div
+                style={{
+                  marginBottom: "0.5rem",
+                  color: "#666",
+                  fontSize: "11px",
+                }}
+              >
                 Negative Trend (Full Featured)
               </div>
               <Sparkline
@@ -1686,7 +1737,13 @@ export const SparklineStylesShowcase: StoryObj = {
                 borderRadius: "2px",
               }}
             >
-              <div style={{ marginBottom: "0.5rem", color: "#666", fontSize: "11px" }}>
+              <div
+                style={{
+                  marginBottom: "0.5rem",
+                  color: "#666",
+                  fontSize: "11px",
+                }}
+              >
                 Neutral Trend (Full Featured)
               </div>
               <Sparkline
@@ -1910,7 +1967,9 @@ export const LineChartWithAnnotations: StoryObj = {
               Stock Price with Key Events
             </h3>
             <div style={{ display: "flex", gap: "1rem", fontSize: "12px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "6px" }}
+              >
                 <div
                   style={{
                     width: "16px",
@@ -2217,7 +2276,9 @@ export const TradingTerminalView: StoryObj = {
               >
                 $165.28
               </div>
-              <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+              <div
+                style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}
+              >
                 <Sparkline data={sparklineData} width={80} height={20} />
                 <span style={{ color: "#4af6c3", fontSize: "14px" }}>
                   +11.52%
@@ -2254,7 +2315,13 @@ export const TradingTerminalView: StoryObj = {
               { label: "P/E Ratio", value: "28.5" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div style={{ color: "#666", fontSize: "11px", marginBottom: "0.25rem" }}>
+                <div
+                  style={{
+                    color: "#666",
+                    fontSize: "11px",
+                    marginBottom: "0.25rem",
+                  }}
+                >
                   {stat.label}
                 </div>
                 <div

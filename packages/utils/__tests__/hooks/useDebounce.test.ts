@@ -20,7 +20,7 @@ describe("useDebounce", () => {
   it("debounces value changes", () => {
     const { result, rerender } = renderHook(
       ({ value, delay }) => useDebounce(value, delay),
-      { initialProps: { value: "initial", delay: 500 } },
+      { initialProps: { value: "initial", delay: 500 } }
     );
 
     expect(result.current).toBe("initial");
@@ -42,7 +42,7 @@ describe("useDebounce", () => {
   it("cancels previous timeout on rapid changes", () => {
     const { result, rerender } = renderHook(
       ({ value }) => useDebounce(value, 500),
-      { initialProps: { value: "first" } },
+      { initialProps: { value: "first" } }
     );
 
     rerender({ value: "second" });
@@ -70,7 +70,7 @@ describe("useDebounce", () => {
   it("works with different delay values", () => {
     const { result, rerender } = renderHook(
       ({ value, delay }) => useDebounce(value, delay),
-      { initialProps: { value: "initial", delay: 1000 } },
+      { initialProps: { value: "initial", delay: 1000 } }
     );
 
     rerender({ value: "updated", delay: 1000 });
@@ -92,7 +92,7 @@ describe("useDebounce", () => {
 
     const { result, rerender } = renderHook(
       ({ value }) => useDebounce(value, 500),
-      { initialProps: { value: obj1 } },
+      { initialProps: { value: obj1 } }
     );
 
     expect(result.current).toBe(obj1);
@@ -108,7 +108,7 @@ describe("useDebounce", () => {
   it("works with numbers", () => {
     const { result, rerender } = renderHook(
       ({ value }) => useDebounce(value, 500),
-      { initialProps: { value: 0 } },
+      { initialProps: { value: 0 } }
     );
 
     rerender({ value: 100 });

@@ -1,9 +1,4 @@
-export {
-  Sparkline,
-  LineChart,
-  AreaChart,
-  CandlestickChart,
-} from "./Charts";
+export { Sparkline, LineChart, AreaChart, CandlestickChart } from "./Charts";
 export type {
   SparklineProps,
   LineChartProps,

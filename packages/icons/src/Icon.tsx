@@ -48,7 +48,7 @@ export const Icon = React.forwardRef<SVGSVGElement, IconProps>(
         {iconPath}
       </svg>
     );
-  },
+  }
 );
 
 Icon.displayName = "Icon";

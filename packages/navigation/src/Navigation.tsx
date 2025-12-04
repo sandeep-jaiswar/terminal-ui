@@ -44,7 +44,7 @@ export const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
           "flex flex-col",
           "bg-terminal-black border-r border-terminal-medium-gray",
           "h-screen overflow-y-auto overflow-x-hidden",
-          className,
+          className
         )}
         style={{ width }}
         aria-label="Main navigation"
@@ -53,7 +53,7 @@ export const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
         {children}
       </aside>
     );
-  },
+  }
 );
 
 Sidebar.displayName = "Sidebar";
@@ -80,7 +80,7 @@ export const NavigationItem = React.forwardRef<
 >(
   (
     { children, icon, active = false, badge, className, href, ...props },
-    ref,
+    ref
   ) => {
     const baseStyles = cn(
       // Base layout - 48px height, 12px vertical padding, 16px horizontal
@@ -102,7 +102,7 @@ export const NavigationItem = React.forwardRef<
       ],
       // Disabled state
       "disabled:opacity-50 disabled:cursor-not-allowed",
-      className,
+      className
     );
 
     const content = (
@@ -146,7 +146,7 @@ export const NavigationItem = React.forwardRef<
         {content}
       </button>
     );
-  },
+  }
 );
 
 NavigationItem.displayName = "NavigationItem";
@@ -178,7 +178,7 @@ export const NavigationGroup = React.forwardRef<
       className,
       ...props
     },
-    ref,
+    ref
   ) => {
     const [isCollapsed, setIsCollapsed] = React.useState(defaultCollapsed);
 
@@ -203,7 +203,7 @@ export const NavigationGroup = React.forwardRef<
               "text-xs font-terminal-sans uppercase tracking-wider",
               "text-terminal-light-gray",
               collapsible &&
-                "cursor-pointer hover:text-terminal-white transition-colors",
+                "cursor-pointer hover:text-terminal-white transition-colors"
             )}
             onClick={toggleCollapsed}
             onKeyDown={(e) => {
@@ -221,7 +221,7 @@ export const NavigationGroup = React.forwardRef<
               <svg
                 className={cn(
                   "w-4 h-4 transition-transform duration-200",
-                  isCollapsed ? "rotate-0" : "rotate-90",
+                  isCollapsed ? "rotate-0" : "rotate-90"
                 )}
                 fill="none"
                 stroke="currentColor"
@@ -247,7 +247,7 @@ export const NavigationGroup = React.forwardRef<
         <div className="h-2" aria-hidden="true" />
       </div>
     );
-  },
+  }
 );
 
 NavigationGroup.displayName = "NavigationGroup";
@@ -305,14 +305,14 @@ export const Breadcrumb = React.forwardRef<HTMLElement, BreadcrumbProps>(
         className={cn(
           "flex items-center",
           "pt-10 pb-3.5", // 40px top, 14px bottom
-          className,
+          className
         )}
         {...props}
       >
         <ol className="flex items-center gap-2">{children}</ol>
       </nav>
     );
-  },
+  }
 );
 
 Breadcrumb.displayName = "Breadcrumb";
@@ -348,7 +348,7 @@ export const BreadcrumbItem = React.forwardRef<
           "cursor-pointer",
           "underline-offset-4",
         ],
-    className,
+    className
   );
 
   if (isCurrentPage) {
@@ -398,7 +398,7 @@ export const BreadcrumbSeparator = React.forwardRef<
         "text-terminal-light-gray", // #666666 for separator
         "font-terminal-mono text-sm",
         "select-none",
-        className,
+        className
       )}
       {...props}
     >

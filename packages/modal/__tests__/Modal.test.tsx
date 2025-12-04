@@ -16,7 +16,7 @@ describe("Modal", () => {
     render(
       <Modal isOpen={true}>
         <ModalContent>Test content</ModalContent>
-      </Modal>,
+      </Modal>
     );
 
     expect(screen.getByRole("dialog")).toBeInTheDocument();
@@ -27,7 +27,7 @@ describe("Modal", () => {
     render(
       <Modal isOpen={false}>
         <ModalContent>Test content</ModalContent>
-      </Modal>,
+      </Modal>
     );
 
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
@@ -38,7 +38,7 @@ describe("Modal", () => {
     render(
       <Modal isOpen={true} onClose={handleClose}>
         <ModalContent>Test content</ModalContent>
-      </Modal>,
+      </Modal>
     );
 
     const backdrop = screen.getByRole("presentation");
@@ -54,7 +54,7 @@ describe("Modal", () => {
     render(
       <Modal isOpen={true} onClose={handleClose}>
         <ModalContent>Test content</ModalContent>
-      </Modal>,
+      </Modal>
     );
 
     const content = screen.getByText("Test content");
@@ -68,7 +68,7 @@ describe("Modal", () => {
     render(
       <Modal isOpen={true} onClose={handleClose} disableBackdropClick={true}>
         <ModalContent>Test content</ModalContent>
-      </Modal>,
+      </Modal>
     );
 
     const backdrop = screen.getByRole("presentation");
@@ -82,7 +82,7 @@ describe("Modal", () => {
     render(
       <Modal isOpen={true} onClose={handleClose}>
         <ModalContent>Test content</ModalContent>
-      </Modal>,
+      </Modal>
     );
 
     fireEvent.keyDown(document, { key: "Escape" });
@@ -97,7 +97,7 @@ describe("Modal", () => {
     render(
       <Modal isOpen={true} onClose={handleClose} disableEscapeKey={true}>
         <ModalContent>Test content</ModalContent>
-      </Modal>,
+      </Modal>
     );
 
     fireEvent.keyDown(document, { key: "Escape" });
@@ -109,7 +109,7 @@ describe("Modal", () => {
     const { rerender } = render(
       <Modal isOpen={true}>
         <ModalContent>Test content</ModalContent>
-      </Modal>,
+      </Modal>
     );
 
     expect(document.body.style.overflow).toBe("hidden");
@@ -117,7 +117,7 @@ describe("Modal", () => {
     rerender(
       <Modal isOpen={false}>
         <ModalContent>Test content</ModalContent>
-      </Modal>,
+      </Modal>
     );
 
     expect(document.body.style.overflow).toBe("");
@@ -127,7 +127,7 @@ describe("Modal", () => {
     render(
       <Modal isOpen={true} aria-label="Test modal">
         <ModalContent>Test content</ModalContent>
-      </Modal>,
+      </Modal>
     );
 
     const dialog = screen.getByRole("dialog");
@@ -139,7 +139,7 @@ describe("Modal", () => {
     render(
       <Modal isOpen={true} size="sm">
         <ModalContent>Test content</ModalContent>
-      </Modal>,
+      </Modal>
     );
 
     const dialog = screen.getByRole("dialog");
@@ -150,7 +150,7 @@ describe("Modal", () => {
     render(
       <Modal isOpen={true} size="md">
         <ModalContent>Test content</ModalContent>
-      </Modal>,
+      </Modal>
     );
 
     const dialog = screen.getByRole("dialog");
@@ -161,7 +161,7 @@ describe("Modal", () => {
     render(
       <Modal isOpen={true} size="lg">
         <ModalContent>Test content</ModalContent>
-      </Modal>,
+      </Modal>
     );
 
     const dialog = screen.getByRole("dialog");
@@ -172,7 +172,7 @@ describe("Modal", () => {
     render(
       <Modal isOpen={true} className="custom-class">
         <ModalContent>Test content</ModalContent>
-      </Modal>,
+      </Modal>
     );
 
     const dialog = screen.getByRole("dialog");
@@ -192,7 +192,7 @@ describe("ModalHeader", () => {
     render(
       <ModalHeader showClose={true} onClose={handleClose}>
         Test Header
-      </ModalHeader>,
+      </ModalHeader>
     );
 
     const closeButton = screen.getByLabelText("Close dialog");
@@ -211,7 +211,7 @@ describe("ModalHeader", () => {
     render(
       <ModalHeader showClose={true} onClose={handleClose}>
         Test Header
-      </ModalHeader>,
+      </ModalHeader>
     );
 
     const closeButton = screen.getByLabelText("Close dialog");
@@ -222,7 +222,7 @@ describe("ModalHeader", () => {
 
   it("applies custom className", () => {
     const { container } = render(
-      <ModalHeader className="custom-header">Test Header</ModalHeader>,
+      <ModalHeader className="custom-header">Test Header</ModalHeader>
     );
 
     const header = container.firstChild as HTMLElement;
@@ -239,7 +239,7 @@ describe("ModalContent", () => {
 
   it("applies custom className", () => {
     const { container } = render(
-      <ModalContent className="custom-content">Test Content</ModalContent>,
+      <ModalContent className="custom-content">Test Content</ModalContent>
     );
 
     const content = container.firstChild as HTMLElement;
@@ -253,7 +253,7 @@ describe("ModalFooter", () => {
       <ModalFooter>
         <button>Cancel</button>
         <button>Confirm</button>
-      </ModalFooter>,
+      </ModalFooter>
     );
 
     expect(screen.getByText("Cancel")).toBeInTheDocument();
@@ -264,7 +264,7 @@ describe("ModalFooter", () => {
     const { container } = render(
       <ModalFooter className="custom-footer">
         <button>Test</button>
-      </ModalFooter>,
+      </ModalFooter>
     );
 
     const footer = container.firstChild as HTMLElement;
@@ -282,7 +282,7 @@ describe("Modal Integration", () => {
         <ModalFooter>
           <button onClick={handleClose}>Close</button>
         </ModalFooter>
-      </Modal>,
+      </Modal>
     );
 
     expect(screen.getByText("Test Title")).toBeInTheDocument();
@@ -299,7 +299,7 @@ describe("Modal Integration", () => {
         <ModalFooter>
           <button onClick={handleClose}>Close</button>
         </ModalFooter>
-      </Modal>,
+      </Modal>
     );
 
     const closeButton = screen.getByText("Close");

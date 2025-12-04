@@ -15,7 +15,7 @@
 export function announceToScreenReader(
   message: string,
   priority: "polite" | "assertive" = "polite",
-  timeout: number = 5000,
+  timeout: number = 5000
 ): void {
   let liveRegion = document.getElementById(`live-region-${priority}`);
 
@@ -66,7 +66,7 @@ export function announceFinancialChange(
   currentValue: number,
   previousValue: number,
   valueType: "price" | "value" | "volume" | "change" = "price",
-  currency: string = "USD",
+  currency: string = "USD"
 ): void {
   const change = currentValue - previousValue;
   const direction = change >= 0 ? "up" : "down";

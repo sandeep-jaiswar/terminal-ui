@@ -1,20 +1,35 @@
 {
-  "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
+  "globalEnv": ["NODE_ENV", "CI"],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["src/**/*.tsx", "src/**/*.ts", "package.json"],
+      "inputs": [
+        "src/**/*.tsx",
+        "src/**/*.ts",
+        "package.json",
+        "tsconfig.json",
+        "tsup.config.ts"
+      ],
       "outputs": [
         "dist/**",
         ".next/**",
         "!.next/cache/**",
-        "storybook-static/**"
+        "storybook-static/**",
+        "**/*.tsbuildinfo"
       ]
     },
     "lint": {
       "dependsOn": ["^build"],
-      "inputs": ["src/**/*.tsx", "src/**/*.ts", "**/*.json", "**/*.js"]
+      "inputs": [
+        "src/**/*.tsx",
+        "src/**/*.ts",
+        "**/*.json",
+        "**/*.js",
+        "**/*.jsx",
+        ".eslintrc.js",
+        ".eslintrc.cjs"
+      ]
     },
     "test": {
       "dependsOn": ["^build"],
@@ -22,13 +37,20 @@
         "src/**/*.tsx",
         "src/**/*.ts",
         "**/*.test.ts",
-        "**/*.test.tsx"
+        "**/*.test.tsx",
+        "__tests__/**",
+        "jest.config.js"
       ],
       "outputs": ["coverage/**"]
     },
+    "test:watch": {
+      "cache": false,
+      "persistent": true
+    },
     "type-check": {
       "dependsOn": ["^build"],
-      "inputs": ["src/**/*.tsx", "src/**/*.ts", "tsconfig.json"]
+      "inputs": ["src/**/*.tsx", "src/**/*.ts", "tsconfig.json"],
+      "outputs": ["**/*.tsbuildinfo"]
     },
     "dev": {
       "cache": false,

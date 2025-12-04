@@ -53,7 +53,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       type = "button",
       ...props
     },
-    ref,
+    ref
   ) => {
     const baseStyles = cn(
       // Base styles
@@ -61,7 +61,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       "transition-all duration-150 ease-in-out",
       "border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black",
       "disabled:opacity-50 disabled:cursor-not-allowed",
-      "select-none",
+      "select-none"
     );
 
     const variantStyles = {
@@ -69,37 +69,37 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         "bg-primary-500 text-white border-primary-500",
         "hover:bg-primary-600 hover:border-primary-600",
         "focus:ring-primary-500",
-        "active:bg-primary-700",
+        "active:bg-primary-700"
       ),
       secondary: cn(
         "bg-terminal-dark-gray text-white border-terminal-medium-gray",
         "hover:bg-terminal-medium-gray hover:border-terminal-light-gray",
         "focus:ring-terminal-light-gray",
-        "active:bg-terminal-light-gray active:text-terminal-black",
+        "active:bg-terminal-light-gray active:text-terminal-black"
       ),
       success: cn(
         "bg-success-500 text-terminal-black border-success-500",
         "hover:bg-success-400 hover:border-success-400",
         "focus:ring-success-500",
-        "active:bg-success-600",
+        "active:bg-success-600"
       ),
       danger: cn(
         "bg-danger-300 text-white border-danger-300",
         "hover:bg-danger-400 hover:border-danger-400",
         "focus:ring-danger-300",
-        "active:bg-danger-500",
+        "active:bg-danger-500"
       ),
       warning: cn(
         "bg-warning-500 text-terminal-black border-warning-500",
         "hover:bg-warning-400 hover:border-warning-400",
         "focus:ring-warning-500",
-        "active:bg-warning-600",
+        "active:bg-warning-600"
       ),
       ghost: cn(
         "bg-transparent text-terminal-white border-terminal-medium-gray",
         "hover:bg-terminal-dark-gray hover:border-terminal-light-gray",
         "focus:ring-terminal-light-gray",
-        "active:bg-terminal-medium-gray",
+        "active:bg-terminal-medium-gray"
       ),
     };
 
@@ -119,7 +119,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           variantStyles[variant],
           sizeStyles[size],
           loading && "cursor-wait",
-          className,
+          className
         )}
         aria-busy={loading}
         {...props}
@@ -150,7 +150,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {children}
       </button>
     );
-  },
+  }
 );
 
 Button.displayName = "Button";

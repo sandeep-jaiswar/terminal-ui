@@ -1,8 +1,9 @@
 {
   "extends": "@sandeep-jaiswar/tsconfig/base.json",
   "compilerOptions": {
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "composite": true
   },
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  "include": ["stories/**/*", "vite.config.ts"],
+  "exclude": ["dist", "build", "node_modules", "**/*.cjs"]
 }

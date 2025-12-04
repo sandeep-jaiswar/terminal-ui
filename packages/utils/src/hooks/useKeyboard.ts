@@ -29,7 +29,7 @@ export function useKeyboard(
     alt?: boolean;
     meta?: boolean;
     preventDefault?: boolean;
-  },
+  }
 ): void {
   useEffect(() => {
     const {
