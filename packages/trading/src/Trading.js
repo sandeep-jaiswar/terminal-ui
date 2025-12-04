@@ -1,5 +1,4 @@
 import { jsx as _jsx } from "react/jsx-runtime";
-import React from "react";
 export function Watchlist({ children }) {
     return _jsx("div", { "data-component": "watchlist", children: children });
 }

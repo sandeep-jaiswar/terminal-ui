@@ -1,5 +1,5 @@
 import { jsx as _jsx } from "react/jsx-runtime";
-import React, { createContext, useContext } from "react";
+import { createContext, useContext } from "react";
 const ThemeContext = createContext({ theme: "dark" });
 /**
  * ThemeProvider component for Bloomberg Terminal-inspired UI.
