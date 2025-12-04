@@ -178,7 +178,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
   const [localFilters, setLocalFilters] =
     React.useState<FilterConfig>(filterConfig);
   const [localSort, setLocalSort] = React.useState<SortConfig | undefined>(
-    sortConfig,
+    sortConfig
   );
 
   // Get row key
@@ -189,7 +189,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
       }
       return String(row[rowKey]);
     },
-    [rowKey],
+    [rowKey]
   );
 
   // Handle selection
@@ -203,7 +203,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
         onSelectionChange([]);
       }
     },
-    [data, getRowKey, onSelectionChange],
+    [data, getRowKey, onSelectionChange]
   );
 
   const handleRowSelect = React.useCallback(
@@ -219,7 +219,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
         }
       }
     },
-    [onSelectionChange, rowSelection, selectedRows],
+    [onSelectionChange, rowSelection, selectedRows]
   );
 
   // Handle sorting
@@ -240,7 +240,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
         onSortChange(newSort);
       }
     },
-    [localSort, onSortChange],
+    [localSort, onSortChange]
   );
 
   // Handle filtering
@@ -255,7 +255,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
         onFilterChange(newFilters);
       }
     },
-    [localFilters, onFilterChange],
+    [localFilters, onFilterChange]
   );
 
   // Format cell value based on column type
@@ -302,7 +302,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
           return String(value);
       }
     },
-    [],
+    []
   );
 
   // Get cell styling for financial values
@@ -330,7 +330,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
 
       return classes;
     },
-    [],
+    []
   );
 
   // Density classes
@@ -394,7 +394,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
         "w-full overflow-auto",
         "bg-terminal-black",
         bordered && "border border-terminal-medium-gray",
-        className,
+        className
       )}
       data-testid={testId}
     >
@@ -407,7 +407,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
                   className={cn(
                     "text-left px-4",
                     headerDensityClasses[density],
-                    "border-r border-terminal-medium-gray",
+                    "border-r border-terminal-medium-gray"
                   )}
                   style={{ width: 48 }}
                 >
@@ -435,7 +435,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
                       "cursor-pointer select-none hover:bg-terminal-medium-gray",
                     column.align === "right" && "text-right",
                     column.align === "center" && "text-center",
-                    column.headerClassName,
+                    column.headerClassName
                   )}
                   style={{
                     width: column.width,
@@ -475,7 +475,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
                     className={cn(
                       "px-4 py-2",
                       bordered &&
-                        "border-r border-terminal-medium-gray last:border-r-0",
+                        "border-r border-terminal-medium-gray last:border-r-0"
                     )}
                   >
                     {column.filterable && (
@@ -491,7 +491,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
                           "bg-terminal-black text-terminal-white",
                           "border border-terminal-medium-gray rounded",
                           "focus:outline-none focus:border-primary-500",
-                          "placeholder:text-terminal-light-gray",
+                          "placeholder:text-terminal-light-gray"
                         )}
                         aria-label={`Filter ${column.label}`}
                       />
@@ -538,7 +538,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
                     striped &&
                       rowIndex % 2 === 1 &&
                       "bg-terminal-dark-gray bg-opacity-50",
-                    onRowClick && "cursor-pointer",
+                    onRowClick && "cursor-pointer"
                   )}
                   onClick={() => onRowClick?.(row, rowIndex)}
                   onDoubleClick={() => onRowDoubleClick?.(row, rowIndex)}
@@ -547,7 +547,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
                     <td
                       className={cn(
                         "px-4",
-                        bordered && "border-r border-terminal-medium-gray",
+                        bordered && "border-r border-terminal-medium-gray"
                       )}
                       style={{ width: 48 }}
                     >
@@ -574,7 +574,7 @@ export const DataGrid = <T extends Record<string, unknown>>({
                             "border-r border-terminal-medium-gray last:border-r-0",
                           column.align === "right" && "text-right tabular-nums",
                           column.align === "center" && "text-center",
-                          getCellClassName(column, value, row),
+                          getCellClassName(column, value, row)
                         )}
                       >
                         {column.render

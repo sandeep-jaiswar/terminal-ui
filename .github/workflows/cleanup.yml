@@ -3,7 +3,7 @@ name: Cleanup
 on:
   schedule:
     # Run daily at midnight UTC
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:
@@ -27,13 +27,13 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
-            
+
             const now = Date.now();
             const maxAge = 7 * 24 * 60 * 60 * 1000; // 7 days
-            
+
             let deletedCount = 0;
             let totalSize = 0;
-            
+
             for (const cache of caches.data.actions_caches) {
               const cacheAge = now - new Date(cache.created_at).getTime();
               
@@ -47,7 +47,7 @@ jobs:
                 totalSize += cache.size_in_bytes;
               }
             }
-            
+
             core.summary
               .addHeading('🧹 Cache Cleanup Report')
               .addTable([
@@ -75,13 +75,13 @@ jobs:
               repo: context.repo.repo,
               per_page: 100
             });
-            
+
             const now = Date.now();
             const maxAge = 30 * 24 * 60 * 60 * 1000; // 30 days
-            
+
             let deletedCount = 0;
             let totalSize = 0;
-            
+
             for (const artifact of artifacts.data.artifacts) {
               const artifactAge = now - new Date(artifact.created_at).getTime();
               
@@ -95,7 +95,7 @@ jobs:
                 totalSize += artifact.size_in_bytes;
               }
             }
-            
+
             core.summary
               .addHeading('🗑️ Artifact Cleanup Report')
               .addTable([
@@ -122,11 +122,11 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
-            
+
             const now = Date.now();
             const maxAge = 90 * 24 * 60 * 60 * 1000; // 90 days
             let totalDeleted = 0;
-            
+
             for (const workflow of workflows.data.workflows) {
               const runs = await github.rest.actions.listWorkflowRuns({
                 owner: context.repo.owner,
@@ -148,7 +148,7 @@ jobs:
                 }
               }
             }
-            
+
             core.summary
               .addHeading('🔄 Workflow Runs Cleanup Report')
               .addTable([
@@ -189,15 +189,15 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
-            
+
             const artifacts = await github.rest.actions.listArtifactsForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
-            
+
             const totalCacheSize = caches.data.actions_caches.reduce((sum, cache) => sum + cache.size_in_bytes, 0);
             const totalArtifactSize = artifacts.data.artifacts.reduce((sum, artifact) => sum + artifact.size_in_bytes, 0);
-            
+
             core.summary
               .addHeading('💾 Storage Usage Report')
               .addTable([

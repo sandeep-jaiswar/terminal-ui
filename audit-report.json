@@ -101,9 +101,7 @@
         "score": 5.3,
         "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
       },
-      "cwe": [
-        "CWE-346"
-      ],
+      "cwe": ["CWE-346"],
       "url": "https://github.com/advisories/GHSA-67mh-4wv8-2f99"
     },
     "1109131": {
@@ -123,9 +121,7 @@
       "reported_by": null,
       "title": "vite allows server.fs.deny bypass via backslash on Windows",
       "metadata": null,
-      "cves": [
-        "CVE-2025-62522"
-      ],
+      "cves": ["CVE-2025-62522"],
       "access": "public",
       "severity": "moderate",
       "module_name": "vite",
@@ -138,9 +134,7 @@
         "score": 0,
         "vectorString": null
       },
-      "cwe": [
-        "CWE-22"
-      ],
+      "cwe": ["CWE-22"],
       "url": "https://github.com/advisories/GHSA-93m4-6634-74q7"
     },
     "1109801": {
@@ -160,9 +154,7 @@
       "reported_by": null,
       "title": "js-yaml has prototype pollution in merge (<<)",
       "metadata": null,
-      "cves": [
-        "CVE-2025-64718"
-      ],
+      "cves": ["CVE-2025-64718"],
       "access": "public",
       "severity": "moderate",
       "module_name": "js-yaml",
@@ -175,9 +167,7 @@
         "score": 5.3,
         "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
       },
-      "cwe": [
-        "CWE-1321"
-      ],
+      "cwe": ["CWE-1321"],
       "url": "https://github.com/advisories/GHSA-mh29-5h37-fv8m"
     },
     "1109802": {
@@ -197,9 +187,7 @@
       "reported_by": null,
       "title": "js-yaml has prototype pollution in merge (<<)",
       "metadata": null,
-      "cves": [
-        "CVE-2025-64718"
-      ],
+      "cves": ["CVE-2025-64718"],
       "access": "public",
       "severity": "moderate",
       "module_name": "js-yaml",
@@ -212,9 +200,7 @@
         "score": 5.3,
         "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
       },
-      "cwe": [
-        "CWE-1321"
-      ],
+      "cwe": ["CWE-1321"],
       "url": "https://github.com/advisories/GHSA-mh29-5h37-fv8m"
     },
     "1109842": {
@@ -234,9 +220,7 @@
       "reported_by": null,
       "title": "glob CLI: Command injection via -c/--cmd executes matches with shell:true",
       "metadata": null,
-      "cves": [
-        "CVE-2025-64756"
-      ],
+      "cves": ["CVE-2025-64756"],
       "access": "public",
       "severity": "high",
       "module_name": "glob",
@@ -249,9 +233,7 @@
         "score": 7.5,
         "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
       },
-      "cwe": [
-        "CWE-78"
-      ],
+      "cwe": ["CWE-78"],
       "url": "https://github.com/advisories/GHSA-5j98-mcp5-4vw2"
     }
   },

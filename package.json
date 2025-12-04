@@ -27,21 +27,49 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "lint:fix": "turbo run lint -- --fix",
     "test": "turbo run test",
+    "test:watch": "turbo run test:watch",
+    "test:coverage": "turbo run test -- --coverage",
     "type-check": "turbo run type-check",
-    "clean": "turbo run clean",
-    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
-    "format:check": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "clean": "turbo run clean && rm -rf node_modules .turbo",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,md,json,yml,yaml}\"",
     "changeset": "changeset",
-    "version-packages": "changeset version",
-    "release": "turbo run build lint test && changeset publish"
+    "changeset:version": "changeset version",
+    "changeset:publish": "changeset publish",
+    "release": "pnpm build && pnpm lint && pnpm test && changeset publish",
+    "prepare": "husky || true",
+    "check-versions": "syncpack list-mismatches",
+    "fix-versions": "syncpack fix-mismatches",
+    "size": "size-limit",
+    "size:why": "size-limit --why",
+    "docs:api": "typedoc",
+    "audit:fix": "pnpm audit --fix"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@sandeep-jaiswar/eslint-config": "workspace:*",
     "@sandeep-jaiswar/tsconfig": "workspace:*",
+    "@size-limit/preset-small-lib": "^12.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.1.1",
+    "size-limit": "^12.0.0",
+    "syncpack": "^13.0.4",
     "turbo": "^1.11.2",
-    "typescript": "~5.3.3"
+    "typedoc": "^0.28.15",
+    "typedoc-plugin-markdown": "^4.9.0",
+    "typescript": "^5.3.3"
   }
 }

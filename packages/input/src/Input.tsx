@@ -64,7 +64,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       id,
       ...props
     },
-    ref,
+    ref
   ) => {
     const generatedId = React.useId();
     const inputId = id || generatedId;
@@ -79,24 +79,24 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       "border-2 rounded",
       "focus:outline-none focus:ring-0",
       "placeholder:text-terminal-light-gray",
-      "disabled:opacity-50 disabled:cursor-not-allowed disabled:border-dashed",
+      "disabled:opacity-50 disabled:cursor-not-allowed disabled:border-dashed"
     );
 
     const stateStyles = {
       default: cn(
         "border-primary-500",
         "focus:border-primary-500 focus:shadow-[0_0_0_3px_rgba(0,104,255,0.2)]",
-        "hover:border-primary-400",
+        "hover:border-primary-400"
       ),
       error: cn(
         "border-danger-300",
         "focus:border-danger-300 focus:shadow-[0_0_0_3px_rgba(255,67,61,0.2)]",
-        "hover:border-danger-400",
+        "hover:border-danger-400"
       ),
       success: cn(
         "border-success-500",
         "focus:border-success-500 focus:shadow-[0_0_0_3px_rgba(74,246,195,0.2)]",
-        "hover:border-success-400",
+        "hover:border-success-400"
       ),
     };
 
@@ -107,18 +107,18 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     };
 
     const labelStyles = cn(
-      "block text-sm font-medium text-terminal-white mb-2 uppercase tracking-wide",
+      "block text-sm font-medium text-terminal-white mb-2 uppercase tracking-wide"
     );
 
     const helperTextStyles = cn(
       "mt-2 text-xs",
-      actualState === "error" ? "text-danger-300" : "text-terminal-light-gray",
+      actualState === "error" ? "text-danger-300" : "text-terminal-light-gray"
     );
 
     const iconStyles = cn(
       "flex items-center justify-center",
       "text-terminal-light-gray",
-      size === "sm" ? "text-xs" : size === "lg" ? "text-base" : "text-sm",
+      size === "sm" ? "text-xs" : size === "lg" ? "text-base" : "text-sm"
     );
 
     return (
@@ -133,7 +133,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             <div
               className={cn(
                 iconStyles,
-                "absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none",
+                "absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
               )}
             >
               {leftAddon}
@@ -149,7 +149,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
               sizeStyles[size],
               leftAddon && "pl-10",
               rightAddon && "pr-10",
-              className,
+              className
             )}
             aria-invalid={actualState === "error"}
             aria-describedby={
@@ -161,7 +161,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             <div
               className={cn(
                 iconStyles,
-                "absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none",
+                "absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"
               )}
             >
               {rightAddon}
@@ -179,7 +179,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
       </div>
     );
-  },
+  }
 );
 
 Input.displayName = "Input";
@@ -212,7 +212,7 @@ export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
         {...props}
       />
     );
-  },
+  }
 );
 
 NumberInput.displayName = "NumberInput";
@@ -270,7 +270,7 @@ export const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
         {...props}
       />
     );
-  },
+  }
 );
 
 SearchInput.displayName = "SearchInput";
@@ -320,7 +320,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       rows = 3,
       ...props
     },
-    ref,
+    ref
   ) => {
     const generatedId = React.useId();
     const textareaId = id || generatedId;
@@ -336,24 +336,24 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       "focus:outline-none focus:ring-0",
       "placeholder:text-terminal-light-gray",
       "disabled:opacity-50 disabled:cursor-not-allowed disabled:border-dashed",
-      "resize-y",
+      "resize-y"
     );
 
     const stateStyles = {
       default: cn(
         "border-primary-500",
         "focus:border-primary-500 focus:shadow-[0_0_0_3px_rgba(0,104,255,0.2)]",
-        "hover:border-primary-400",
+        "hover:border-primary-400"
       ),
       error: cn(
         "border-danger-300",
         "focus:border-danger-300 focus:shadow-[0_0_0_3px_rgba(255,67,61,0.2)]",
-        "hover:border-danger-400",
+        "hover:border-danger-400"
       ),
       success: cn(
         "border-success-500",
         "focus:border-success-500 focus:shadow-[0_0_0_3px_rgba(74,246,195,0.2)]",
-        "hover:border-success-400",
+        "hover:border-success-400"
       ),
     };
 
@@ -364,12 +364,12 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     };
 
     const labelStyles = cn(
-      "block text-sm font-medium text-terminal-white mb-2 uppercase tracking-wide",
+      "block text-sm font-medium text-terminal-white mb-2 uppercase tracking-wide"
     );
 
     const helperTextStyles = cn(
       "mt-2 text-xs",
-      actualState === "error" ? "text-danger-300" : "text-terminal-light-gray",
+      actualState === "error" ? "text-danger-300" : "text-terminal-light-gray"
     );
 
     return (
@@ -388,7 +388,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             baseStyles,
             stateStyles[actualState],
             sizeStyles[size],
-            className,
+            className
           )}
           aria-invalid={actualState === "error"}
           aria-describedby={
@@ -407,7 +407,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         )}
       </div>
     );
-  },
+  }
 );
 
 Textarea.displayName = "Textarea";

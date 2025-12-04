@@ -1,0 +1,43 @@
+# Build outputs
+dist/
+build/
+.next/
+out/
+storybook-static/
+.turbo/
+coverage/
+
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Generated files
+*.d.ts
+.tsbuildinfo
+
+# Lock files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache
+.cache/
+.eslintcache
+
+# Changesets
+.changeset/*.md
+!.changeset/README.md
+
+# Git
+.git/
+.gitignore
+
+# OS
+.DS_Store
+Thumbs.db

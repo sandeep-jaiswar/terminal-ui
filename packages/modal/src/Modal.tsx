@@ -68,7 +68,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
       "aria-labelledby": ariaLabelledby,
       "aria-describedby": ariaDescribedby,
     },
-    ref,
+    ref
   ) => {
     const modalRef = useRef<HTMLDivElement>(null);
     const modalId = useRef(generateId("modal")).current;
@@ -81,7 +81,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
           onClose();
         }
       },
-      [disableEscapeKey, onClose],
+      [disableEscapeKey, onClose]
     );
 
     // Handle backdrop click
@@ -95,7 +95,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
           onClose();
         }
       },
-      [disableBackdropClick, onClose],
+      [disableBackdropClick, onClose]
     );
 
     // Manage focus and body scroll
@@ -160,7 +160,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
           "flex items-center justify-center",
           "bg-black/50",
           !reducedMotion && "backdrop-blur-[8px]",
-          "p-4",
+          "p-4"
         )}
         onClick={handleBackdropClick}
         role="presentation"
@@ -193,7 +193,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
             "shadow-lg shadow-primary-500/20",
             // Animation
             !reducedMotion && "animate-in fade-in-0 zoom-in-95 duration-200",
-            className,
+            className
           )}
           tabIndex={-1}
         >
@@ -201,7 +201,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
         </div>
       </div>
     );
-  },
+  }
 );
 
 Modal.displayName = "Modal";
@@ -231,7 +231,7 @@ export const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
           "flex items-center justify-between",
           "px-6 py-4",
           "border-b border-terminal-medium-gray",
-          className,
+          className
         )}
         {...props}
       >
@@ -247,7 +247,7 @@ export const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
               "text-terminal-light-gray hover:text-terminal-white",
               "transition-colors duration-150",
               "focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-terminal-dark-gray",
-              "rounded",
+              "rounded"
             )}
             aria-label="Close dialog"
           >
@@ -266,7 +266,7 @@ export const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
         )}
       </div>
     );
-  },
+  }
 );
 
 ModalHeader.displayName = "ModalHeader";
@@ -293,14 +293,14 @@ export const ModalContent = React.forwardRef<HTMLDivElement, ModalContentProps>(
           "px-6 py-4",
           "text-terminal-white text-sm font-terminal-sans",
           "max-h-[60vh] overflow-y-auto",
-          className,
+          className
         )}
         {...props}
       >
         {children}
       </div>
     );
-  },
+  }
 );
 
 ModalContent.displayName = "ModalContent";
@@ -323,14 +323,14 @@ export const ModalFooter = React.forwardRef<HTMLDivElement, ModalFooterProps>(
           "flex items-center justify-end gap-3",
           "px-6 py-4",
           "border-t border-terminal-medium-gray",
-          className,
+          className
         )}
         {...props}
       >
         {children}
       </div>
     );
-  },
+  }
 );
 
 ModalFooter.displayName = "ModalFooter";

@@ -16,7 +16,7 @@ jobs:
   deploy-storybook:
     name: Deploy Storybook to Vercel
     runs-on: ubuntu-latest
-    if: false  # Disabled by default - requires VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID secrets
+    if: false # Disabled by default - requires VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID secrets
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,7 +30,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
@@ -51,7 +51,7 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./apps/docs
-          vercel-args: '--prod'
+          vercel-args: "--prod"
 
       - name: Deploy to Vercel (Preview)
         if: github.event_name == 'pull_request'
@@ -70,14 +70,14 @@ jobs:
           script: |
             const url = '${{ steps.vercel-preview.outputs.preview-url }}';
             const body = `## 📚 Storybook Preview Deployed
-            
+
             Your Storybook documentation has been deployed to Vercel:
-            
+
             🔗 **Preview URL**: ${url}
-            
+
             The preview will be automatically updated with new commits.
             `;
-            
+
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
@@ -95,7 +95,7 @@ jobs:
   deploy-github-pages:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    if: false  # Disabled by default - enable when GitHub Pages is configured
+    if: false # Disabled by default - enable when GitHub Pages is configured
     permissions:
       contents: write
       pages: write
@@ -113,7 +113,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile

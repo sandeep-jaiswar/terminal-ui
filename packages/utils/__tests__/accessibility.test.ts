@@ -218,7 +218,7 @@ describe("prefersReducedMotion", () => {
 
     expect(prefersReducedMotion()).toBe(true);
     expect(mockMatchMedia).toHaveBeenCalledWith(
-      "(prefers-reduced-motion: reduce)",
+      "(prefers-reduced-motion: reduce)"
     );
 
     // Cleanup

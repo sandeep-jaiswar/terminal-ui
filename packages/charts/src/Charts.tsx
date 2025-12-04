@@ -48,7 +48,7 @@ function getMinMax(data: number[]): { min: number; max: number } {
 function normalizeData(
   data: number[],
   height: number,
-  padding: number = 2,
+  padding: number = 2
 ): number[] {
   const { min, max } = getMinMax(data);
   const range = max - min;
@@ -85,7 +85,7 @@ function generatePath(data: number[], width: number, height: number): string {
 function generateAreaPath(
   data: number[],
   width: number,
-  height: number,
+  height: number
 ): string {
   if (data.length === 0) return "";
 
@@ -163,7 +163,7 @@ export const Sparkline = React.forwardRef<SVGSVGElement, SparklineProps>(
       "aria-label": ariaLabel,
       ...props
     },
-    ref,
+    ref
   ) => {
     if (!data || data.length === 0) {
       return (
@@ -195,9 +195,7 @@ export const Sparkline = React.forwardRef<SVGSVGElement, SparklineProps>(
     }[detectedTrend];
 
     // Generate area path for fill
-    const areaPath = showFill
-      ? generateAreaPath(data, width, height)
-      : "";
+    const areaPath = showFill ? generateAreaPath(data, width, height) : "";
 
     const gradientId = `sparkline-gradient-${Math.random().toString(36).substr(2, 9)}`;
 
@@ -224,20 +222,11 @@ export const Sparkline = React.forwardRef<SVGSVGElement, SparklineProps>(
                   stopColor={strokeColor}
                   stopOpacity={fillOpacity}
                 />
-                <stop
-                  offset="100%"
-                  stopColor={strokeColor}
-                  stopOpacity={0}
-                />
+                <stop offset="100%" stopColor={strokeColor} stopOpacity={0} />
               </linearGradient>
             </defs>
           )}
-          {showFill && (
-            <path
-              d={areaPath}
-              fill={`url(#${gradientId})`}
-            />
-          )}
+          {showFill && <path d={areaPath} fill={`url(#${gradientId})`} />}
           <path
             d={path}
             fill="none"
@@ -256,7 +245,7 @@ export const Sparkline = React.forwardRef<SVGSVGElement, SparklineProps>(
                 positive: detectedTrend === "positive",
                 negative: detectedTrend === "negative",
                 neutral: detectedTrend === "neutral",
-              }),
+              })
             )}
           >
             {detectedTrend === "positive" ? "+" : ""}
@@ -265,7 +254,7 @@ export const Sparkline = React.forwardRef<SVGSVGElement, SparklineProps>(
         )}
       </div>
     );
-  },
+  }
 );
 
 Sparkline.displayName = "Sparkline";
@@ -328,7 +317,7 @@ export const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
       "aria-label": ariaLabel,
       ...props
     },
-    ref,
+    ref
   ) => {
     // Normalize data to array of series
     const series: DataPoint[][] = Array.isArray(data[0])
@@ -341,7 +330,7 @@ export const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
           ref={ref}
           className={cn(
             "flex items-center justify-center bg-terminal-black border border-terminal-medium-gray",
-            className,
+            className
           )}
           style={{ width, height }}
         >
@@ -377,8 +366,7 @@ export const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
     const paths = series.map((seriesData) => {
       const points = seriesData.map((point, i) => {
         const x = (i / (seriesData.length - 1)) * chartWidth;
-        const y =
-          chartHeight - ((point.y - minY) / yRange) * chartHeight;
+        const y = chartHeight - ((point.y - minY) / yRange) * chartHeight;
         return { x, y };
       });
 
@@ -394,7 +382,7 @@ export const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
         ref={ref}
         className={cn(
           "bg-terminal-black border border-terminal-medium-gray p-2",
-          className,
+          className
         )}
         style={{ width, height }}
         role="img"
@@ -497,7 +485,7 @@ export const LineChart = React.forwardRef<HTMLDivElement, LineChartProps>(
         </svg>
       </div>
     );
-  },
+  }
 );
 
 LineChart.displayName = "LineChart";
@@ -546,7 +534,7 @@ export const AreaChart = React.forwardRef<HTMLDivElement, AreaChartProps>(
       "aria-label": ariaLabel,
       ...props
     },
-    ref,
+    ref
   ) => {
     // Normalize data to array of series
     const series: DataPoint[][] = Array.isArray(data[0])
@@ -559,7 +547,7 @@ export const AreaChart = React.forwardRef<HTMLDivElement, AreaChartProps>(
           ref={ref}
           className={cn(
             "flex items-center justify-center bg-terminal-black border border-terminal-medium-gray",
-            className,
+            className
           )}
           style={{ width, height }}
         >
@@ -619,7 +607,7 @@ export const AreaChart = React.forwardRef<HTMLDivElement, AreaChartProps>(
         ref={ref}
         className={cn(
           "bg-terminal-black border border-terminal-medium-gray p-2",
-          className,
+          className
         )}
         style={{ width, height }}
         role="img"
@@ -752,7 +740,7 @@ export const AreaChart = React.forwardRef<HTMLDivElement, AreaChartProps>(
         </svg>
       </div>
     );
-  },
+  }
 );
 
 AreaChart.displayName = "AreaChart";
@@ -810,7 +798,7 @@ export const CandlestickChart = React.forwardRef<
       "aria-label": ariaLabel,
       ...props
     },
-    ref,
+    ref
   ) => {
     if (!data || data.length === 0) {
       return (
@@ -818,7 +806,7 @@ export const CandlestickChart = React.forwardRef<
           ref={ref}
           className={cn(
             "flex items-center justify-center bg-terminal-black border border-terminal-medium-gray",
-            className,
+            className
           )}
           style={{ width, height }}
         >
@@ -827,7 +815,12 @@ export const CandlestickChart = React.forwardRef<
       );
     }
 
-    const padding = { top: 20, right: 20, bottom: showVolume ? 80 : 30, left: 50 };
+    const padding = {
+      top: 20,
+      right: 20,
+      bottom: showVolume ? 80 : 30,
+      left: 50,
+    };
     const chartHeight = height - padding.top - padding.bottom;
     const candleHeight = showVolume
       ? chartHeight * (1 - volumeHeight)
@@ -852,7 +845,7 @@ export const CandlestickChart = React.forwardRef<
         ref={ref}
         className={cn(
           "bg-terminal-black border border-terminal-medium-gray p-2",
-          className,
+          className
         )}
         style={{ width, height }}
         role="img"
@@ -985,7 +978,7 @@ export const CandlestickChart = React.forwardRef<
         </svg>
       </div>
     );
-  },
+  }
 );
 
 CandlestickChart.displayName = "CandlestickChart";

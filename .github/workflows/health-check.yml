@@ -3,7 +3,7 @@ name: Health Check
 on:
   schedule:
     # Run daily at 8 AM UTC
-    - cron: '0 8 * * *'
+    - cron: "0 8 * * *"
   workflow_dispatch:
 
 permissions:
@@ -31,7 +31,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
@@ -40,21 +40,21 @@ jobs:
         run: |
           echo "## 📊 Code Health Metrics" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          
+
           # Count lines of code
           total_lines=$(find packages -name "*.ts" -o -name "*.tsx" | xargs wc -l | tail -1 | awk '{print $1}')
           echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
           echo "| Total Lines of Code | $total_lines |" >> $GITHUB_STEP_SUMMARY
-          
+
           # Count files
           ts_files=$(find packages -name "*.ts" -o -name "*.tsx" | wc -l)
           echo "| TypeScript Files | $ts_files |" >> $GITHUB_STEP_SUMMARY
-          
+
           # Count test files
           test_files=$(find packages -name "*.test.ts" -o -name "*.test.tsx" | wc -l)
           echo "| Test Files | $test_files |" >> $GITHUB_STEP_SUMMARY
-          
+
           # Calculate test coverage ratio
           if [ $ts_files -gt 0 ]; then
             coverage_ratio=$(echo "scale=2; $test_files / $ts_files * 100" | bc)
@@ -88,15 +88,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Analyze Dependencies
         run: |
           echo "## 📦 Dependency Health" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          
+
           pnpm audit --json > audit.json || true
-          
+
           if [ -s audit.json ]; then
             vulnerabilities=$(jq -r '.metadata.vulnerabilities | to_entries[] | "\(.key): \(.value)"' audit.json 2>/dev/null || echo "None")
             echo "### Security Vulnerabilities" >> $GITHUB_STEP_SUMMARY
@@ -112,7 +112,7 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Outdated Packages" >> $GITHUB_STEP_SUMMARY
           pnpm outdated --recursive > outdated.txt || true
-          
+
           if [ -s outdated.txt ]; then
             echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
             head -20 outdated.txt >> $GITHUB_STEP_SUMMARY
@@ -139,14 +139,14 @@ jobs:
               state: 'open',
               per_page: 100
             });
-            
+
             const now = Date.now();
             const dayInMs = 24 * 60 * 60 * 1000;
-            
+
             let stalePRs = 0;
             let draftPRs = 0;
             let readyPRs = 0;
-            
+
             for (const pr of pullRequests) {
               const prAge = now - new Date(pr.created_at).getTime();
               
@@ -160,7 +160,7 @@ jobs:
                 stalePRs++;
               }
             }
-            
+
             core.summary
               .addHeading('🔄 Pull Request Health')
               .addTable([
@@ -190,15 +190,15 @@ jobs:
               state: 'open',
               per_page: 100
             });
-            
+
             const now = Date.now();
             const dayInMs = 24 * 60 * 60 * 1000;
-            
+
             let bugs = 0;
             let enhancements = 0;
             let staleIssues = 0;
             let needsResponse = 0;
-            
+
             for (const issue of issues) {
               if (issue.pull_request) continue;
               
@@ -215,7 +215,7 @@ jobs:
                 needsResponse++;
               }
             }
-            
+
             core.summary
               .addHeading('🐛 Issue Health')
               .addTable([
@@ -244,10 +244,10 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
-            
+
             let failingWorkflows = 0;
             let successfulWorkflows = 0;
-            
+
             for (const workflow of workflows.data.workflows) {
               const runs = await github.rest.actions.listWorkflowRuns({
                 owner: context.repo.owner,
@@ -265,7 +265,7 @@ jobs:
                 }
               }
             }
-            
+
             core.summary
               .addHeading('⚙️ Workflow Health')
               .addTable([
@@ -280,7 +280,8 @@ jobs:
     name: Create Health Report Issue
     runs-on: ubuntu-latest
     continue-on-error: true
-    needs: [code-health, dependency-health, pr-health, issue-health, workflow-health]
+    needs:
+      [code-health, dependency-health, pr-health, issue-health, workflow-health]
     if: failure()
     steps:
       - name: Create Issue
@@ -288,19 +289,19 @@ jobs:
         with:
           script: |
             const body = `## ⚠️ Repository Health Check Failed
-            
+
             One or more health checks have failed. Please review the workflow run for details.
-            
+
             **Run**: ${context.payload.repository.html_url}/actions/runs/${context.runId}
-            
+
             ### Action Required
             - Review failed checks
             - Address any issues
             - Re-run health check
-            
+
             This issue was automatically created by the Health Check workflow.
             `;
-            
+
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,

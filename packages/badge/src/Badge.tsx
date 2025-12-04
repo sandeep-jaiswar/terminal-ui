@@ -63,7 +63,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
       className,
       ...props
     },
-    ref,
+    ref
   ) => {
     // Determine if this is a dot variant
     const isDot = variant === "dot";
@@ -78,7 +78,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
       "font-terminal-mono font-medium",
       "transition-all duration-150 ease-in-out",
       "select-none",
-      !isDot && "rounded-full",
+      !isDot && "rounded-full"
     );
 
     // Variant styles
@@ -86,23 +86,23 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
       primary: cn("bg-primary-500 text-white", "border border-primary-600"),
       secondary: cn(
         "bg-terminal-medium-gray text-white",
-        "border border-terminal-light-gray",
+        "border border-terminal-light-gray"
       ),
       success: cn(
         "bg-success-500 text-terminal-black",
-        "border border-success-600",
+        "border border-success-600"
       ),
       danger: cn("bg-danger-300 text-white", "border border-danger-400"),
       warning: cn(
         "bg-warning-500 text-terminal-black",
-        "border border-warning-600",
+        "border border-warning-600"
       ),
       info: cn("bg-primary-500 text-white", "border border-primary-600"),
       dot: cn(
         "rounded-full",
         "w-2 h-2",
         "bg-danger-300",
-        "border border-danger-400",
+        "border border-danger-400"
       ),
     };
 
@@ -120,7 +120,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
           baseStyles,
           variantStyles[variant],
           !isDot && sizeStyles[size],
-          className,
+          className
         )}
         role={isDot ? "status" : "status"}
         aria-label={isDot ? "status indicator" : displayContent?.toString()}
@@ -129,7 +129,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
         {!isDot && displayContent}
       </span>
     );
-  },
+  }
 );
 
 Badge.displayName = "Badge";
