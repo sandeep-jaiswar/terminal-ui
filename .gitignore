@@ -14,3 +14,7 @@ storybook-static/
 .tsbuildinfo
 next-env.d.ts
 coverage
+**/*.d.ts
+**/*.d.ts.map
+**/*.js
+docs/api/
