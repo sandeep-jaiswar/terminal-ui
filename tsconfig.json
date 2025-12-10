@@ -1,0 +1,21 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/tokens" },
+    { "path": "./packages/utils" },
+    { "path": "./packages/theme" },
+    { "path": "./packages/icons" },
+    { "path": "./packages/button" },
+    { "path": "./packages/input" },
+    { "path": "./packages/badge" },
+    { "path": "./packages/card" },
+    { "path": "./packages/modal" },
+    { "path": "./packages/navigation" },
+    { "path": "./packages/data-grid" },
+    { "path": "./packages/charts" },
+    { "path": "./packages/trading" },
+    { "path": "./packages/dashboard" },
+    { "path": "./packages/ui" },
+    { "path": "./apps/docs" }
+  ]
+}

@@ -40,7 +40,7 @@ describe("useLocalStorage", () => {
       useLocalStorage<{ name: string; age: number }>("user", {
         name: "John",
         age: 30,
-      }),
+      })
     );
 
     act(() => {

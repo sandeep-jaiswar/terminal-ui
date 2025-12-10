@@ -40,28 +40,28 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (
     { children, variant = "default", padding = "md", className, ...props },
-    ref,
+    ref
   ) => {
     const baseStyles = cn(
       // Base styles
       "rounded-md overflow-hidden",
-      "transition-all duration-150 ease-in-out",
+      "transition-all duration-150 ease-in-out"
     );
 
     const variantStyles = {
       default: cn(
         "bg-terminal-dark-gray",
-        "border border-terminal-medium-gray",
+        "border border-terminal-medium-gray"
       ),
       elevated: cn(
         "bg-terminal-dark-gray",
         "border border-terminal-medium-gray",
-        "shadow-terminal-card",
+        "shadow-terminal-card"
       ),
       outlined: cn(
         "bg-transparent",
         "border border-terminal-medium-gray",
-        "hover:border-terminal-light-gray",
+        "hover:border-terminal-light-gray"
       ),
       interactive: cn(
         "bg-terminal-dark-gray",
@@ -69,7 +69,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         "cursor-pointer",
         "hover:border-terminal-light-gray hover:shadow-terminal-card",
         "focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-black",
-        "active:scale-[0.99]",
+        "active:scale-[0.99]"
       ),
     };
 
@@ -87,14 +87,14 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
           baseStyles,
           variantStyles[variant],
           paddingStyles[padding],
-          className,
+          className
         )}
         {...props}
       >
         {children}
       </div>
     );
-  },
+  }
 );
 
 Card.displayName = "Card";
@@ -125,14 +125,14 @@ export const CardHeader = React.forwardRef<HTMLDivElement, CardHeaderProps>(
         className={cn(
           "flex items-start justify-between gap-4",
           "mb-4",
-          className,
+          className
         )}
         {...props}
       >
         {children}
       </div>
     );
-  },
+  }
 );
 
 CardHeader.displayName = "CardHeader";
@@ -166,7 +166,7 @@ export const CardContent = React.forwardRef<HTMLDivElement, CardContentProps>(
         {children}
       </div>
     );
-  },
+  }
 );
 
 CardContent.displayName = "CardContent";
@@ -200,7 +200,7 @@ export const CardFooter = React.forwardRef<HTMLDivElement, CardFooterProps>(
         {children}
       </div>
     );
-  },
+  }
 );
 
 CardFooter.displayName = "CardFooter";

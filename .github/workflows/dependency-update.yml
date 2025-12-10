@@ -3,7 +3,7 @@ name: Dependency Updates
 on:
   schedule:
     # Run weekly on Monday at 9 AM UTC
-    - cron: '0 9 * * 1'
+    - cron: "0 9 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -24,18 +24,18 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8.15.0
+          version: 8.15.1
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Update Dependencies
         run: |
           pnpm update --latest --recursive
-          
+
           echo "## 📦 Dependency Update Report" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           git diff package.json pnpm-lock.yaml >> $GITHUB_STEP_SUMMARY || echo "No changes" >> $GITHUB_STEP_SUMMARY
@@ -50,17 +50,17 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: 'chore: update dependencies'
-          title: 'chore: update dependencies'
+          commit-message: "chore: update dependencies"
+          title: "chore: update dependencies"
           body: |
             ## 📦 Dependency Updates
-            
+
             This PR updates all dependencies to their latest versions.
-            
+
             ### Changes
             - Updated all packages to latest versions
             - All tests passing
-            
+
             Please review the changes and merge if everything looks good.
           branch: chore/update-dependencies
           delete-branch: true
@@ -69,7 +69,7 @@ jobs:
   renovate:
     name: Renovate Bot
     runs-on: ubuntu-latest
-    if: false  # Disabled by default - enable in repository settings
+    if: false # Disabled by default - enable in repository settings
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -93,21 +93,21 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8.15.0
+          version: 8.15.1
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Check for Security Vulnerabilities
         run: |
           pnpm audit --json > audit-report.json || true
-          
+
           echo "## 🔒 Security Audit" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          
+
           if [ -s audit-report.json ]; then
             echo "\`\`\`json" >> $GITHUB_STEP_SUMMARY
             cat audit-report.json >> $GITHUB_STEP_SUMMARY
@@ -125,17 +125,17 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: 'fix: security vulnerability updates'
-          title: '🔒 fix: security vulnerability updates'
+          commit-message: "fix: security vulnerability updates"
+          title: "🔒 fix: security vulnerability updates"
           body: |
             ## 🔒 Security Vulnerability Updates
-            
+
             This PR automatically fixes security vulnerabilities found in dependencies.
-            
+
             ### Changes
             - Updated vulnerable packages
             - All security issues resolved
-            
+
             **Priority**: High - Please review and merge as soon as possible.
           branch: security/auto-fix
           delete-branch: true
@@ -152,13 +152,13 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8.15.0
+          version: 8.15.1
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
@@ -168,7 +168,7 @@ jobs:
           echo "## 📊 Outdated Packages Report" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           pnpm outdated --recursive > outdated.txt || true
-          
+
           if [ -s outdated.txt ]; then
             echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
             cat outdated.txt >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "packages/button/src/index.ts",
+    "packages/input/src/index.ts",
+    "packages/badge/src/index.ts",
+    "packages/card/src/index.ts",
+    "packages/modal/src/index.ts",
+    "packages/navigation/src/index.ts",
+    "packages/data-grid/src/index.ts",
+    "packages/charts/src/index.ts",
+    "packages/trading/src/index.ts",
+    "packages/dashboard/src/index.ts",
+    "packages/utils/src/index.ts",
+    "packages/tokens/src/index.ts",
+    "packages/theme/src/index.ts",
+    "packages/icons/src/index.ts"
+  ],
+  "entryPointStrategy": "packages",
+  "out": "docs/api",
+  "plugin": ["typedoc-plugin-markdown"],
+  "readme": "README.md",
+  "includeVersion": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeInternal": true,
+  "excludeExternals": true,
+  "categorizeByGroup": true,
+  "categoryOrder": ["Components", "Hooks", "Utilities", "Types", "*"],
+  "sort": ["source-order"],
+  "validation": {
+    "notExported": true,
+    "invalidLink": true,
+    "notDocumented": false
+  },
+  "treatWarningsAsErrors": false,
+  "cleanOutputDir": true,
+  "githubPages": false,
+  "hideGenerator": false,
+  "searchInComments": true,
+  "commentStyle": "jsdoc"
+}
