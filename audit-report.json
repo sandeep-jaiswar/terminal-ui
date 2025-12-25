@@ -70,6 +70,19 @@
           "bundled": false
         }
       ]
+    },
+    {
+      "action": "review",
+      "module": "storybook",
+      "resolves": [
+        {
+          "id": 1111543,
+          "path": "apps__docs>storybook",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
     }
   ],
   "advisories": {
@@ -255,6 +268,45 @@
         "CWE-78"
       ],
       "url": "https://github.com/advisories/GHSA-5j98-mcp5-4vw2"
+    },
+    "1111543": {
+      "findings": [
+        {
+          "version": "8.6.14",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/storybookjs/storybook/security/advisories/GHSA-8452-54wp-rmv6\n- https://nvd.nist.gov/vuln/detail/CVE-2025-68429\n- https://storybook.js.org/blog/security-advisory\n- https://github.com/advisories/GHSA-8452-54wp-rmv6",
+      "created": "2025-12-18T18:49:21.000Z",
+      "id": 1111543,
+      "npm_advisory_id": null,
+      "overview": "On December 11th, the Storybook team received a responsible disclosure alerting them to a potential vulnerability in certain built and published Storybooks. \n\nThe vulnerability is a bug in how Storybook handles environment variables defined in a `.env` file, which could, in specific circumstances, lead to those variables being unexpectedly bundled into the artifacts created by the `storybook build` command. When a built Storybook is published to the web, the bundle’s source is viewable, thus potentially exposing those variables to anyone with access. If those variables contained secrets, they should be considered compromised.\n\n## Who is impacted?\n\nFor a project to be vulnerable to this issue, it must:\n\n- Build the Storybook (i.e. run `storybook build` directly or indirectly) in a directory that contains a `.env` file (including variants like `.env.local`)\n- The `.env` file contains sensitive secrets\n- Use Storybook version `7.0.0` or above\n- Publish the built Storybook to the web\n\nStorybooks built without a `.env` file at build time are not affected, including common CI-based builds where secrets are provided via platform environment variables rather than `.env` files.\n\nUsers' Storybook runtime environments (i.e. `storybook dev`) are not affected. Deployed applications that share a repo with a project's Storybook are not affected.\n\nStorybook 6 and below are not affected.\n\n## Recommended actions\n\nFirst, Storybook recommends that everyone audit for any sensitive secrets provided via `.env` files and rotate those keys.\n\nSecond, Storybook has released patched versions of all affected major Storybook versions that no longer have this vulnerability. Projects should upgrade their Storybook—on both local machines and CI environments—to one of these versions **before publishing again**.\n\n- `10.1.10+`\n- `9.1.17+`\n- `8.6.15+`\n- `7.6.21+`\n\nFinally, some projects may have been relying on the undocumented behavior at the heart of this issue and will need to change how they reference environment variables after this update. If a project can no longer read necessary environmental variable values, it can either prefix the variables with `STORYBOOK_` or use the [`env` property in Storybook’s configuration](https://storybook.js.org/docs/configure/environment-variables#using-storybook-configuration) to manually specify values. In either case, **do not** include sensitive secrets as they *will* be included in the built bundle.\n\n## Further information\n\nDetails of the vulnerability can be found on the [Storybook announcement](https://storybook.js.org/blog/security-advisory).",
+      "reported_by": null,
+      "title": "Storybook manager bundle may expose environment variables during build",
+      "metadata": null,
+      "cves": [
+        "CVE-2025-68429"
+      ],
+      "access": "public",
+      "severity": "high",
+      "module_name": "storybook",
+      "vulnerable_versions": ">=8.0.0 <8.6.15",
+      "github_advisory_id": "GHSA-8452-54wp-rmv6",
+      "recommendation": "Upgrade to version 8.6.15 or later",
+      "patched_versions": ">=8.6.15",
+      "updated": "2025-12-18T18:49:22.000Z",
+      "cvss": {
+        "score": 7.3,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+      },
+      "cwe": [
+        "CWE-200",
+        "CWE-538",
+        "CWE-541"
+      ],
+      "url": "https://github.com/advisories/GHSA-8452-54wp-rmv6"
     }
   },
   "muted": [],
@@ -263,7 +315,7 @@
       "info": 0,
       "low": 0,
       "moderate": 4,
-      "high": 1,
+      "high": 2,
       "critical": 0
     },
     "dependencies": 1073,
