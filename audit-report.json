@@ -120,7 +120,7 @@
         }
       ],
       "module": "rollup",
-      "target": "4.63.3",
+      "target": "4.63.5",
       "depth": 3
     },
     {
@@ -272,7 +272,7 @@
         }
       ],
       "module": "brace-expansion",
-      "target": "2.1.4",
+      "target": "2.1.7",
       "depth": 4
     },
     {
@@ -360,7 +360,7 @@
         }
       ],
       "module": "ws",
-      "target": "8.21.3",
+      "target": "8.22.0",
       "depth": 4
     },
     {
@@ -486,7 +486,7 @@
         }
       ],
       "module": "browserslist",
-      "target": "4.28.9",
+      "target": "4.29.2",
       "depth": 6
     },
     {
@@ -501,7 +501,7 @@
         }
       ],
       "module": "baseline-browser-mapping",
-      "target": "2.11.23",
+      "target": "2.11.26",
       "depth": 7
     },
     {
